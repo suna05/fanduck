@@ -1,0 +1,115 @@
+1.소스 다운로드 github.com / git S/W 설치 / git clone url
+
+2. DBMS > MySQL
+
+3. Web Application Server(WAS) - Tomcat - JDK 설치 - JAVA_HOME 시스템 환경 변수 설정(C:\Program Files\Java\jdk1.8.0_121) - PATH 변수
+(C:\Program Files\Java\jdk1.8.0_121\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Utilities 1.6\)
+ 
+4. 빌드도구 설치 -> ant -> maven -> 'gradle'  gradle.org/install -> binary only -> c드라이브에 압축풀기 - PATH 변수 맨앞에 (C:\gradle-3.4.1\bin;)
+
+cmd C:\Users\Bitcamp\git\java89-project-web2에서 gradle build
+
+C:\Users\Bitcamp\git\java89-project-web2\build 에 있는 war파일 C:\apache-tomcat-8.5.11\webapps 로 이동 후 C:\apache-tomcat-8.5.11\bin에 있는 startup.bat파일 실행
+
+빌드 후 http://localhost:8080/java89-project-web2/student/list.do
+
+git clone https://github.com/eomjinyoung/java89 
+
+
+5. 개발편집기 -> Atom,visualstudio -> https://atom.io/  https://code.visualstudio.com/Download
+
+github에서 java89 받아서 git 폴더에 clone 
+
+visual studio code 에서 폴더열기 java89
+
+dbms mysql 설정
+
+서버접속
+mysql -u root -p
+1111
+
+사용자 추가 
+create user 'webapp'@'localhost' identified by '1111';
+
+데이터베이스 생성
+
+create database webappdb
+default character set utf8
+default collate utf_general_ci;
+
+사용자에게 권한 부여
+grant all on webappdb.* to 'webapp'@'localhost';
+
+show databases;
+
+사용자 교체
+quit
+mysql -u java93 -p
+1111
+
+데이터베이스 사용
+use webappdb;
+
+model.sql 복사 붙여넣기
+
+data.sql data2.sql 복붙
+	
+웹페이지 접속 
+http://localhost:8080/java89-project-web2/student/list.do
+
+
+https://nodejs.org/ko/
+
+C:\Users\Bitcamp\git\java89-project-web2\src\main\webapp
+
+npm install
+
+
+==========
+
+drop database java93db;
+
+drop user 'java93'@'localhost';
+
+
+
+1 git clone https://github.com/eomjinyoung/java89-project-web2.git
+
+2.vsc 에서 java89-project-web2 폴더열기 web-inf\jdbc.properties 수정
+ build.gradle  compileJava.options.encoding = 'UTF-8' 추가
+
+3.cmd C:\Users\Bitcamp\git\java89-project-web2\src\main\webapp 에서 npm install
+
+4. C:\Users\Bitcamp\git\java89-project-web2 에서 gradle build
+
+5. C:\Users\Bitcamp\git\java89-project-web2\build\libs 에서 war파일 복사해서 
+톰캣폴더 이동
+
+6.톰캣 실행
+
+7 mysql -u root -p 
+
+create user 'java93'@'localhost' identified by '1111';
+
+create database java93db
+default character set utf8
+default collate utf8_general_ci;
+
+grant all on java93db.* to 'java93'@'localhost';
+
+quit
+mysql -u java93 -p
+
+use java93db;
+
+
+show tables;
+
+model.sql / data.sql / data2.sql 순서로 복사 붙여넣기
+
+localhost:8080/java89_project-web2/student/list.do
+
+localhost:8080/java89_project-web2/student/main.html
+]
+
+ 
