@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+  </head>
+  <style>
+    .con {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: yellow;
+    }
+    .abc {
+      float: left;
+
+    }
+    .box1 {
+      background-color: green;
+    }
+    .box2 {
+      background-color: blue;
+    }
+    /*mobile*/
+    @media (max-width: 740px) {
+      .abc {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    /*desktop*/
+    @media (min-width: 741px) {
+      .abc {
+        width: 50%;
+        height: 500px;
+      }
+    }
+  </style>
+  <body>
+    <div class="con">
+      <div class="abc box1"></div>
+      <div class="abc box2"></div>
+    </div>
+  </body>
+</html>
