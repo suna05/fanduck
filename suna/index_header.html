@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FanDuck</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./header.css" type="text/css">
+
+</head>
+
+<style>
+</style>
+<header>
+<div class="con">
+<!-- <table style="height:80px padding-top:50px; background-color:yellow;"> -->
+<div class="a box1" style="padding-left:0px; background-color:white; width:500px; margin-left:200px;">
+  <!-- <tr style="vertical-align:top">
+    <td class="a left" style="height:80px; border-right:2px solid #fa507b; padding-right:0px; text-align:justify;">
+      <form class="form-horizontal">
+        <div class="form-group"> -->
+          <a href="index.html"><img src="images/logo1.png" class="img-responsive" alt="Responsive image" style="height:100px; padding-top:30px;"/></a>
+        <!-- </div>
+      </form>
+    </td> -->
+  </div>
+
+    <!-- <td class="a right" style="padding-left:450px; background-color:pink; font-size:220%;" >
+      <br> -->
+      <div class="a box2" style="width:700px; padding-top:50px; padding-left:150px; text-align:right; font-size:150%;">
+      <div style="padding-top:0px;">
+        <a id="1" href="#" style="border-right:2px solid pink; padding-right:20px;">HOME</a>
+        <a id="2" href="#" style="border-right:2px solid pink; padding-right:10px; padding-left:10px;" data-toggle="modal" data-target="#join">회원가입 </a>
+        <a id="3" href="#" style="padding-left:10px;" data-toggle="modal" data-target="#poplogin">로그인</a>
+      </div>
+      <!-- </span>
+    </td>
+  </tr>
+</table> -->
+</div>
+</div>
+</header>
+
+<!-- 회원가입 -->
+<div class="modal fade" style="height:500px padding-top:450px;" id="join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<div class="modal-header">
+    		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <img class="img" style="width:90px; padding-left:0px; position:absolute;" src="images/logo1.png"/></a></h1>
+        <h4 class="modal-title" id="myModalLabel" style="text-align:center">회원가입</h4>
+    	</div>
+    	<div class="modal-body" style="height:280px; ">
+        <table>
+          <tr style="vertical-align:top ">
+            <td style="width:300px; border-right:2px solid pink; padding-right:0px; text-align:justify">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputID" class="col-sm-5 control-label">아이디</label>
+                  <div class="col-sm-6">
+                    <input type="id" class="form-control" id="inputID">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputNick" class="col-sm-5 control-label">닉네임</label>
+                  <div class="col-sm-6">
+                    <input type="Nick" class="form-control" id="inputNick">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-5 control-label">비밀번호</label>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword_ch" class="col-sm-5 control-label">비밀번호 확인</label>
+                  <div class="col-sm-6">
+                    <input type="password_ch" class="form-control" id="inputPassword_ch">
+                  </div>
+                </div>
+              </td>
+        </form>
+        <td style="padding-left:0px">
+          <span>
+            <button id="button" style="margin-left:25px; margin-top:50px;">페이스북 가입하기</button>
+          </span>
+        </td>
+      </tr>
+</table>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">가입하기</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- 로그인 -->
+  <div class="modal fade" style="height:500px" id="poplogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" position="fixed" style="left: 50%; top: 50%; margin-left: -400px;">
+      <div class="modal-content">
+      	<div class="modal-header">
+      		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <img class="img" style="width:90px; padding-left:0px; border:1px solid w; position:absolute;" src="images/logo1.png"/></a></h1>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center">로그인</h4>
+      	</div>
+      	<div class="modal-body" style="height:280px; ">
+          <table style="height:180px">
+            <tr style="vertical-align:top">
+              <td style="width:300px; padding-top:50px; height:180px; border-right:2px solid #fa507b; padding-right:0px; text-align:justify">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputID" class="col-sm-5 control-label">아이디</label>
+                    <div class="col-sm-6">
+                      <input type="id" class="form-control" id="inputID">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-sm-5 control-label">비밀번호</label>
+                    <div class="col-sm-6">
+                      <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                  </div>
+
+                </td>
+          </form>
+          <td style="padding-left:0px">
+            <span>
+              <button id="button" style="margin-left:25px; margin-top:50px;">페이스북 로그인</button>
+            </span>
+          </td>
+        </tr>
+  </table>
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">로그인</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</header>
+
+<section style="background-color:white;">
+  <!-- <iframe style="margin-left: 450px;" width="970" height="600" src="https://www.youtube.com/embed/k_NDGqLTaVA" frameborder="0" allowfullscreen >
+  </iframe> -->
+  <div style="background-color:black; padding-left:450px;" width="1000">
+    <object type="text/html" width="970" height="600" data="https://www.youtube.com/embed/k_NDGqLTaVA" allowFullScreen></object>
+  </div>
+</section>
+
+<section class="center">
+    <div class="container">
+      <h1 style="color:#fa507b;"><b>당신이 좋아하는 영화인을 등록하세요</b></h1>
+      <h3>영화인의 프로필을 등록하고 마음껏 덕질하세요</h3>
+      <h3>영화인의 작품을 실시간으로 알림받는 서비스</h3>
+    </div>
+</section>
+
+<hr>
+
+<footer class="footer" style="background-color:white">
+    <p><strong>만든이</strong>:김미연 신선아 이유운</p>
+    <p><strong>Email</strong>: <a href="#">fanduck@gmail.con</a></p>
+</footer>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</html>
