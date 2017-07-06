@@ -1,0 +1,80 @@
+.outer-container {
+  margin: 0px 200px;
+  position: absolute;
+  border: 1px solid red;
+  max-width: 1000px;
+  height: 2000px;
+  width:100%;
+}
+.list-container {
+  float: left;
+}
+.list-box {
+  width: 140px;
+  height: 100px;
+  background-color: yellow;
+  margin-bottom: 10px;
+}
+.boxstyle1 {
+  height: 170px;
+  background-color: yellow;
+}
+.boxstyle2 {
+  height: 170px;
+  background-color: lightgray;
+}
+.boxstyle3 {
+  height: 140px;
+  background-color: yellow;
+}
+.boxstyle4 {
+  height: 130px;
+  background-color: lightgray;
+}
+.boxstyle5 {
+  height: 230px;
+  background-color: yellow;
+}
+.boxstyle6 {
+  height: 110px;
+  background-color: yellow;
+  margin-bottom: 10px;
+}
+.aside {
+  height: 490px;
+  width: 180px;
+  border: 1px coral solid;
+  background-color: coral;
+  /*position: relative;*/
+  float:left;
+  margin: 15px 0px 15px 10px;
+}
+.thumb {
+ max-width: 100%;
+ height: auto;
+ margin-top: 32px;
+}
+.thumb2 {
+ max-width: 100%;
+ height: auto;
+ margin-top: 22px;
+}
+.thumb3 {
+ max-width: 100%;
+ height: auto;
+ margin-top:64px;
+}
+.boxstyle1:hover {
+  background: url("facebook-logo.png");
+  background-color: red;
+  /*display: inline;*/
+}
+.boxstyle2:hover {
+  background: url("facebook-logo (1).png");
+  background-color: red;
+  /*display: inline;*/
+}
+
+ul{
+   list-style:none;
+   }
