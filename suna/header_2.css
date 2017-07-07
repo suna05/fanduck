@@ -16,6 +16,10 @@ ul li a.home {
   height: 80%;
 }
 
+.glyphicon {
+  size: 80px;
+}
+
 .hul {
     list-style:none;
     margin:0;
