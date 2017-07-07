@@ -1,7 +1,20 @@
 ul li a.home {
   text-decoration: none;
 }
+#login {
+  width: 80%;
+  margin-left: 10%;
+}
+.loginmodal {
+  width: 450px;
+  height: 40%;
+  /*margin-top: 0px;*/
+  padding-top: 50px;
+}
 
+.modal-body {
+  height: 80%;
+}
 .hul {
     list-style:none;
     margin:0;
@@ -68,12 +81,16 @@ ul li a.home {
   text-align:right;
   font-size:150%;
 }
+
 /*mobile*/
 @media (max-width: 740px) {
   .a {
     width: 100%;
     height: auto;
     font-size: 165%;
+  }
+  .video {
+    background-color: white;
   }
   .youtubeWrap iframe {
     position: relative;
@@ -144,7 +161,7 @@ ul li a.home {
     top: 1%;
     right: 10%;
   }
-  img {
+  .himg {
     position: fixed;
     padding-top:1%;
     left: 10%;
@@ -199,6 +216,12 @@ ul li a.home {
 
 .footer {
   text-align:center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: black;
+
 }
 
 .btn {

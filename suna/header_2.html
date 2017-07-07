@@ -102,18 +102,18 @@
 
 
 <!-- 로그인 -->
-<div class="modal fade" style="height:500px padding-top:450px;" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-  <div class="modal-dialog">
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog loginmodal">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
         <img class="img" style="width:90px; padding-left:0px; position:absolute;" src="images/logo1.png"/></a></h1>
         <h4 class="modal-title" id="myModalLabel" style="text-align:center">로그인</h4>
       </div>
-      <div class="modal-body" style="height:280px; ">
-        <table style="height:170px;">
-          <tr style="vertical-align:top">
-            <td style="width:300px; border-right:2px solid pink; padding-right:0px; text-align:justify">
+      <div class="modal-body">
+
+          <div style="vertical-align:top">
+            <div style="width:80%; text-align:center; padding-top:3%;">
               <form class="form-horizontal">
                 <div class="form-group">
                     <label for="inputID" class="col-sm-5 control-label">아이디</label>
@@ -129,28 +129,25 @@
                     </div>
                   </div>
 
-                </td>
+
+                </div>
           </form>
-          <td style="padding-left:0px">
-            <span>
-              <body>
+
+              <section>
+                  <img src="images/login_btn.png" style="width:50%; height:50%; margin-left:30%; margin-top:3%;"/>
 
 
-
-                 <p>로그인 버튼 추가</p>
-                 <button src="face_login.js"><img src="images/login_btn.png" style="width:90%;"></button>
-                 <fb:login-button show-faces="false" width="200" max-rows="1"></fb:login-button>
-</body>
+               </section>
         <!--
               </script>
               <p>로그인 버튼</p>
                     <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" style="padding-left:0px;" ></div>
 
                 </body> -->
-            </span>
-          </td>
-        </tr>
-  </table>
+
+        </div>
+  </div>
+
 
 
             <div class="modal-footer">
@@ -168,14 +165,13 @@
 
 
 
-
-<section class="video" style="background-color:white; background-color:black;">
+<body>
+<section class="video" style="background-color:black;">
   <!-- <iframe style="margin-left: 450px;" width="970" height="600" src="https://www.youtube.com/embed/k_NDGqLTaVA" frameborder="0" allowfullscreen >
   </iframe> -->
   <!-- <div style="background-color:black; padding-left:450px;" width="1000"> -->
   <div class="youtubeWrap">
-    <iframe src="https://www.youtube.com/embed/k_NDGqLTaVA" width=650 frameborder="0" allowfullscreen >
-    </iframe>
+  <iframe width="760" height="315" src="https://www.youtube.com/embed/Eb9wT1JxMwU?list=PLViFIAYgL5lZS0i-EM7LSlrGhbRE_H9o0" frameborder="0" allowfullscreen autoplay=1></iframe>
     </div>
   <!-- </div> -->
 </section>
@@ -187,6 +183,7 @@
       <p class="second">영화인의 작품을 실시간으로 알림받는 서비스</p>
     <!-- </div> -->
 </section>
+</body>
 
 <hr>
 
