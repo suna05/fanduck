@@ -5,6 +5,9 @@
   <title></title>
   <link rel="stylesheet" href="css/bootstrap.min.css"/>
   <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./CLNDR/demo/css/clndr.css">
+  <style media="screen">
+  </style>
 </head>
 <body>
   <div id="container">
@@ -26,77 +29,122 @@
     </header>
   </div>
 
-  <div class="container" style="border:1px solid; text-align:center;">
-      <img src="./images/L.jpg" class="img-circle">
-      <h3>에르데스</h3>
+  <div class="container-fluid" style=" text-align:center; background-color:#d4fec6">
+    <div class="row" style="">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" style="margin-top:5%;">
+        <img src="./images/L.jpg" class="img-circle">
+        <h3>에르데스</h3>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <div id="default" class="cal1" data-toggle="modal" data-target="#myModal"></div>
+          <div id="mini-clndr" ></div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-  <div class="container article-bar" style="border:1px solid;">
+  <div class="container-fluid article-bar" >
     <div class="text-center article-bar">
       <h2 id="article-text">영화인 목록</h2>
     </div>
-    <nav class="text-center clearfix" id="filter">
-      <a href="#"><h3 style="font-size:110%; display:inline;">배우</h3></a>
-      <a href="#"><h3 style="font-size:110%; display:inline; padding-left:5%;">감독</h3></a>
-    </nav>
+    <div class="text-center" id="filter">
+      <a href="#"><h3 style="font-size:110%; display:inline-block;">배우</h3></a>
+      <a href="#"><h3 style="font-size:110%; display:inline-block; margin-left:3%;">감독</h3></a>
+    </div>
   </div>
 
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row" style="margin-right:6%; padding:0% 15% 15% 15%;">
       <section class="mp-list">
         <article>
         <div class="col-md-4 mp-list-cont">
-        <span>
-          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot">
-        </span>
-        <span class="mp-text">
+        <div class="text-center mp-phot-box">
+          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot img-responsive">
+        </div>
+        <div class="mp-text">
             <p><h4 class="mp-name">김혜수</h4></p>
              <cite title="Source Title"><h5>청룡인<h5><i class="icon-map-marker"></i></cite>
-          <p>
+          <p class="mp-text-line">
             <i class="icon-gift"></i> September 05, 1970
           </p>
-        </span>
+        </div>
       </div>
       <div class="col-md-4 mp-list-cont">
-        <span>
-          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot">
-        </span>
-        <span class="mp-text">
-            <p><h4 class="mp-name">김혜수</h4></p>
-             <cite title="Source Title"><h5>청룡인<h5><i class="icon-map-marker"></i></cite>
-          <p>
-            <i class="icon-gift"></i> September 05, 1970
+        <div class="text-center">
+          <img src="./images/tim.jpg" alt="" class="img-rounded mp-phot img-responsive">
+        </div>
+        <div class="mp-text">
+            <p><h4 class="mp-name">팀 로빈스</h4></p>
+             <cite title="Source Title"><h5>앤디 듀프레인<h5><i class="icon-map-marker"></i></cite>
+          <p class="mp-text-line">
+            <i class="icon-gift"></i> October 10, 1958
           </p>
-        </span>
+        </div>
       </div>
       <div class="col-md-4 mp-list-cont">
-        <span>
-          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot">
-        </span>
-        <span class="mp-text">
-            <p><h4 class="mp-name">김혜수</h4></p>
-             <cite title="Source Title"><h5>청룡인<h5><i class="icon-map-marker"></i></cite>
-          <p>
-            <i class="icon-gift"></i> September 05, 1970
+        <div class="text-center">
+          <img src="./images/L.jpg" alt="" class="img-rounded mp-phot img-responsive">
+        </div>
+        <div class="mp-text">
+            <p><h4 class="mp-name">L</h4></p>
+             <cite title="Source Title"><h5>L입니다<h5><i class="icon-map-marker"></i></cite>
+          <p class="mp-text-line">
+            <i class="icon-gift">secret</i>
           </p>
-        </span>
+        </div>
       </div>
       <div class="col-md-4 mp-list-cont">
-        <span>
-          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot">
-        </span>
-        <span class="mp-text">
-            <p><h4 class="mp-name" >김혜수</h4></p>
-             <cite title="Source Title"><h5>청룡인<h5><i class="icon-map-marker"></i></cite>
-          <p>
-            <i class="icon-gift"></i> September 05, 1970
+        <div class="text-center">
+          <img src="./images/spiderman.jpg" alt="" class="img-rounded mp-phot img-responsive">
+        </div>
+        <div class="mp-text">
+            <p><h4 class="mp-name">피터 파커</h4></p>
+             <cite title="Source Title"><h5>스파이더맨<h5><i class="icon-map-marker"></i></cite>
+          <p class="mp-text-line">
+            <i class="icon-gift"></i> August 10, 1962
           </p>
-        </span>
+        </div>
       </div>
       </article>
       </section>
     </div>
   </div>
+  <!-- Button trigger modal -->
+<div  >
+  Launch demo modal
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+
+
+      </div>
+      <div class="modal-body">
+        <div class="cal2" id="adjacent"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="./CLNDR/src/clndr.js"></script>
+  <script src="./CLNDR/demo/demo.js"></script>
 </body>
 </html>
