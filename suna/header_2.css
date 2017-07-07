@@ -15,6 +15,7 @@ ul li a.home {
 .modal-body {
   height: 80%;
 }
+
 .hul {
     list-style:none;
     margin:0;
@@ -28,26 +29,31 @@ ul li a.home {
     font-family: sans-serif;
     text-decoration: none;
 }
+
 .hul .hli a.hover {
   text-decoration: none;
   color: pink;
 }
+
 .hli {
-    margin: 35px 10px 10px 20px;
+    margin: 35px 10px 20px 20px;
     /*padding: 0 0 0 0;*/
     border : 0;
     float: right;
     font-size: 140%;
 }
+
 .login {
   color: black;
   position: static;
   color: DimGray;
 }
+
 .home {
   /*color: slategray;*/
   color: DimGray;
 }
+
 .join {
   color: black;
   border-right:2px solid pink;
@@ -64,6 +70,7 @@ ul li a.home {
 .a {
     float: left;
 }
+
 .box1 {
   position: relative;
   left: 0%;
@@ -72,9 +79,9 @@ ul li a.home {
   width:300px;
   margin-left:200px;
 }
+
 .box2 {
   position: relative;
-
   width:50px;
   padding-top:50px;
   padding-left:150px;
@@ -82,6 +89,31 @@ ul li a.home {
   font-size:150%;
 }
 
+.youtubeWrap {
+  position: relative;
+  width: 100%;
+  /*padding-bottom: 56.25%;*/
+}
+
+.youtubeWrap iframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  text-align:center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: black;
+
+}
+
+.btn {
+  padding: 10px;
+}
 /*mobile*/
 @media (max-width: 740px) {
   .a {
@@ -199,31 +231,4 @@ ul li a.home {
   .second {
     font-size: 150%;
   }
-}
-
-.youtubeWrap {
-  position: relative;
-  width: 100%;
-  /*padding-bottom: 56.25%;*/
-}
-.youtubeWrap iframe {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-
-
-.footer {
-  text-align:center;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: black;
-
-}
-
-.btn {
-  padding: 10px;
 }
