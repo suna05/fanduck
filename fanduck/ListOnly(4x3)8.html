@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport"  content="width=device-width, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--suna-->
+    <title>FanDuck</title>
+    <script src="//cdn.ckeditor.com/4.7.1/basic/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header_2.css" type="text/css">
+    <link rel="stylesheet"  type="text/css" href="ListOnly(4x3)8.css"/>
+    <link rel="stylesheet"  type="text/css" href="header.css"/>
+  </head>
+<body>
+  <header class="header">
+    <div class="container" style="width:100%;">
+      <div class="Header" id="header">
+        <!-- <div class="Header-container row"> -->
+        <div class="Header-container">
+
+          <a href="index_header.html"><img class="Logo col-md-4" src="images/logo1.png" style="width:25%; display:inline-block"/></a>
+          <ul class="hul" style="position:absolute; ">
+            <li class="hli" ><h3 style="cursor:pointer" class="login" data-toggle="modal" data-target="#login">로그인</h3></li>
+            <li class="hli"><h3 style="cursor:pointer" class="join" data-toggle="modal" data-target="#join">회원가입</h3></li>
+            <li class="hli"><h3><a class="home" href="header_2.html" style="border-right:2px solid pink; padding-right:25px;">HOME</a></h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="search">
+  <input type="text" class="form-control" placeholder="검색">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+     글쓰기
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">글쓰기</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary">저장</button>
+          </div>
+        </div>
+      </div>
+    </div> <!--/Modal -->
+
+  </section>
+    <div class="outer-container">
+      <aside>
+        <div class="aside">
+           1. css 헤더푸터 따로 적용<br>
+           2. 글쓰기 모달 적용<br>
+           3. popover 효과 하려다가 줄바뀜 현상 어떡??
+        </div>
+      </aside>
+    <div class="list-container">
+      <ul>
+        <li class="list-box boxstyle3">
+         <img class="thumb3" src="images/placeholder1.png"/>
+         <div class="icons">
+           <img src="images/fbIcon.png" width="15px;" height="15px;" class="share" onClick="self.location.href='https://facebook.com/'" />
+           <img src="images/twIcon.png" width="15px;" height="15px;" class="tw" onclick="self.location.href='https://twitter.com/'" />
+        </div>
+        </li>
+        <li class="list-box boxstyle1">
+         <img class="thumb2" src="images/placeholder2.png" />
+        </li>
+        <li class="list-box boxstyle2">
+          <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+      </ul>
+    </div>
+    <div class="list-container">
+      <ul>
+        <li class="list-box boxstyle2">
+          <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+        <li class="list-box boxstyle3">
+         <img class="thumb3" src="images/placeholder1.png"/>
+         <div class="icons">
+           <img src="images/fbIcon.png" width="15px;" height="15px;" class="share" onClick="self.location.href='https://facebook.com/'" />
+           <img src="images/twIcon.png" width="15px;" height="15px;" class="tw" onclick="self.location.href='https://twitter.com/'" />
+           <img src="images/shareIcon.png" width="15px;" height="15px;" class="share">
+             <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="공유하기" data-content="shareIcons">Dismissible popover</a>
+           </img>
+        </div>
+        </li>
+        <li class="list-box boxstyle1">
+         <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+      </ul>
+    </div>
+    <div class="list-container">
+      <ul>
+        <li class="list-box boxstyle3">
+         <img class="thumb3" src="images/placeholder1.png"/>
+         <div class="icons">
+           <img src="images/fbIcon.png" width="15px;" height="15px;" class="share" onClick="self.location.href='https://facebook.com/'" />
+           <img src="images/twIcon.png" width="15px;" height="15px;" class="tw" onclick="self.location.href='https://twitter.com/'" />
+        </div>
+        </li>
+        <li class="list-box boxstyle1">
+         <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+        <li class="list-box boxstyle2">
+          <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+      </ul>
+    </div>
+    <div class="list-container">
+      <ul>
+        <li class="list-box boxstyle2">
+          <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+        <li class="list-box boxstyle3">
+         <img class="thumb3" src="images/placeholder1.png"/>
+         <div class="icons">
+           <img src="images/fbIcon.png" width="15px;" height="15px;" class="share" onClick="self.location.href='https://facebook.com/'" />
+           <img src="images/twIcon.png" width="15px;" height="15px;" class="tw" onclick="self.location.href='https://twitter.com/'" />
+        </div>
+        </li>
+        <li class="list-box boxstyle1">
+         <img class="thumb3" src="images/placeholder1.png"/>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p><strong>만든이</strong>:김미연 신선아 이유운</p>
+      <p><strong>Email</strong>: <a href="#">fanduck@gmail.con</a></p>
+    </div>
+  </div><!--outer-container-->
+</body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script  src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+  <!-- <script>
+  $('a[rel=popover]').popover({
+    html: true,
+    trigger: 'hover',
+    placement: 'bottom',
+    content: function(){return '<img src="'+$(this).data('img') + '" />';}
+  });
+  </script> -->
+  <script>
+
+  </script>
+</html>
