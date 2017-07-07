@@ -1,0 +1,18 @@
+a {
+  color:gray;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: color .2s ease-out, border-bottom-color .2s ease-out; /* webkit moz, ms, o는 웹 브라우저의 호환성을 위해 기술한다.*/
+  -moz-transition: color .2s ease-out, border-bottom-color .2s ease-out; /* ease-out, ease-in은 빠르고 느리게, 느리고 빠르게를 조정한다.*/
+  -ms-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+  -o-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+  transition: color .2s ease-out, border-bottom-color .2s ease-out;
+}
+
+a:hover {
+  color:#fa507b;
+  border-width:medium;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
