@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="font-size.css"/>
+  <link rel="stylesheet" href="footer.css"/>
+</head>
+<style>
+li a {
+  color:white;
+}
+
+.img-brand {
+  /*width: 60px;*/
+  width: 180px;
+}
+
+
+</style>
+<body>
+  <header>
+    <div class="container-fluid" style="background-color:#424558;">
+      <div class="container">
+      <div id="logo" style="display:inline-block">
+        <a href="index.html"><img class="img-brand" src="images/logo1.png"/></a>
+          <span id="menu">
+            <ul>
+              <li><a id="1" href="#">목록</a></li>
+              <li><a id="2" href="#">메인페이지</a></li>
+              <li><a id="3" href="#">마이페이지</a></li>
+              <li><a id="3" href="#">갤러리</a></li>
+              <li><button id="logout" class="btn btn-default"
+              style="background-color:#fa507b; color:white; margin-bottom:5px">로그아웃</button></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid" style=" text-align:center;">
+    <div class="row" style="">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" style="margin-top:5%;">
+        <img src="./images/L.jpg" class="img-circle">
+        <h3>에르데스</h3>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <div id="default" class="cal1" data-toggle="modal" data-target="#myModal"></div>
+          <div id="mini-clndr" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="text-center article-bar">
+      <h2 id="article-text">영화인 목록</h2>
+    </div>
+    <nav class="text-center article-bar clearfix" id="filter">
+      <a href="#" style="margin-right: 4%; font-size:1.1em; font-weight:bold;">배우</a>
+      <a href="#" style="font-size:1.1em; font-weight:bold;">감독</a>
+    </nav>
+  </div>
+
+  <div class="container mp-list">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/kimhyesu.jpg" alt="...">
+        <div class="caption">
+          <h3>김혜수</h3>
+          <p>이분이 바로 김혜수 씨입니다.</p>
+          <p style="font-size:0.85em; color:gray">> 상세 보기</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/kimhyesu.jpg" alt="...">
+        <div class="caption">
+          <h3>김혜수</h3>
+          <p>이분이 바로 김혜수 씨입니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/L.jpg" alt="...">
+        <div class="caption">
+          <h3>김혜수</h3>
+          <p>이분이 바로 김혜수 씨입니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/kimhyesu.jpg" alt="...">
+        <div class="caption">
+          <h3>김혜수</h3>
+          <p>이분이 바로 김혜수 씨입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> 김미연 신선아 이유운</a>&nbsp; All rights reserved 2016-2017.</p>
+  </footer>
+
+</body>
+</html>
