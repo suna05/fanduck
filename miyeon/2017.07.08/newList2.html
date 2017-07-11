@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--suna-->
+
+    <title>FanDuck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./header.css" type="text/css">
+    <link rel="stylesheet" href="./list2.css"  type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+  </head>
+  <body>
+  <div id=frame><!--frame-->
+  <header class="header">
+    <div class="container" style="width:100%;">
+      <div class="Header" id="header">
+        <div class="Header-container">
+          <a href="index_header.html"><img class="Logo col-md-4" src="images/logo1.png" style="width:25%; display:inline-block"/></a>
+          <ul class="hul" style="position:absolute; ">
+          <li class="hli" ><h3 style="cursor:pointer" class="login" data-toggle="modal" data-target="#login"><a>로그인</a></h3></li>
+          <li class="hli"><h3 style="cursor:pointer" class="join" data-toggle="modal" data-target="#join"><a>회원가입</a></h3></li>
+            <li class="hli"><h3><a class="home" href="header_2.html" style="border-right:2px solid pink; padding-right:25px;">HOME</a></h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="search" style="margin-top: 30px; margin-bottom: 30px;">
+  <input type="text" class="form-control" placeholder="검색">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg">
+     글쓰기
+    </button>
+ <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">글쓰기</h4>
+          </div>
+          <div class="modal-body">
+            <div id="summernote"><p>
+            </p></div>
+<script>
+$(document).ready(function() {
+    $('#summernote').summernote({
+      height: 300,
+      lang: 'ko-KR'
+    });
+});
+</script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary">저장</button>
+          </div>
+        </div>
+      </div>
+    </div> <!--/Modal -->
+	  </section>
+	  <div class="outer-container">
+
+
+    <div id="columns">
+      <div class="left">
+        1. aside and pinterest list together.
+      </div>
+      <figure>
+        <img src="./images/edDance.jpg">
+         <figuration>
+
+          아아아아ㅏ아아아<br>
+          차차차차차차차차차
+          </figuration>
+      </figure>
+
+      <figure>
+        <img src="./images/lalaland.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/island.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/placeholder1.png">
+
+      </figure>
+
+      <figure>
+        <img src="./images/edDance.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/edDance.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/edDance.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/edDance.jpg">
+
+      </figure>
+
+      <figure>
+        <img src="./images/edDance.jpg">
+        <!-- <figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption> -->
+      </figure>
+    </div>
+  </div><!--outer-container-->
+    <div class="footer">
+      <p><strong>만든이</strong>:김미연 신선아 이유운</p>
+      <p><strong>Email</strong>: <a href="#">fanduck@gmail.con</a></p>
+    </div>
+</div><!--frame-->
+  </body>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script  src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+</html>
