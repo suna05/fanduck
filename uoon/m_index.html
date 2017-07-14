@@ -47,52 +47,38 @@
     margin-left:10%;
     width:35%;
   }
-  input {
-    display: none;
-  }
 
-  label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid;
-    border-radius: 4px;
-    background: #336600;
-    color: #FFF;
-    font-family: arial;
-    -webkit-transition: background-color 0.1s, color 0.1s;
+    /*this block should go in the styles.css file*/
+  .ui-panel-inner {
+    padding:0px; /*make the buttons flush edge to edge*/
   }
-
-  label:hover {
-    background: #33CC00;
-    color: #000;
+  .ui-controlgroup {
+    margin:0; /*make the buttons flush to the top*/
   }
-
-  .test {
-    -webkit-transition: width .3s ease;
-    height: 200px;
-    overflow: hidden;
-    width: 0px;
-    background: red;
-    margin-top: 10px;
+  #header {
+    height:54px;
   }
-
-  input:checked + .test {
-    width: 100px;
+  #bars-button {
+    margin:7px;
   }
 
   </style>
   </head>
 <body>
-  <div class="brand"  style="">
-    <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
-         style="width:13%; margin-left:10px;" alt="profile-sample5" id="imgBtn"/>
+  <div class="brand" style="">
+    <a id="bars-button" href="#navpanel"><img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
+         style="width:13%; margin-left:10px;" alt="profile-sample5" id="imgBtn"/></a>
     <span style=" font-size:1.5em; margin-left:5%; padding-top:2.5%; position:absolute">홈</span>
   <span class="glyphicon glyphicon-calendar" aria-hidden="true" style="font-size:120%; color:black"></span>
   </div>
-  <input id="check" type="checkbox">
-  <div class="test">
-    <p>I am some hidden text</p>
+  <div data-role="panel" id="navpanel" data-theme="a"
+       data-display="overlay" data-position="left">
+      <div data-role="controlgroup" data-corners="false">
+          <a href="#" data-role="button">Business</a>
+          <a href="#" data-role="button">Numbers</a>
+          <a href="#" data-role="button">Money</a>
+          <a href="#" data-role="button">People</a>
+      </div>
   </div>
   <div class="mp-list" style="padding-bottom:74px;">
     <ul data-role="listview" data-inset="true" >
@@ -164,28 +150,14 @@
     </div>
   </div>
 
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </div>
+  </nav>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
-var count = 0
-
-if (count == 0) {
-$('#imgBtn').click(function() {
-  console.log(count)
-  $('#check').prop('checked', 'true')
-  count = 1;
-  console.log(count)
+$('#bars-button').click(function() {
+  $('html').css('background-color', 'gray')
 })
-}
-if (count != 0) {
-$('#imgBtn').click(function() {
-  console.log('bb');
-  $('#check').prop('checked', 'false')
-  count = 0;
-})
-}
-
-
 </script>
 </body>
 </html>
