@@ -2,149 +2,150 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="./style.css"/>
-  <link rel="stylesheet" href="./CLNDR/demo/css/clndr.css">
-  <style media="screen">
-  </style>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="font-size.css"/>
+  <link rel="stylesheet" href="footer.css"/>
+  <link rel="stylesheet" href="calendar.css"/>
+  <link rel="stylesheet" href="my-profile.css"/>
 </head>
+<style>
+</style>
 <body>
-  <div id="container">
-    <header>
-        <div id="logo" >
-          <h1><a href="index.html"><img class="img-logo" src="images/logo1.png"/></a></h1>
-           <spna style="font-size:220%; color:black;"><b></b></span>
-            <div id="menu" style="float: right;">
-          <ul>
-            <li><a id="1" href="#">목록</a></li>
-            <li><a id="2" href="#">메인페이지</a></li>
-            <li><a id="3" href="#">마이페이지</a></li>
-            <li><a id="3" href="#">갤러리</a></li>
-            <li><button id="logout" class="btn btn-default"
-            style="background-color:#fa507b; color:white; margin-bottom:5px">로그아웃</button></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-  </div>
-
-  <div class="container-fluid" style=" text-align:center; background-color:#d4fec6">
-    <div class="row" style="">
-      <div class="col-md-4"></div>
-      <div class="col-md-4" style="margin-top:5%;">
-        <img src="./images/L.jpg" class="img-circle">
-        <h3>에르데스</h3>
-      </div>
-      <div class="col-md-4">
-        <div>
-          <div id="default" class="cal1" data-toggle="modal" data-target="#myModal"></div>
-          <div id="mini-clndr" ></div>
+  <header>
+    <div class="container-fluid" style="background-color:#424558;">
+      <div class="container">
+      <div id="logo" style="display:inline-block">
+        <a href="index44.html"><img class="img-brand" src="images/logo1.png"/></a>
+          <span id="menu">
+            <ul>
+              <li><button class="btn btn-default"
+              style="background-color:#fa507b; color:white; margin-bottom:5px; border:1px solid black">목록</button></li>
+              <li><a id="2" href="#">메인페이지</a></li>
+              <li><a id="3" href="#">갤러리</a></li>
+              <li><button id="logout" class="btn btn-primary"
+              style="color:white; margin-bottom:5px; border:1px solid black">로그아웃</button></li>
+            </ul>
+          </span>
         </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="container-fluid article-bar" >
-    <div class="text-center article-bar">
-      <h2 id="article-text">영화인 목록</h2>
-    </div>
-    <div class="text-center" id="filter">
-      <a href="#"><h3 style="font-size:110%; display:inline-block;">배우</h3></a>
-      <a href="#"><h3 style="font-size:110%; display:inline-block; margin-left:3%;">감독</h3></a>
-    </div>
-  </div>
+  </header>
 
   <div class="container-fluid">
-    <div class="row" style="margin-right:6%; padding:0% 15% 15% 15%;">
-      <section class="mp-list">
-        <article>
-        <div class="col-md-4 mp-list-cont">
-        <div class="text-center mp-phot-box">
-          <img src="./images/kimhyesu.jpg" alt="" class="img-rounded mp-phot img-responsive">
-        </div>
-        <div class="mp-text">
-            <p><h4 class="mp-name">김혜수</h4></p>
-             <cite title="Source Title"><h5>청룡인<h5><i class="icon-map-marker"></i></cite>
-          <p class="mp-text-line">
-            <i class="icon-gift"></i> September 05, 1970
-          </p>
-        </div>
+  <div class="container" style="padding: 0 -15%; margin-bottom:2%;">
+    <figure class="snip1336" style="width:25%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+    <figcaption>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+      <div class="my-intro">
+        <h2>에르데스<span>Accountant</span></h2>
+        <p>나는 정의입니다.</p>
       </div>
-      <div class="col-md-4 mp-list-cont">
-        <div class="text-center">
-          <img src="./images/tim.jpg" alt="" class="img-rounded mp-phot img-responsive">
-        </div>
-        <div class="mp-text">
-            <p><h4 class="mp-name">팀 로빈스</h4></p>
-             <cite title="Source Title"><h5>앤디 듀프레인<h5><i class="icon-map-marker"></i></cite>
-          <p class="mp-text-line">
-            <i class="icon-gift"></i> October 10, 1958
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4 mp-list-cont">
-        <div class="text-center">
-          <img src="./images/L.jpg" alt="" class="img-rounded mp-phot img-responsive">
-        </div>
-        <div class="mp-text">
-            <p><h4 class="mp-name">L</h4></p>
-             <cite title="Source Title"><h5>L입니다<h5><i class="icon-map-marker"></i></cite>
-          <p class="mp-text-line">
-            <i class="icon-gift">secret</i>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4 mp-list-cont">
-        <div class="text-center">
-          <img src="./images/spiderman.jpg" alt="" class="img-rounded mp-phot img-responsive">
-        </div>
-        <div class="mp-text">
-            <p><h4 class="mp-name">피터 파커</h4></p>
-             <cite title="Source Title"><h5>스파이더맨<h5><i class="icon-map-marker"></i></cite>
-          <p class="mp-text-line">
-            <i class="icon-gift"></i> August 10, 1962
-          </p>
-        </div>
-      </div>
-      </article>
-      </section>
+    </figcaption>
+  </figure>
+
+    <div class="wrapper">
+    <div id="calendar"></div>
+    <div id="calendar_data">
+      <h3>알림</h3>
+      <dl>
+        <dt><dfn>Title:</dfn></dt><dd>도끼</dd>
+        <dt><dfn>Hour:</dfn></dt><dd>2017.08.25</dd>
+        <dt><dfn>name:</dfn></dt><dd>박찬욱</dd>
+        <dt><dfn>More Info:</dfn></dt><dd><a href="#" title="More info">Here</a><dt></dd>
+      </dl>
     </div>
-  </div>
-  <!-- Button trigger modal -->
-<div  >
-  Launch demo modal
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-
-
-      </div>
-      <div class="modal-body">
-        <div class="cal2" id="adjacent"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="clearfix"></div>
     </div>
   </div>
 </div>
+ <!--  -->
+  <div class="container-fluid" style="padding-right:1.7%;">
+    <div class="container article-menu" style="max-width:1100px; padding-left:10%; padding-right:10%; border-top:1px solid gainsboro; border-bottom:1px solid gainsboro;">
+      <div class="text-center article-bar" >
+        <h2 id="article-text">영화인 목록</h2>
+      </div>
+      <nav class="text-center article-bar " id="filter">
+        <a href="#" style="margin-right: 4%; font-size:1.1em; font-weight:bold;">배우</a>
+        <a href="#" style="font-size:1.1em; font-weight:bold;">감독</a>
+      </nav>
+    </div>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-  <script src="./CLNDR/src/clndr.js"></script>
-  <script src="./CLNDR/demo/demo.js"></script>
+  <div class="container mp-list">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/kimhyesu.jpg" alt="..." class="img-responsive">
+        <div class="caption">
+          <h3 class="mp-font" style="text-align:center;">김혜수</h3>
+          <div class="" style="margin:10px 0px;">
+            <span class="glyphicon glyphicon-calendar" style="color:gray;"></span>
+            <span style="color:gray;">1970.09.05</span>
+          </div>
+          <p>이분이 바로 김혜수 씨입니다.</p>
+          <p style="font-size:0.85em; color:gray">> 상세 보기</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/spiderman.jpg" alt="...">
+        <div class="caption">
+          <h3 class="mp-font" style="text-align:center">톰</h3>
+          <div class="" style="margin:10px 0px;">
+            <span class="glyphicon glyphicon-calendar" style="color:gray;"></span>
+            <span style="color:gray;">1970.09.05</span>
+          </div>
+          <p>이분이 바로 스파이더맨입니다.</p>
+          <p style="font-size:0.85em; color:gray">> 상세 보기</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/L.jpg" alt="...">
+        <div class="caption">
+          <h3 class="mp-font" style="text-align:center">L</h3>
+          <div class="" style="margin:10px 0px;">
+            <span class="glyphicon glyphicon-calendar" style="color:gray;"></span>
+            <span style="color:gray;">1970.09.05</span>
+          </div>
+          <p>이분이 바로 엘 씨입니다.</p>
+          <p style="font-size:0.85em; color:gray">> 상세 보기</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="./images/tim.jpg" alt="...">
+        <div class="caption">
+          <h3 class="mp-font" style="text-align:center">팀 로빈스</h3>
+          <div class="" style="margin:10px 0px;">
+            <span class="glyphicon glyphicon-calendar" style="color:gray;"></span>
+            <span style="color:gray;">1970.09.05</span>
+          </div>
+          <p>이분이 바로 팀 로빈스 씨입니다.</p>
+          <p style="font-size:0.85em; color:gray">> 상세 보기</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> 김미연 신선아 이유운</a>&nbsp; All rights reserved 2016-2017.</p>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="./calendar.js"></script>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

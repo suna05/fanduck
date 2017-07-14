@@ -47,16 +47,52 @@
     margin-left:10%;
     width:35%;
   }
+  input {
+    display: none;
+  }
 
+  label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 4px;
+    background: #336600;
+    color: #FFF;
+    font-family: arial;
+    -webkit-transition: background-color 0.1s, color 0.1s;
+  }
+
+  label:hover {
+    background: #33CC00;
+    color: #000;
+  }
+
+  .test {
+    -webkit-transition: width .3s ease;
+    height: 200px;
+    overflow: hidden;
+    width: 0px;
+    background: red;
+    margin-top: 10px;
+  }
+
+  input:checked + .test {
+    width: 100px;
+  }
 
   </style>
   </head>
 <body>
   <div class="brand"  style="">
     <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
-         style="width:13%; margin-left:10px;" alt="profile-sample5"/>
+         style="width:13%; margin-left:10px;" alt="profile-sample5" id="imgBtn"/>
     <span style=" font-size:1.5em; margin-left:5%; padding-top:2.5%; position:absolute">홈</span>
   <span class="glyphicon glyphicon-calendar" aria-hidden="true" style="font-size:120%; color:black"></span>
+  </div>
+  <input id="check" type="checkbox">
+  <div class="test">
+    <p>I am some hidden text</p>
   </div>
   <div class="mp-list" style="padding-bottom:74px;">
     <ul data-role="listview" data-inset="true" >
@@ -130,5 +166,26 @@
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+var count = 0
+
+if (count == 0) {
+$('#imgBtn').click(function() {
+  console.log(count)
+  $('#check').prop('checked', 'true')
+  count = 1;
+  console.log(count)
+})
+}
+if (count != 0) {
+$('#imgBtn').click(function() {
+  console.log('bb');
+  $('#check').prop('checked', 'false')
+  count = 0;
+})
+}
+
+
+</script>
 </body>
 </html>
