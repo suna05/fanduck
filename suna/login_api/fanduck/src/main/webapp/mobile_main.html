@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+  <title>Fanduck</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="mobile_main.css"/>
+
+</head>
+<style>
+</style>
+<!-- <body background-image="images/movie.jpg"> -->
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="mobile_header" style="width:100%; margin-top:3%;">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true" style="font-size:120%; color:white"></span>
+        <a href="mobile_login.html" style="text-align:right; float:right; color:white; font-size:120%;">로그인</a>
+
+      </div>
+      <a class="ha" href="index.html"><img class="himg" src="images/logo1.png"/></a>
+      <section class="about" style="text-align:center">
+            <p class="first" style="color:#fa507b"><b>당신이 좋아하는 </b></p>
+            <p class="first" style="color:#fa507b"><b>영화인을 등록하세요</b></p>
+            <p class="second">영화인의 프로필을 등록하고</p>
+            <p class="second">마음껏 덕질하세요</p>
+            <p class="second">영화인의 작품을 실시간으로 알림받는 서비스</p>
+      </section>
+
+      </div>
+    </div>
+  </header>
+
+<!-- 회원가입 모달-->
+  <div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content" style="width:80%; height: 125%; position:center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center"><b>회원가입</b></h4>
+        </div>
+
+    <div class="modal-body">
+      <div style="vertical-align:top; width:130%;">
+        <div style="text-align:center; padding-top:3%;">
+          <form class="form-horizontal">
+
+            <div class="form-group form-inline" >
+              <div class="col-sm-11 main-id" style="margin-left:2px;">
+                <button type="button" class="btn btn-warning col-sm-3" style="float:right;">중복확인</button>
+                <input type="text" class="form-control" id="inputID" placeholder="아이디">
+              </div>
+            </div>
+            <div class="form-group" >
+              <div class="col-sm-10 main-id" style="left:5%; right:15%">
+                <input type="text" class="form-control" id="inputNick" placeholder="닉네임">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호 확인">
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+        <hr style="border: 1px solid red; top:0%;">
+
+        <section style="float:left; padding-bottom:2%;">
+          <p><b>소셜 회원가입</b></p>
+          <img src="images/facebook.png" style="width:35%; height:auto; margin-left:10%;"/>
+          <img src="images/twitter.png" style="width:35%; height:auto;"/>
+        </section>
+        </div>
+      </div>
+
+
+          <div class="modal-footer" style="margin-top:15%; bottom:2%;">
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">가입</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- 로그인 모달 -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+      <div class="modal-dialog loginmodal">
+        <div class="modal-content" style="width:70%; position:center;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel" style="text-align:center"><b>로그인</b></h4>
+          </div>
+
+      <div class="modal-body">
+        <div style="vertical-align:top; width:130%;">
+          <div style="text-align:center; padding-top:3%;">
+            <form class="form-horizontal">
+
+              <div class="form-group" >
+                <div class="col-sm-10 main-id" style="left:5%; right:15%">
+                  <input type="text" class="form-control" id="inputID" placeholder="아이디">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> 아이디 기억하기
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <hr style="border: 1px solid red; top:0%;">
+
+          <section style="float:left; padding-bottom:2%;">
+            <p><b>소셜 로그인</b></p>
+            <img src="images/facebook.png" style="width:35%; height:auto; margin-left:10%;"/>
+            <img src="images/twitter.png" style="width:35%; height:auto;"/>
+          </section>
+          </div>
+        </div>
+
+
+            <div class="modal-footer" style="margin-top:15%;">
+
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">로그인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="menu" style="padding-top:10%; font-weight:bold; padding-bottom:13%;">
+
+        <div id="btn1">
+          <img class="btn_logo" src="images/facelogo.png" style="width: 10%; margin-top:2%; float:left; margin-left:1%;"/>
+          <a style="margin-right:5%;">페이스북으로 가입하기</a>
+        </div>
+        <div id="btn2">
+          <img class="btn_logo" src="images/twitlogo.png" style="width: 7%; margin-top:4%; float:left; margin-left:3%;"/>
+          <a>트위터로 가입하기</a>
+        </div>
+        <div id="btn3">회원가입</div>
+      </section>
+
+
+
+
+  <footer>
+    <span style="color:white; text-align:right;">2017 김미연 신선아 이유운</span>
+  </footer>
+
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</html>
