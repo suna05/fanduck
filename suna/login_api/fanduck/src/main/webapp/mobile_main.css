@@ -10,11 +10,27 @@ body {
 
 }
 
+header div div span {
+  font-size:130%;
+  color:white
+}
+
+header div div a {
+  text-align:right;
+  float:right;
+  color:white;
+  font-size:130%;
+}
+
 footer {
-  position: fixed;
-  padding-left: 30%;
+  position: relative;
+  /*padding-left: 10%;*/
   bottom: 0;
   text-align: center;
+}
+
+footer p {
+  color:white;
 }
 
 .mobile_logo {
@@ -28,22 +44,28 @@ footer {
   /*height: 30%;*/
 }
 
+.about {
+  height: 30%;
+  text-align:center
+}
+
 .first {
   font-size: 200%;
+  color:#fa507b
 }
 
 .second {
   color: white;
-  font-size:130%;
+  font-size:120%;
 }
 
 .menu {
-  /*height: 60%;*/
+  padding-top:10%;
+  font-weight:bold;
+  padding-bottom:13%;
 }
 
-.about {
-  height: 30%;
-}
+
 
 .himg{
   width:50%;
@@ -96,11 +118,23 @@ footer {
 }
 
 
-img .btn_logo {
+.face_logo {
   /*position: relative;*/
-  float: left;
+  /*float: left;*/
   left: 4%;
+  width: 10%;
+  margin-top:2%;
+  float:left;
+  margin-left:1%;
 }
+.kakao_logo {
+  width: 7%;
+  margin-top:4%;
+  float:left;
+  margin-left:3%;
+}
+
+
 
 @media (max-width: 361px) {
   .first {
