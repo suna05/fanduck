@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
   <title>Fanduck</title>
-
+ 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/m_main.css"/>
 
@@ -39,13 +39,13 @@
 
         <div id="btn1">
 
-            <img class="face_logo" src="images/f.png"/>
-            <a style="margin-right:15%">페이스북으로 가입하기</a>
+            <img class="face_logo" src="images/f.png" />
+            <a onClick="facebooklogin()" style="margin-right:15%">페이스북으로 가입하기</a>
 
         </div>
         <div id="btn2">
           <img class="kakao_logo" src="images/kakao_mobile.png"/>
-          <a style="margin-right:15%">카카오톡으로 가입하기</a>
+          <a href="javascript:loginWithKakao()" style="margin-right:15%">카카오톡으로 가입하기</a>
         </div>
     
         <div id="btn3">회원가입</div>
@@ -58,9 +58,12 @@
     <p>2017 김미연 신선아 이유운 Fanduck</p>
   </footer>
 
-</body>
+<script src="js/m_kakao_login.js"></script>
+<script src="js/m_facebook_login.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
 
 
 
