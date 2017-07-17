@@ -1,0 +1,71 @@
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.glyphicon {
+  float:right;
+  line-height: 45px;
+  margin-right: 20px;
+}
+
+.brand {
+    width:100%;
+    border:none;
+    padding:9px;
+    border-bottom:1px solid lightgray;
+    position: relative;
+}
+
+.nav-bar {
+  background-color:#fa507b;
+}
+
+.menu-bar {
+  width:100%;
+}
+
+.menu-block {
+  float:left;
+  text-align: center;
+  width:25%;
+  padding:10px 15px 5px 10px;
+  border-top:1px solid lightgray;
+}
+
+#logo {
+  margin-top:2.5%;
+  margin-left:10%;
+  width:35%;
+}
+  /*this block should go in the styles.css file*/
+.ui-panel-inner {
+  padding:0px; /*make the buttons flush edge to edge*/
+}
+
+.ui-controlgroup {
+  margin:0; /*make the buttons flush to the top*/
+}
+
+#header {
+  height:54px;
+}
+
+#bars-button {
+  margin:7px;
+}
+
+.profile-menu {
+}
+
+.profile-font {
+  font-size:1em;
+  font-weight: 800;
+}
+
+.count {
+  margin-left: 3%;
+}
+
+#navpanel {
+  padding:20px;
+}
