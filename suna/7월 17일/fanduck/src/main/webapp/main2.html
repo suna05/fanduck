@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fanduck</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="footer.css"/>
+    <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="header.css"/>
+
+
+</head>
+<style>
+</style>
+<body>
+  <header>
+    <div class="container-fluid" style="background-color:white">
+      <div class="container">
+      <div id="logo" style="display:inline-block">
+        <a class="ha" href="index.html"><img class="himg" src="images/logo1.png"/></a>
+
+          <span id="menu">
+            <ul class="hul">
+              <li class="hli"><a href="index4.html" class="ha" id="1" style="color:black;  cursor:pointer">Home</a></li>
+              <li class="hli" style="color:black" data-toggle="modal" data-target="#join"><a class="ha" id="2" style="color:black; cursor:pointer">회원가입</a></li>
+              <li class="hli"><button id="logout" class="btn btn-default"
+                    style="background-color:#fa507b; color:white; margin-bottom:5px; right:0px;" data-toggle="modal" data-target="#login">로그인</button></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- 회원가입 모달-->
+  <div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content" style="width:80%; height: 125%; position:center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center"><b>회원가입</b></h4>
+        </div>
+
+    <div class="modal-body">
+      <div style="vertical-align:top; width:130%;">
+        <div style="text-align:center; padding-top:3%;">
+          <form class="form-horizontal">
+
+            <div class="form-group form-inline" >
+              <div class="col-sm-11 main-id" style="margin-left:2px;">
+                <button type="button" class="btn btn-warning col-sm-3" style="float:right;">중복확인</button>
+                <input type="text" class="form-control" id="inputID" placeholder="아이디">
+              </div>
+            </div>
+            <div class="form-group" >
+              <div class="col-sm-10 main-id" style="left:5%; right:15%">
+                <input type="text" class="form-control" id="inputNick" placeholder="닉네임">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호 확인">
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+        <hr style="border: 1px solid red; top:0%;">
+
+        <section style="float:left; padding-bottom:2%;">
+          <p><b>소셜 회원가입</b></p>
+          <img src="images/facebook.png" onClick="facebooklogin()" style="width:35%; height:auto; margin-left:10%; cursor:pointer;"/>
+
+            <script>
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '1932124593728840',
+                    xfbml      : true,
+                    version    : 'v2.9'
+                  });
+                  FB.AppEvents.logPageView();
+                };
+
+                (function(d, s, id){
+                   var js, fjs = d.getElementsByTagName(s)[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement(s); js.id = id;
+                   js.src = "//connect.facebook.net/en_US/sdk.js";
+                   fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+
+                 function facebooklogin() {
+
+    //페이스북 로그인 버튼을 눌렀을 때의 루틴.
+							  FB.login(function(response) {
+							    var fbname;
+							    var accessToken = response.authResponse.accessToken;
+							    FB.api('/me', function(user) {
+							      fbname = user.name;
+							      $.post("콜백url", { "userid": user.id, "email":user.email, "username": fbname, "fbaccesstoken":accessToken},
+							      function (responsephp) {
+							        if(responsephp=="N"){
+							         location.replace('/unmember/memberrege?flag=1');
+							        }else{
+							         location.replace('/');
+							        }
+							      });
+							    });
+							  }, {scope: "user_about_me,publish_stream,read_friendlists,offline_access,email,user_birthday"});
+							}
+								
+								function getMyProfile(){
+								 FB.api('/me',function(user){
+								
+								 var myName= user.name ;
+								 var myEmail = user.email;
+								 var myId = user.id;
+								
+								 if(myEmail != ""){
+								   //정보를 post로 보내고 submit처리
+								 }
+								
+								  });
+								 FB.api('/me/picture?type=large',function(data){
+								 var myImg = data.data.url;
+								 });
+								}
+             </script>
+          <img src="images/twitter.png" style="width:35%; height:auto;"/>
+        </section>
+        </div>
+      </div>
+
+
+          <div class="modal-footer" style="margin-top:15%; bottom:2%;">
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+            <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">가입</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- 로그인 모달 -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+      <div class="modal-dialog loginmodal">
+        <div class="modal-content" style="width:70%; position:center;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel" style="text-align:center"><b>로그인</b></h4>
+          </div>
+
+      <div class="modal-body">
+        <div style="vertical-align:top; width:130%;">
+          <div style="text-align:center; padding-top:3%;">
+            <form class="form-horizontal">
+
+              <div class="form-group" >
+                <div class="col-sm-10 main-id" style="left:5%; right:15%">
+                  <input type="text" class="form-control" id="inputID" placeholder="아이디">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10 main-pwd" style="left:5%; right:15%">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> 아이디 기억하기
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <hr style="border: 1px solid red; top:0%;">
+
+          <section style="float:left; padding-bottom:2%;">
+            <p><b>소셜 로그인</b></p>
+            <img src="images/facebook.png" onClick="facebooklogin()" style="width:35%; height:auto; margin-left:10%; cursor:pointer;"/>
+            <!-- <button type="button" onClick="facebooklogin();"></button> -->
+
+        
+          <img src="images/twitter.png" style="width:35%; height:auto;"/>
+            <script>
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '1932124593728840',
+                    xfbml      : true,
+                    version    : 'v2.9'
+                  });
+                  FB.AppEvents.logPageView();
+                };
+
+                (function(d, s, id){
+                   var js, fjs = d.getElementsByTagName(s)[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement(s); js.id = id;
+                   js.src = "//connect.facebook.net/en_US/sdk.js";
+                   fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+
+                 function facebooklogin() {
+
+    //페이스북 로그인 버튼을 눌렀을 때의 루틴.
+									  FB.login(function(response) {
+									    var fbname;
+									    var accessToken = response.authResponse.accessToken;
+									    FB.api('/me', function(user) {
+									      fbname = user.name;
+									      $.post("콜백url", { "userid": user.id, "email":user.email, "username": fbname, "fbaccesstoken":accessToken},
+									      function (responsephp) {
+									        if(responsephp=="N"){
+									         location.replace('/unmember/memberrege?flag=1');
+									        }else{
+									         location.replace('/');
+									        }
+									      });
+									    });
+									  }, {scope: "user_about_me,publish_stream,read_friendlists,offline_access,email,user_birthday"});
+									}
+									
+									function getMyProfile(){
+									 FB.api('/me',function(user){
+									
+									 var myName= user.name ;
+									 var myEmail = user.email;
+									 var myId = user.id;
+									
+									 if(myEmail != ""){
+									   //정보를 post로 보내고 submit처리
+									 }
+									
+									  });
+									 FB.api('/me/picture?type=large',function(data){
+									 var myImg = data.data.url;
+									 });
+									}
+             </script>
+          </section>
+          </div>
+        </div>
+
+
+            <div class="modal-footer" style="margin-top:15%;">
+
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+              <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">로그인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <section class="video" style="background-color:black;">
+      <div class="youtubeWrap">
+        <iframe width="760" height="315" src="https://www.youtube.com/embed/Eb9wT1JxMwU?list=PLViFIAYgL5lZS0i-EM7LSlrGhbRE_H9o0&amp;autoplay=1&amp;loop=1" frameborder="0" allowfullscreen autoplay=1></iframe>
+      </div>
+    </section>
+
+    <section class="about">
+          <p class="first" style="color:#fa507b;"><b>당신이 좋아하는 영화인을 등록하세요</b></p>
+          <p class="second">영화인의 프로필을 등록하고 마음껏 덕질하세요</p>
+          <p class="second">영화인의 작품을 실시간으로 알림받는 서비스</p>
+    </section>
+
+
+
+<hr>
+
+  <footer>
+    <p>© 2017<a class="ha" style="color:#0a93a6; text-decoration:none;" href="#"> 김미연 신선아 이유운</a>&nbsp; All rights reserved 2016-2017.</p>
+  </footer>
+
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+ $(window).resize(function(){resizeYoutube();});
+ $(function(){resizeYoutube();});
+function resizeYoutube(){ $("iframe").each(function(){ if( /^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ){ $(this).css("width","60%"); $(this).css("height",Math.ceil( parseInt($(this).css("width")) * 480 / 854 ) + "px");} }); }
+</script>
+
+</html>
