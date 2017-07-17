@@ -17,9 +17,9 @@
 <body>
   <div class="ui-grid-b">
     <div class="mobile-headar">
-      <img src="back2.png" style="width:4%;" alt="">
+      <a id="mypage" href="#"><img src="back2.png" style="width:4%;" alt=""></a>
       <span class="header-title">프로필 수정</span>
-      <span class="header-save"><a href="m_update.html" style="font-weight:bold">저장하기</a></span>
+      <span class="header-save"><a id="update-save" href="#" style="font-weight:bold">저장하기</a></span>
     </div>
   </div>
   <div class="brand">
@@ -33,26 +33,32 @@
   </div>
   <div class="profile-update">
     <div class="menu-title">이름</div>
-    <div class="update-content" id="profile-name">아무개</div>
+    <input class="update-content" id="profile-name" type="text" name="" value="아무개" style="border:none">
     <hr>
     <div class="menu-title">자기소개</div>
-    <div class="update-content" id="profile-text">
-      책을 읽기 전에 작두같은 걸로 제본된 부분을 잘라내는 거야. 그러면 책이 종이 수백장으로 흩어지겠지?
-      그 종이를 화투 섞듯이 섞은 다음에, 아무렇게나 다시 제본을 해서 읽는거야.
-    </div>
+    <textarea class="update-content" id="profile-text"
+              type="text" name="" style="border:none; width:100%; height:90px;">책을 읽기 전에 작두같은 걸로 제본된 부분을 잘라내는 거야. 그러면 책이 종이 수백장으로 흩어지겠지? 그 종이를 화투 섞듯이 섞은 다음에, 아무렇게나 다시 제본을 해서 읽는거야.
+    </textarea>
     <hr>
     <div class="menu-title">현재 비밀번호</div>
-    <div class="update-content" id="profile-password1">1111</div>
+    <input class="update-content" id="profile-password1" type="text" name="" value="1111" style="border:none">
     <hr>
-      <span style="display:inline-block;" >
+      <div class="" style="display:inline-block; width:45%;">
         <div class="menu-title">비밀번호 변경</div>
-        <div class="update-content">2222</div>
-      </span>
-      <span style="display:inline-block; margin-left:25%;" >
+        <input class="update-content" type="text" name="" value="2222" style="border:none; width:70%;">
+      </div>
+      <div class="" style="display:inline-block; width:45%;">
         <div class="menu-title" style="color:lightgray; font-weight:bold; margin-top:10px">비밀번호 확인</div>
-        <div class="update-content" id="profile-password2">2222</div>
-      </span>
-      <hr>
+        <input class="update-content" id="profile-password2" type="text" name="" value="2222" style="border:none; width:70%;">
+      </div>
+    <hr>
   </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$('#mypage').click(function(event) {
+  event.preventDefault();
+  location.href = "m_mypage.html"
+})
+</script>
 </body>
 </html>

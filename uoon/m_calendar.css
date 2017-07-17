@@ -17,16 +17,15 @@
 .clearfix { display: inline-block; }
 
 div#calendar {
-  margin-top: 51px;
   padding: 0;
   display: inline-block;
   width: 100%;
-  float: left;
   height: 302px;
   background: #F3F3F3;
 }
 table {
-  width: 101%;
+
+  width: 100%;
   font-family: sans-serif;
   border-collapse: separate;
   border-spacing: 0;

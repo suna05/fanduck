@@ -48,15 +48,17 @@ hr {
 }
 
 .header-title {
-  font-weight:bold;
   margin-left:5%;
-  font-size:1.1em;
+  font-size:1.3em;
+  font-weight:bold;
   position:absolute;
   margin-top:1px;
 }
 
 .header-save {
   float:right;
+  font-size:1.3em;
+  font-weight:bold;
   margin-right:5%;
   margin-top:1px
 }

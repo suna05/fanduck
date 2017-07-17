@@ -9,9 +9,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="m_mypage.css">
   <title>Fanduck</title>
   <style media="screen">
+  .fa {
+    font-size:1.7em;
+    color:black;
+  }
   </style>
   </head>
 <body>
@@ -19,8 +24,10 @@
     <a id="bars-button" href="#navpanel">
       <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
            style="width:13%; margin-left:10px;" alt="profile-sample5" id="imgBtn"/></a>
-    <span style=" font-size:1.5em; margin-left:5%; padding-top:2.5%; position:absolute">홈</span>
-  <span class="glyphicon glyphicon-calendar" aria-hidden="true" style="font-size:120%; color:black"></span>
+    <span style="font-size:1.5em; margin-left:5%; padding-top:2.5%; position:absolute">홈</span>
+    <a id="calendar-page" href="#">
+      <span class="glyphicon glyphicon-calendar" aria-hidden="true" style="font-size:120%; color:black"></span>
+    </a>
   </div>
   <div data-role="panel" id="navpanel" data-theme="a"
        data-display="overlay" data-position="left">
@@ -41,8 +48,8 @@
       <span class="profile-font">영화인</span><span class="count" id="mp-count">4</span>
       <span class="profile-font" style="margin-left:20%;">게시글</span><span class="count" id="post-count">20</span>
     </div>
-    <div style="margin-bottom:5%;"><a href="m_update.html" class="profile-menu profile-font">프로필 수정</a></div>
-    <div><a href="m_index.html" class="profile-menu profile-font">로그아웃</a></div>
+    <div style="margin-bottom:5%;"><a id="update-page" href="#" class="profile-menu profile-font">프로필 수정</a></div>
+    <div><a href="#" class="profile-menu profile-font">로그아웃</a></div>
     <!-- <div data-role="controlgroup" data-corners="false">
     </div> -->
   </div>
@@ -105,14 +112,24 @@
       </a>
     </li>
   </ul>
-</div>
-
+  </div>
   <div class="menu-bar">
-    <div class="ui-grid-b" style="bottom:0; right:0; left:0;position:fixed; background-color:ghostwhite;">
-      <div class="menu-block"><a href="index.html"><img class="img-menu"src="images/home.png" style="width:40.5%;" alt=""></a></div>
-      <div class="menu-block"><a><img class="img-menu" src="images/add.png" style="width:48%;" alt=""></a></div>
-      <div class="menu-block"><a><img class="img-menu" src="images/gallery.png" style="width:55%;" alt=""></a></div>
-      <div class="menu-block"><a><img class="img-menu" src="images/profile.png" style="width:58%;" alt=""></a></div>
+    <div class="ui-grid-b" style="bottom:0; right:0; left:0;position:fixed; background-color:white;">
+      <div class="menu-block" style="inline-block">
+        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <div class="">홈</div>
+      </div>
+      <div class="menu-block" style="inline-block">
+        <a><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+        <div class="">추가</div>
+      </div>
+      <div class="menu-block" style="inline-block">
+        <a><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+        <div class="">갤러리</div>
+      </div>
+      <div class="menu-block" style="inline-block"><a><i class="fa fa-user" aria-hidden="true"></i></a>
+        <div class="">마이프로필</div>
+      </div>
     </div>
   </div>
 
@@ -121,9 +138,16 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
-$('#bars-button').click(function() {
-  $('html').css('background-color', 'gray')
+$('#update-page').click(function(event) {
+  event.preventDefault();
+  location.href = "m_update.html"
 })
+$('#calendar-page').click(function(event) {
+  event.preventDefault();
+  location.href = "m_calendar.html"
+})
+
+
 </script>
 </body>
 </html>

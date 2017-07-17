@@ -76,16 +76,17 @@ function calendar(month, year, weekday) {
 //  showInfo();
   // vars
   var day_of_week = new Array(
-    'Sun', 'Mon', 'Tue',
-    'Wed', 'Thu', 'Fri', 'Sat'),
+    '일', '월', '화',
+    '수', '목', '금', '토'),
       month_of_year = new Array(
-    'January', 'February', 'March',
-    'April', 'May', 'June', 'July',
-    'August', 'September', 'October',
-    'November', 'December');
+    '1월', '2월', '3월',
+    '4월', '5월', '6월', '7월',
+    '8월', '9월', '10월',
+    '11월', '12월');
 
   var Calendar = new Date(),
   today = Calendar.getDate(),
+  currMonth = Calendar.getMonth(),
   html = '';
 
   // start in 1 and this month
@@ -95,8 +96,8 @@ function calendar(month, year, weekday) {
 //  console.log(Calendar.getDate());
 //  console.log(Calendar.getDay()); // 2017년 7월 1일은 토요일이므로 숫자 '6'이 출력된다.
   // template calendar
-  html += '<div class="prevBtn" style="float:left; margin-left:10%; margin-top:5px; color:white; cursor:pointer">prev</div>';
-  html += '<div class="nextBtn" style="float:right; margin-right:10%; margin-top:5px; color:white; cursor:pointer">next</div>';
+  html += '<div class="prevBtn" style="float:left; margin-left:10%; margin-top:5px; color:white; cursor:pointer">이전</div>';
+  html += '<div class="nextBtn" style="float:right; margin-right:10%; margin-top:5px; color:white; cursor:pointer">다음</div>';
   html += '<div class="head_cal" style="text-align:center">' + month_of_year[month] + '</div>';
   html += '<table>';
   // head
@@ -133,8 +134,8 @@ function calendar(month, year, weekday) {
         // this day
         var day = Calendar.getDate();
         var info = (Calendar.getMonth() + 1) + '/' + day + '/' + Calendar.getFullYear();
-        if (today === Calendar.getDate()) {
-          html += '<td><a class="today_cal" href="#" data-id="' + info + '" onclick="showInfo(\'' + info + '\')">' +
+        if (today === Calendar.getDate() && currMonth === Calendar.getMonth()) {
+          html += '<td style="background-color:#EE7171"><a class="today_cal" style="color:white" href="#" data-id="' + info + '" onclick="showInfo(\'' + info + '\')">' +
             day + '</a></td>';
 
           //showInfo(info);
