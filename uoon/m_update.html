@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="m_update.css">
+  <title>Fanduck</title>
+  <style media="screen">
+  </style>
+  </head>
+<body>
+  <div class="ui-grid-b">
+    <div class="mobile-headar">
+      <img src="back2.png" style="width:4%;" alt="">
+      <span class="header-title">프로필 수정</span>
+      <span class="header-save"><a href="m_update.html" style="font-weight:bold">저장하기</a></span>
+    </div>
+  </div>
+  <div class="brand">
+    <label for="img-upload">
+    <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
+         style="width:50%;" alt="profile-sample5" id="imgBtn"/></a>
+   <div class="" style="margin-top:6%;"><a style="font-weight:bold">사진 변경</a></div>
+   </label>
+   </div>
+   <input id="img-upload" type="file" accept="image/*" style="display:none;">
+  </div>
+  <div class="profile-update">
+    <div class="menu-title">이름</div>
+    <div class="update-content" id="profile-name">아무개</div>
+    <hr>
+    <div class="menu-title">자기소개</div>
+    <div class="update-content" id="profile-text">
+      책을 읽기 전에 작두같은 걸로 제본된 부분을 잘라내는 거야. 그러면 책이 종이 수백장으로 흩어지겠지?
+      그 종이를 화투 섞듯이 섞은 다음에, 아무렇게나 다시 제본을 해서 읽는거야.
+    </div>
+    <hr>
+    <div class="menu-title">현재 비밀번호</div>
+    <div class="update-content" id="profile-password1">1111</div>
+    <hr>
+      <span style="display:inline-block;" >
+        <div class="menu-title">비밀번호 변경</div>
+        <div class="update-content">2222</div>
+      </span>
+      <span style="display:inline-block; margin-left:25%;" >
+        <div class="menu-title" style="color:lightgray; font-weight:bold; margin-top:10px">비밀번호 확인</div>
+        <div class="update-content" id="profile-password2">2222</div>
+      </span>
+      <hr>
+  </div>
+</body>
+</html>
