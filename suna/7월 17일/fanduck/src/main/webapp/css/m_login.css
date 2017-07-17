@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  background-image: url(../images/mobilebackgroud.jpg);
+  background-image: url(images/14.jpg);
   overflow: hidden;
   /*background-color: #fa507b;*/
   background-position: center;
@@ -17,11 +17,11 @@ body {
 .login {
   float:left;
   color:white;
-  font-size:150%;
+  font-size:160%;
 }
 
 .back {
-  width: 8%;
+  width: 6%;
 }
 
 .first {
@@ -43,6 +43,7 @@ body {
 }
 
 .mobile_logo{
+  padding-top: 5%;
   width: 60%;
   display: block;
   margin-left: auto;
