@@ -1,6 +1,7 @@
 body {
   width: 100%;
-  background-image: url(images/14.jpg);
+  height: 100%;
+  background-image: url(../images/mobilebackgroud.jpg);
   overflow: hidden;
   /*background-color: #fa507b;*/
   background-position: center;
@@ -49,6 +50,13 @@ body {
   margin-left: auto;
   margin-right: auto;
 
+}
+
+footer {
+  position: relative;
+  /*padding-left: 10%;*/
+  padding-top: 30%;
+  text-align: center;
 }
 
 
