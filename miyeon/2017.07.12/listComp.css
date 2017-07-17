@@ -1,0 +1,155 @@
+
+/*caption*/
+.grid {
+padding: 20px 20px 100px 20px;
+max-width: 1300px;
+margin: 0 auto;
+list-style: none;
+text-align: center;
+}
+
+.grid figure {
+margin: 0;
+position: relative;
+}
+.grid figure img {
+max-width: 100%;
+display: block;
+position: relative;
+}
+
+.grid figcaption {
+position: absolute;
+top: 0;
+left: 10;
+padding: 200px;
+/*background: #2c3f52;*/
+/*color: #ed4e6e;*/
+}
+
+/*.grid figcaption h3 {
+margin: 0;
+padding: 0;
+color: #fff;
+}*/
+
+
+.grid figcaption a {
+text-align: center;
+padding: 15px 10px;
+border-radius: 2px;
+/*align-items: flex-end;*/
+/*padding: 400px 0px 0px 300px;*/
+/*display: inline-block;*/
+/*background: #ed4e6e;*/
+/*color: #ed4e6e;*/
+}
+@media screen and (max-width: 31.5em) {
+.grid {
+padding: 10px 10px 100px 10px;
+}
+.grid li {
+width: 100%;
+min-width: 300px;
+}
+}
+
+
+/*.cs-style-3 figure {
+overflow: hidden;
+}*/
+.cs-style-3 figure img {
+transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+transform: translateY(-5px);
+}
+.cs-style-3 figcaption {
+height: 10%;
+width: 90%;
+top:0px;
+bottom: 10px;
+opacity: 0;
+transform: translateY(100%);
+transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+opacity: 1;
+transform: translateY(0px);
+transition: transform 0.0s, opacity 0.1s;
+}
+
+
+/*profile*/
+.MP_profile {
+  width:600px;
+  margin:0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  text-align:center;
+}
+
+.MP_profile_photo {
+  height:140px;
+  height:140px;
+}
+
+.outer-container {
+padding-top: 1px;
+/*background-color: #333;*/
+/*background-color:rgba(0, 0, 0, 0.5);*/
+}
+/*list*/
+
+ .search_write {
+  margin-bottom: 25px;
+
+ }
+ /*hover-share*/
+ .icons {
+   margin-left: 95px;
+   display: none;
+ }
+ .list-box:hover .icons {
+   display:block;
+   cursor:pointer;
+ }
+
+
+/*pinterest style*/
+input[type=text] {
+    width: 12%;
+    position:relative;
+    margin-left: 70%;
+    display: inline-block;
+}
+     #columns{
+       margin-left: 130px;
+       column-width:280px;
+       column-gap: 15px;
+       width:80%;
+       height:70%;
+     }
+     #columns figure{
+       background-color: white;
+       display: inline-block;
+       border:1px solid rgba(0,0,0,0.2);
+       margin:0;
+       margin-bottom: 15px;
+       padding:10px;
+       box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
+     }
+     #columns figure img{
+       width:100%;
+     }
+
+     #columns figure figcaption {
+    /*border-top: 1px solid rgba(0,0,0,0.2);*/
+    padding: 1px;
+    /*margin-left:3px;*/
+    position: relative;
+}
