@@ -1,0 +1,21 @@
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="top:20%;">
+  <div class="modal-dialog modal-sm">
+<div class="modal-content" style="width:80%; height:90%; left:12%;">
+    <p style="font-size:110%; padding-left:35%; margin-top:5%;">&nbsp; 삭제하기</p><hr>
+    <p style="font-size:110%; padding-left:35%; margin-top:5%;">&nbsp; 수정하기</p><hr>
+    
+    
+      <p style="font-size:110%; padding-left:35%; margin-top:5%;">&nbsp; 공유하기</p><hr>
+       <div style="margin-left:23%; width: 80%; font-size: 24px; margin-bottom:5%;">
+           <img class="article" src="./images/Twitter-share.png" style="width:17%; margin-right:8%; ">
+           <img class="article" src="./images/facebook-share.png" style="width:17%; margin-right:8%; ">
+           <img class="article" src="./images/kakaotalk-share.png" style="width:17%;">
+      </div>
+
+        <div class="modal-footer" data-dismiss="modal" style="text-align:center">
+          <div style="font-size:120%; color:grey;">취소</div>
+
+        </div>
+    </div>
+  </div>
+</div><!-- share -->
