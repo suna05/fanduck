@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="m_update.css">
+  <title>Fanduck</title>
+  <style media="screen">
+  input[type="text"], input[type="password"], textarea, select {
+    outline: none;
+  }
+  input:hover, input:visited, input:link, input:active {
+    text-decoration: none;
+  }
+  </style>
+  </head>
+<body>
+  <div class="ui-grid-b">
+    <div class="mobile-headar">
+      <a id="mypage" href="#"><img src="back2.png" style="width:4%;" alt=""></a>
+      <span class="header-title">프로필 수정</span>
+      <span class="header-save"><a id="update-save" href="#" style="font-weight:bold">저장하기</a></span>
+    </div>
+  </div>
+  <div class="brand">
+    <label for="img-upload">
+    <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
+         style="width:50%;" alt="profile-sample5" id="imgBtn"/></a>
+   <div class="" style="margin-top:6%;"><a style="font-weight:bold">사진 변경</a></div>
+   </label>
+   </div>
+   <input id="img-upload" type="file" accept="image/*" style="display:none;">
+  </div>
+  <div class="profile-update">
+    <div class="menu-title">이름</div>
+    <input class="update-content" id="profile-name" type="text" name="" value="아무개" style="border:none; text-decoration: none;">
+    <hr>
+    <div class="menu-title">자기소개</div>
+    <textarea class="update-content" id="profile-text"
+              type="text" name="" style="border:none; width:100%; height:90px;">책을 읽기 전에 작두같은 걸로 제본된 부분을 잘라내는 거야. 그러면 책이 종이 수백장으로 흩어지겠지? 그 종이를 화투 섞듯이 섞은 다음에, 아무렇게나 다시 제본을 해서 읽는거야.
+    </textarea>
+    <hr>
+    <div class="menu-title">현재 비밀번호</div>
+    <input class="update-content" id="profile-password1" type="text" name="" value="1111" style="border:none">
+    <hr>
+      <div class="" style="display:inline-block; width:45%;">
+        <div class="menu-title">비밀번호 변경</div>
+        <input class="update-content" type="text" name="" value="2222" style="border:none; width:70%;">
+      </div>
+      <div class="" style="display:inline-block; width:45%;">
+        <div class="menu-title" style="color:lightgray; font-weight:bold; margin-top:10px">비밀번호 확인</div>
+        <input class="update-content" id="profile-password2" type="text" name="" value="2222" style="border:none; width:70%;">
+      </div>
+    <hr>
+  </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$('#mypage').click(function(event) {
+  event.preventDefault();
+  location.href = "m_mypage.html"
+})
+</script>
+</body>
+</html>
