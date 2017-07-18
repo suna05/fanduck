@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="m_update.css">
   <title>Fanduck</title>
   <style media="screen">
+  input[type="text"], input[type="password"], textarea, select {
+    outline: none;
+  }
+  input:hover, input:visited, input:link, input:active {
+    text-decoration: none;
+  }
   </style>
   </head>
 <body>
@@ -33,7 +39,7 @@
   </div>
   <div class="profile-update">
     <div class="menu-title">이름</div>
-    <input class="update-content" id="profile-name" type="text" name="" value="아무개" style="border:none">
+    <input class="update-content" id="profile-name" type="text" name="" value="아무개" style="border:none; text-decoration: none;">
     <hr>
     <div class="menu-title">자기소개</div>
     <textarea class="update-content" id="profile-text"

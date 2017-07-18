@@ -13,16 +13,23 @@ $('#mypage').click(function(event) {
 
 $('#mp-add').hover(function() {
   event.preventDefault();
-  $('.footer-menu1').css('color', '#fa507b')
+  $('.footer-menu1').css('color', 'black')
+  $('.footer-menu2').css('color', '#fa507b')
   location.href = "m_add.html"
 }, function() {
-  $('.footer-menu1').css('color', 'black')
+  $('.footer-menu2').css('color', 'black')
 })
 
 $('#myprofile').hover(function() {
-  $('.footer-menu3').css('color', '#fa507b')
+  $('.footer-menu4').css('color', '#fa507b')
 }, function() {
-  $('.footer-menu3').css('color', 'black')
+  $('.footer-menu4').css('color', 'black')
+})
+
+$('#bars-button').hover(function() {
+  $('.footer-menu5').css('color', '#fa507b')
+}, function() {
+  $('.footer-menu5').css('color', 'black')
 })
 
 $('#calendar-page').hover(function() {

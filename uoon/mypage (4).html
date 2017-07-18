@@ -17,6 +17,11 @@
     font-size:1.7em;
     color:black;
   }
+
+  .footer-font {
+    font-size:0.8em;
+  }
+
   </style>
   </head>
 <body>
@@ -114,40 +119,29 @@
   </ul>
   </div>
   <div class="menu-bar">
-    <div class="ui-grid-b" style="bottom:0; right:0; left:0;position:fixed; background-color:white;">
-      <div class="menu-block" style="inline-block">
-        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
-        <div class="">홈</div>
+    <div class="ui-grid-b" style="bottom:0; right:0; left:0; position:fixed; background-color:white;">
+      <div class="menu-block">
+        <a id="mypage" href="index.html"><i class="footer-menu1 fa fa-home" aria-hidden="true" style="color:#fa507b"></i></a>
+        <div class="footer-font footer-menu1" style="color:#fa507b">홈</div>
       </div>
-      <div class="menu-block" style="inline-block">
-        <a><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-        <div class="">추가</div>
+      <div class="menu-block" id="mp-add">
+        <a><i class="footer-menu2 fa fa-user-plus" aria-hidden="true"></i></a>
+        <div class="footer-font footer-menu2">추가</div>
       </div>
-      <div class="menu-block" style="inline-block">
+      <div class="menu-block">
         <a><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-        <div class="">갤러리</div>
+        <div class="footer-font">갤러리</div>
       </div>
-      <div class="menu-block" style="inline-block"><a><i class="fa fa-user" aria-hidden="true"></i></a>
-        <div class="">마이프로필</div>
+      <div class="menu-block" id="myprofile" style="width:25%; padding:10px 5px 15px 5px">
+        <a href="#navpanel" style="color:black; font-weight:normal">
+          <i id="myprofile-icon" class="footer-menu4 fa fa-user" aria-hidden="true"></i>
+        <div id="myprofile-font" class="footer-font footer-menu4" >마이프로필</div></a>
       </div>
     </div>
   </div>
-
-    </div>
   </nav>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript">
-$('#update-page').click(function(event) {
-  event.preventDefault();
-  location.href = "m_update.html"
-})
-$('#calendar-page').click(function(event) {
-  event.preventDefault();
-  location.href = "m_calendar.html"
-})
-
-
-</script>
+<script src="m_mypage.js"></script>
 </body>
 </html>

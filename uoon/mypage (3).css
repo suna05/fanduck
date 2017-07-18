@@ -1,5 +1,20 @@
+a {
+  color:black;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: color .2s ease-out, border-bottom-color .2s ease-out; /* webkit moz, ms, o는 웹 브라우저의 호환성을 위해 기술한다.*/
+  -moz-transition: color .2s ease-out, border-bottom-color .2s ease-out; /* ease-out, ease-in은 빠르고 느리게, 느리고 빠르게를 조정한다.*/
+  -ms-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+  -o-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+  transition: color .2s ease-out, border-bottom-color .2s ease-out;
+}
+
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
+}
+
+a:hover {
+  color:#fa507b;
+  border-width:medium;
 }
 
 .glyphicon {
@@ -26,10 +41,15 @@ a:hover, a:visited, a:link, a:active {
 
 .menu-block {
   float:left;
+  display:inline-block;
   text-align: center;
   width:25%;
-  padding:10px 15px 5px 10px;
+  padding:10px;
   border-top:1px solid lightgray;
+}
+
+.ui-grid-b {
+  height:60px;
 }
 
 #logo {
