@@ -1,0 +1,7 @@
+
+drop table board_phots;
+drop table cal_event;
+
+drop table mp_pro;
+drop table thm_board;
+drop table memb;
