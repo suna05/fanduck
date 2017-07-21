@@ -1,0 +1,205 @@
+{\rtf1\ansi\ansicpg949\deff0\nouicompat\deflang1033\deflangfe1042{\fonttbl{\f0\fnil Courier New;}{\f1\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green127\blue0;\red128\green0\blue128;\red0\green0\blue0;\red64\green64\blue64;\red0\green0\blue127;\red128\green0\blue0;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\cf1\f0\fs20\lang18 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 BD_NO`\cf3  \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MP_NO`\cf3  \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 TITL`\cf3   \cf6 VARCHAR\cf5\b (\b0 100\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c1\'a6\'b8\'f1\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c1\'a6\'b8\'f1\cf0\f0\par
+\cf3\tab `\cf4 TEXT`\cf3   \cf6 VARCHAR\cf5\b (\b0 200\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b3\'bb\'bf\'eb\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b3\'bb\'bf\'eb\cf0\f0\par
+\cf3\tab `\cf4 RDT`\cf3    \cf6 DATE\cf3          \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b5\'ee\'b7\'cf\'c0\'cf\f0 '\cf3  \cf1 -- \f1\'b5\'ee\'b7\'cf\'c0\'cf\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_BOARD`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 BD_NO`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MP_PRO`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 MP_NO`\cf3     \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MNO`\cf3       \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MP_PATH`\cf3   \cf6 VARCHAR\cf5\b (\b0 250\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\cf0\f0\par
+\cf3\tab `\cf4 MP_NICK`\cf3   \cf6 VARCHAR\cf5\b (\b0 100\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'ba\'b0\'b8\'ed\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'ba\'b0\'b8\'ed\cf0\f0\par
+\cf3\tab `\cf4 MP_CONT`\cf3   \cf6 TEXT\cf3          \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b3\'bb\'bf\'eb\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b3\'bb\'bf\'eb\cf0\f0\par
+\cf3\tab `\cf4 MP_ALAM`\cf3   \cf6 BOOLEAN\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'be\'cb\'b8\'b2\'bf\'a9\'ba\'ce\f0 YN'\cf5\b ,\cf3\b0  \cf1 -- \f1\'be\'cb\'b8\'b2\'bf\'a9\'ba\'ce\f0 YN\cf0\par
+\cf3\tab `\cf4 MP_FILMO`\cf3  \cf6 VARCHAR\cf5\b (\b0 100\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c0\'ce\'bb\'f3\'b1\'ed\'c0\'ba\'bf\'b5\'c8\'ad\'b8\'ed\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c0\'ce\'bb\'f3\'b1\'ed\'c0\'ba\'bf\'b5\'c8\'ad\'b8\'ed\cf0\f0\par
+\cf3\tab `\cf4 MP_CODE`\cf3   \cf6 VARCHAR\cf5\b (\b0 200\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\f0 '\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MP_PRO`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_MP_PRO`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MP_NO`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MOVIE`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 MV_NO`\cf3    \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MV_TITL`\cf3  \cf6 VARCHAR\cf5\b (\b0 100\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'b8\'ed\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'b8\'ed\cf0\f0\par
+\cf3\tab `\cf4 MV_DAY`\cf3   \cf6 DATE\cf3          \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'b3\'ba\'c0\'c0\'cf\f0 '\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'c0\'cf\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MOVIE`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_MOVIE`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MV_NO`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 ALARM`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 ALA_NO`\cf3  \cf6 INTEGER\cf3  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'be\'cb\'b6\'f7\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'be\'cb\'b6\'f7\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MV_NO`\cf3   \cf6 INTEGER\cf3  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 MNO`\cf3     \cf6 INTEGER\cf3  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 READ`\cf3    \cf6 BOOLEAN\cf3  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c0\'d0\'c0\'ba\'bf\'a9\'ba\'ce\f0 YN'\cf5\b ,\cf3\b0  \cf1 -- \f1\'c0\'d0\'c0\'ba\'bf\'a9\'ba\'ce\f0 YN\cf0\par
+\cf3\tab `\cf4 MV_RDT`\cf3  \cf6 DATE\cf3     \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b5\'ee\'b7\'cf\'c0\'cf\f0 '\cf3  \cf1 -- \f1\'b5\'ee\'b7\'cf\'c0\'cf\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 ALARM`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_ALARM`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 ALA_NO`\cf3  \cf1 -- \f1\'be\'cb\'b6\'f7\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'c3\'e2\'bf\'ac\'c0\'da\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 CAST_MEMB`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 MV_NO`\cf3    \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 FP_CODE`\cf3  \cf6 VARCHAR\cf5\b (\b0 200\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\f0 '\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c3\'e2\'bf\'ac\'c0\'da\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 FILM_PERSON`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 FP_CODE`\cf3   \cf6 VARCHAR\cf5\b (\b0 200\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf3\tab `\cf4 FP_NAME`\cf3   \cf6 VARCHAR\cf5\b (\b0 50\b )\cf3\b0   \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c0\'cc\'b8\'a7\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c0\'cc\'b8\'a7\cf0\f0\par
+\cf3\tab `\cf4 FP_FILMO`\cf3  \cf6 VARCHAR\cf5\b (\b0 200\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c7\'ca\'b8\'f0\'b1\'d7\'b7\'a1\'c7\'c7\f0 '\cf3  \cf1 -- \f1\'c7\'ca\'b8\'f0\'b1\'d7\'b7\'a1\'c7\'c7\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bf\'b5\'c8\'ad\'c0\'ce\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 FILM_PERSON`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_FILM_PERSON`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 FP_CODE`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'c8\'b8\'bf\'f8\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MEMB`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 MNO`\cf3    \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 ID`\cf3     \cf6 VARCHAR\cf5\b (\b0 50\b )\cf3\b0   \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'be\'c6\'c0\'cc\'b5\'f0\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'be\'c6\'c0\'cc\'b5\'f0\cf0\f0\par
+\cf3\tab `\cf4 NICK`\cf3   \cf6 VARCHAR\cf5\b (\b0 50\b )\cf3\b0   \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b4\'d0\'b3\'d7\'c0\'d3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b4\'d0\'b3\'d7\'c0\'d3\cf0\f0\par
+\cf3\tab `\cf4 PWD`\cf3    \cf6 VARCHAR\cf5\b (\b0 50\b )\cf3\b0   \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'be\'cf\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'be\'cf\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 PATH`\cf3   \cf6 VARCHAR\cf5\b (\b0 250\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\cf0\f0\par
+\cf3\tab `\cf4 INTRO`\cf3  \cf6 VARCHAR\cf5\b (\b0 250\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c8\'b8\'bf\'f8\'bc\'d2\'b0\'b3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\'bc\'d2\'b0\'b3\cf0\f0\par
+\cf3\tab `\cf4 TYPE`\cf3   \cf6 VARCHAR\cf5\b (\b0 250\b )\cf3\b0  \cf2\b NULL\cf3\b0      \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'a1\'c0\'d4\'c0\'af\'c7\'fc\f0 '\cf3  \cf1 -- \f1\'b0\'a1\'c0\'d4\'c0\'af\'c7\'fc\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c8\'b8\'bf\'f8\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'c8\'b8\'bf\'f8\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MEMB`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_MEMB`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\f0  Primary key\cf0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MNO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'c8\'b8\'bf\'f8\f0  \f1\'c0\'af\'b4\'cf\'c5\'a9\f0  \f1\'c0\'ce\'b5\'a6\'bd\'ba\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b UNIQUE\cf3\b0  \cf2\b INDEX\cf3\b0  `\cf4 UIX_MEMB`\cf0\par
+\cf3\tab\cf2\b ON\cf3\b0  `\cf4 MEMB`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\cf0\f0\par
+\cf3\tab\tab `\cf4 ID`\cf3  \cf2\b ASC\cf3\b0  \cf1 -- \f1\'be\'c6\'c0\'cc\'b5\'f0\cf0\f0\par
+\cf3\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\cf0\f0\par
+\cf2\b CREATE\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD_PHOTS`\cf3  \cf5\b (\cf0\b0\par
+\cf3\tab `\cf4 BD_PHOT`\cf3  \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'bb\'e7\'c1\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'bb\'e7\'c1\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 BD_NO`\cf3    \cf6 INTEGER\cf3       \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\f0 '\cf5\b ,\cf3\b0  \cf1 -- \f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab `\cf4 BD_PATH`\cf3  \cf6 VARCHAR\cf5\b (\b0 250\b )\cf3\b0  \cf2\b NOT\cf3\b0  \cf2\b NULL\cf3\b0  \cf2\b COMMENT\cf3\b0  \cf7 '\f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\f0 '\cf3  \cf1 -- \f1\'c6\'c4\'c0\'cf\'b0\'e6\'b7\'ce\cf0\f0\par
+\cf5\b )\cf0\b0\par
+\cf2\b COMMENT\cf3\b0  \cf7 '\f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\f0 '\cf5\b ;\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD_PHOTS`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 PK_BOARD_PHOTS`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\f0  \f1\'b1\'e2\'ba\'bb\'c5\'b0\cf0\f0\par
+\cf3\tab\tab\cf2\b PRIMARY\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 BD_PHOT`\cf3  \cf1 -- \f1\'bb\'e7\'c1\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_MP_PRO_TO_BOARD`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\f0  -> \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MP_NO`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 MP_PRO`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 MP_NO`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 MP_PRO`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_MEMB_TO_MP_PRO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\f0  -> \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c7\'c1\'b7\'ce\'c7\'ca\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MNO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 NEW_SCHEMA`.`MEMB`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 MNO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 ALARM`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_MOVIE_TO_ALARM`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\f0  -> \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MV_NO`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 MOVIE`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 MV_NO`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 ALARM`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_MEMB_TO_ALARM`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\f0  -> \f1\'bf\'b5\'c8\'ad\'be\'cb\'b8\'b2\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MNO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 NEW_SCHEMA`.`MEMB`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'c8\'b8\'bf\'f8\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 MNO`\cf3  \cf1 -- \f1\'c8\'b8\'bf\'f8\'c0\'cf\'b7\'c3\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'c3\'e2\'bf\'ac\'c0\'da\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 CAST_MEMB`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_MOVIE_TO_CAST_MEMB`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\f0  -> \f1\'c3\'e2\'bf\'ac\'c0\'da\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 MV_NO`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 MOVIE`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 MV_NO`\cf3  \cf1 -- \f1\'b0\'b3\'ba\'c0\'bf\'b5\'c8\'ad\'b0\'ed\'c0\'af\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'c3\'e2\'bf\'ac\'c0\'da\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 CAST_MEMB`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_FILM_PERSON_TO_CAST_MEMB`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\f0  -> \f1\'c3\'e2\'bf\'ac\'c0\'da\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 FP_CODE`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 FILM_PERSON`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 FP_CODE`\cf3  \cf1 -- \f1\'bf\'b5\'c8\'ad\'c0\'ce\'c4\'da\'b5\'e5\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\par
+\par
+\cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\cf0\f0\par
+\cf2\b ALTER\cf3\b0  \cf2\b TABLE\cf3\b0  `\cf4 BOARD_PHOTS`\cf0\par
+\cf3\tab\cf2\b ADD\cf3\b0  \cf2\b CONSTRAINT\cf3\b0  `\cf4 FK_BOARD_TO_BOARD_PHOTS`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\f0  -> \f1\'b0\'d4\'bd\'c3\'c6\'c7\'bb\'e7\'c1\'f8\cf0\f0\par
+\cf3\tab\tab\cf2\b FOREIGN\cf3\b0  \cf2\b KEY\cf3\b0  \cf5\b (\cf0\b0\par
+\cf3\tab\tab\tab `\cf4 BD_NO`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b )\cf0\b0\par
+\cf3\tab\tab\cf2\b REFERENCES\cf3\b0  `\cf4 MY_SCHEMA`.`BOARD`\cf3  \cf5\b (\cf3\b0  \cf1 -- \f1\'b0\'d4\'bd\'c3\'c6\'c7\f0  \f1\'bb\'f3\'bc\'bc\cf0\f0\par
+\cf3\tab\tab\tab `\cf4 BD_NO`\cf3  \cf1 -- \f1\'b0\'d4\'bd\'c3\'b9\'b0\'b9\'f8\'c8\'a3\cf0\f0\par
+\cf3\tab\tab\cf5\b );\cf0\b0\f1\par
+}
+ 
