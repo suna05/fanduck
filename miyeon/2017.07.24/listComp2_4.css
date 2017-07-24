@@ -1,0 +1,79 @@
+
+/*caption*/
+
+
+/*profile*/
+.MP_profile {
+  width:600px;
+  margin:0 auto;
+  padding-top: 15%;
+  padding-bottom: 4%;
+  text-align:center;
+}
+
+.MP_profile_photo {
+  height:140px;
+  height:140px;
+}
+
+.outer-container {
+padding-top: 1px;
+/*background-color: #333;*/
+/*background-color:rgba(0, 0, 0, 0.5);*/
+}
+
+/*list*/
+ .search_write {
+  margin-bottom: 25px;
+
+ }
+ /*hover-share*/
+figgure > a {
+	display: none;
+}
+figcaption a:hover {
+  display: block;
+}
+
+/*pinterest style*/
+input[type=text] {
+    width: 12%;
+    position:relative;
+    margin-left: 80%;
+    display: inline-block;
+}
+
+ #columns{
+     
+      column-width:350px;
+        column-gap: 15px;
+    
+     }
+   
+     #columns figure{
+       background-color: white;
+       display: inline-block;
+       border:1px solid rgba(0,0,0,0.2);
+       margin:0;
+       margin-bottom: 15px;
+       padding:10px;
+       box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
+     }
+     #columns figure img{
+       width:100%;
+     }
+
+     #columns figure figcaption {
+    /*border-top: 1px solid rgba(0,0,0,0.2);*/
+    padding: 1px;
+    /*margin-left:3px;*/
+    position: relative;
+}
+
+
+.share-icons {
+	display:none;
+}
+a:hover + .shore-icons {
+ display:block;	
+}
