@@ -1,0 +1,9 @@
+done
+
+1. header footer 적용 --진행중
+2. handlebars적용해서 json데이터 받아온 것을 프로필칸(at movieperson ofindex.html)에 띄우기
+
+to do
+
+1. header 완료
+2. columns 똑같이..

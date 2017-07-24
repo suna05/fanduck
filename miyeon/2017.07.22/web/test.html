@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>member</title>
+    <style>
+    #teacher-tbl {
+    border: 1px solid black;
+    }
+    </style>
+  </head>
+  <body>
+  
+  <table id="teacher-tbl" class="table table-hover">
+<thead>
+  <tr><th>회원번호</th><th>아이디</th><th>닉네임</th><th>암호</th><th>경로</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+
+  <script id="tbody-template" type="text/x-handlebars-template">
+ {{#each list}}
+      <tr>
+        <td>{{mno}}</td>
+        <td>{{id}}</td>
+        <td>{{nickname}}</td>
+        <td>{{password}}</td>
+        <td>{{path}}</td>
+      </tr>
+      {{/each}}
+  </script>    
+   
+   
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script> 
+<script src="../js/test.js"></script>
+  </body>
+</html>
