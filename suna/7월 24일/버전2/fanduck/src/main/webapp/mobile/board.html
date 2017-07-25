@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>FanDuck</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+ <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+ <link rel="stylesheet" href="../css/m_board7.css" type="text/css">
+ <link rel="stylesheet" href="../css/m_board_header.css" type="text/css">
+ <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="M_frame">
+
+<div class="search_form">
+<div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" id="hide-container" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><img src="../images/search.png" style="height:17px; width:17px;"></button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!--container -->
+
+<div id="getBackMenu">
+
+<div class="MP_profile_box">
+      <div class="MP_profile">
+<table width="95%">
+  <tr>
+    <th><img class="MP_profile_photo" src="../images/emma2.jpg"></th>
+    <th><h4>Emma Stone</h4>
+        <p>This is Emma.</p></th>
+  <th style="text-align:center;">게시글수<br> 4개</th>
+  </tr>
+
+</table>
+</div>
+</div><!-- MP_profile_box -->
+
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="top:20%;">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" style="width:80%; height:90%; left:12%;">
+    <p style="font-size:130%; padding-left:40%; margin-top:3%;">삭제하기</p>
+    <p style="font-size:130%; padding-left:40%; margin-top:3%;">수정하기</p>
+    
+    
+      <p style="font-size:130%; padding-left:40%; margin-top:3%;">공유하기</p>
+       <div style="background-color:white; margin-left:10%;width: 80%; font-size: 20px; margin-top:5%; margin-bottom:5%;">
+           <img class="article" src="../images/Twitter-share.png" style="width:19%; margin-right:10%; margin-left:10%;">
+           <img class="article" src="../images/facebook-share.png" style="width:18%; margin-right:10%; ">
+           <img class="article" src="../images/kakaotalk-share.png" style="width:19%;">
+      </div>
+
+        <div class="modal-footer" data-dismiss="modal" style="text-align:center">
+          <div style="font-size:120%; color:grey;">취소</div>
+
+        </div>
+    </div>
+  </div>
+</div><!-- share -->
+
+<div data-role="main" class="ui-content" style="padding:0px;">
+ <div class="columns">
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+<!-- 
+<figure id="figure1" class="list-box" style="margin-top:20px;">
+ <a href="#" class="pop">
+   <img id="img2" src="./images/lalaland.jpg">
+   </a>
+  <figcaption style="margin-right:1.6%;">
+    <a class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+     </a>
+  </figcaption>
+    </figure>
+-->
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+
+<figure id="figure1" class="list-box" style=" background-color:yellow;">
+  <div class="modalShare" data-toggle="modal" data-target=".bs-example-modal-sm">
+<div style="float:right; padding-right:74%; font-size:125%;">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+</div>
+
+   <img id="img2" src="../images/edDance.jpg">
+  
+  <figcaption style="margin-right:1.6%;">
+        <p class="more" style="font-size:150%">라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 라이언 고슬링과 엠마스톤의 라라랜드 고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드고슬링과 엠마스톤의 라라랜드</p>
+  </figcaption>
+    </figure>
+  </div><!-- columns -->
+  </div><!-- main -->
+  </div><!-- getBackMenu -->
+
+  <div class="menu-bar" id="eventContainer">
+    <div class="ui-grid-b" style="bottom:0; right:0; left:0; position:fixed; background-color:white;">
+      <div class="menu-block" id="home">
+        <a id="mypage" href="index.html">
+        <i class="footer-menu1 fa fa-home" aria-hidden="true"></i></a>
+        <div class="footer-menu1 footer-font">홈</div>
+      </div>
+      <div class="menu-block" id="mvPerson">
+        <a id="mp-page" href="index.html">
+        <i class="footer-menu2 fa fa-user-secret" aria-hidden="true"></i></a>
+        <div class="footer-menu2 footer-font">영화인</div>
+      </div>
+      <div class="menu-block" id="write">
+        <a><i class="footer-menu3 fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        <div class="footer-menu3 footer-font">글쓰기</div>
+      </div>
+      <div class="menu-block" id="modify" style="padding:14.5px 0px 10px 0px;">
+       <a><i class="footer-menu4 fa fa-wrench" aria-hidden="true"></i></a>
+        <div class="footer-menu4 footer-font">영화인수정</div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- M_frame -->
+</body>
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../js/more.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script>
+$("#hide-container").click(function () {
+  $("#eventContainer").hide().css("display", "none");
+});
+
+
+$("#getBackMenu").click(function () {
+    $("#eventContainer").hide().css("display", "");
+  }); 
+  
+$('#home').hover(function() {
+  $('.footer-menu1').css('color', '#fa507b')
+}, function() {
+  $('.footer-menu1').css('color', 'black')
+})
+
+$('#mvPerson').hover(function() {
+  $('.footer-menu2').css('color', '#fa507b')
+}, function() {
+  $('.footer-menu2').css('color', 'black')
+})
+
+$('#write').hover(function() {
+  $('.footer-menu3').css('color', '#fa507b')
+}, function() {
+  $('.footer-menu3').css('color', 'black')
+})
+
+$('#modify').hover(function() {
+  $('.footer-menu4').css('color', '#fa507b')
+}, function() {
+  $('.footer-menu4').css('color', 'black')
+})
+</script>
+</html>

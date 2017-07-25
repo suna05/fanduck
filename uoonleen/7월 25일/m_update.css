@@ -1,0 +1,64 @@
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-top:1px solid lightskyblue;
+}
+
+.brand {
+    width:100%;
+    border:none;
+    padding:9px 0px;
+    margin-top:15%;
+    text-align: center;
+}
+
+.profile-update {
+  margin-top:2%;
+  margin-left:20px;
+  margin-right:20px;
+  padding-bottom: 0px;
+}
+
+.menu-title {
+  color:lightgray;
+  font-weight:bold;
+}
+
+.update-content {
+  font-size:1.1em;
+  font-weight:600;
+  margin-top:10px;
+}
+
+.ui-grid-b {
+  top:0;
+  right:0;
+  left:0;
+  padding:15px;
+  position:fixed;
+  background-color:white;
+}
+
+.mobile-headar {
+  position: relative;
+}
+
+.header-title {
+  margin-left:5%;
+  font-size:1.3em;
+  font-weight:bold;
+  position:absolute;
+  margin-top:1px;
+}
+
+.header-save {
+  float:right;
+  font-size:1.3em;
+  font-weight:bold;
+  margin-right:5%;
+  margin-top:1px
+}
