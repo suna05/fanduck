@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+  <title>Fanduck</title>
+ 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/m_main.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script> <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+
+
+</head>
+<style>
+</style>
+<!-- <body background-image="images/movie.jpg"> -->
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="mobile_header" style="width:100%; margin-top:3%;">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <a href="login.html">로그인</a>
+      </div>
+
+      <a class="ha" href="index.html"><img class="himg" src="../images/logo1.png"/></a>
+      <section class="about">
+            <p class="first"><b>당신이 좋아하는 </b></p>
+            <p class="first"><b>영화인을 등록하세요</b></p>
+            <p class="second">영화인의 프로필을 등록하고</p>
+            <p class="second">마음껏 덕질하세요</p>
+            <p class="second">영화인의 작품을 실시간으로 알림받는 서비스</p>
+      </section>
+
+      </div>
+    </div>
+  </header>
+
+
+      <section class="menu">
+
+        <div id="btn1">
+
+            <img class="face_logo" src="../images/f.png" />
+            <a onClick="facebooklogin()" style="margin-right:15%">페이스북으로 가입하기</a>
+
+        </div>
+        <div id="btn2">
+          <img class="kakao_logo" src="../images/kakao_mobile.png"/>
+          <a href="javascript:loginWithKakao()" style="margin-right:15%">카카오톡으로 가입하기</a>
+        </div>
+    
+        <div id="btn3">회원가입</div>
+      </section>
+
+
+
+
+  <footer>
+    <p>2017 김미연 신선아 이유운 Fanduck</p>
+  </footer>
+
+<script src="../js/m_kakao_login.js"></script>
+<script src="../js/m_facebook_login.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</body>
+
+
+
+</html>
