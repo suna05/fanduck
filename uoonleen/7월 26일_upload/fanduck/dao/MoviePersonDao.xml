@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fanduck.dao.MoviePersonDao">
+
+  <resultMap type="moviePerson" id="moviePersonMap">
+    <id column="mp_no" property="mpNo"/>
+    <result column="mp_path" property="mpPhotopath"/>
+    <result column="mp_nick" property="mpNickname"/>
+    <result column="mp_cont" property="mpContent"/>
+    <result column="mp_alam" property="mpAlarm"/>
+    <result column="mp_type" property="mpType"/>
+    <result column="mp_code" property="mpCode"/>
+    <collection property="mpFilmo" ofType="string">
+    	<result column="mp_filmo"/>
+    </collection>
+  </resultMap>
+
+  <select id="selectList" resultMap="moviePersonMap" parameterType="map">
+    select mno, mp.mp_path, mp.mp_nick, mp.mp_cont, mp.mp_alam, mp_filmo, mp_code, mp_type
+    from mp_pro mp 
+  </select>
+  
+  <insert id="insert" parameterType="moviePerson">
+    insert into mp_pro(mno, mp_no, mp_path, mp_nick, mp_cont, mp_alam, mp_filmo, mp_code, mp_type) 
+    values(#{mno}, #{mpNo}, #{mpPhotopath}, #{mpNickname}, #{mpContent}, #{mpAlarm}, #{mp_filmo}, #{mpType}, #{mpCode})
+  </insert>
+  
+<!-- limit #{startIndex}, #{pageSize} --> 
+
+<!-- <select id="selectOne" resultMap="teacherMap" parameterType="int"> 
+	파라미터 타입을 map이 아니라 int 하나로 주기 때문에 #{memberNo}에 들어가는 별칭은 마음대로 줄 수 있다.
+    select  m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit, tp.path
+    from tcher t inner join memb m on t.tno=m.mno
+                 left outer join tch_phot tp on t.tno=tp.tno
+    where mno = #{memberNo} 
+  </select>
+  
+  <select id="selectOneByEmailPassword" resultMap="teacherMap" parameterType="map">
+    select  m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit, tp.path
+    from tcher t inner join memb m on t.tno=m.mno
+                 left outer join tch_phot tp on t.tno=tp.tno
+    where email=#{email} and pwd=password(#{password})
+  </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from tcher where tno=#{teacherNo}
+  </delete>
+  
+  <update id="update" parameterType="teacher">
+    update tcher set 
+      hmpg=#{homepage}, 
+      fcbk=#{facebook}, 
+      twit=#{twitter} 
+    where tno=#{no}
+  </update>
+  
+  <select id="selectPhotoList" parameterType="int">
+    select tpno, tno, path
+    from tch_phot
+    where tno=#{teacherNo}
+  </select>
+  
+  <delete id="deletePhoto" parameterType="int">
+    delete from tch_phot
+    where tno=#{teacherNo}
+  </delete> -->  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
