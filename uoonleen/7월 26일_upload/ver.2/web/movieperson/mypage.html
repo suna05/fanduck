@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../../css/mypage.css"/>
+  <link rel="stylesheet" href="../../css/font-size.css"/>
+  <link rel="stylesheet" href="../../css/footer.css"/>
+  <link rel="stylesheet" href="../../css/calendar.css"/>
+  <link rel="stylesheet" href="../../css/my-profile.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+
+</head>
+<style>
+body {
+  background-color:black;
+}
+</style>
+<body>
+  <header>
+    <div class="container-fluid" style="background-color:#424558;">
+      <div class="container">
+      <div id="logo" style="display:inline-block">
+        <a href="mypage.html"><img class="img-brand" src="../../images/logo1.png"/></a>
+          <span id="menu">
+            <ul>
+              <li><button id="menu-mypage" class="btn btn-default">목록</button></li>
+              <li><a id="2" href="#">메인페이지</a></li>
+              <li><a id="3" href="#">갤러리</a></li>
+              <li><button id="logout" class="btn btn-primary"
+              >로그아웃</button></li>
+              <a id="update-profile" data-toggle="modal" data-target="#mypage">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+  <div class="container" style="padding: 0 -15%; margin-bottom:2%;">
+    <figure class="snip1336" style="width:25%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+    <figcaption>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+      <div class="my-intro">
+        <h2>아무개<span>Accountant</span></h2>
+        <p>나는 존재합니다.</p>
+      </div>
+    </figcaption>
+  </figure>
+
+    <div class="wrapper">
+    <div id="calendar"></div>
+    <div id="calendar_data">
+      <h3>알림</h3>
+      <dl>
+        <dt><dfn>Title:</dfn></dt><dd>도끼</dd>
+        <dt><dfn>Hour:</dfn></dt><dd>2017.08.25</dd>
+        <dt><dfn>name:</dfn></dt><dd>박찬욱</dd>
+        <dt><dfn>More Info:</dfn></dt><dd><a href="#" title="More info">Here</a><dt></dd>
+      </dl>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+ <!--  -->
+  <div class="container-fluid" style="padding-right:1.7%;">
+    <div class="container article-menu">
+      <div class="text-center article-bar" >
+        <h2 id="article-text">영화인 목록</h2>
+      <nav class="text-center article-bar " id="filter">
+        <a href="#" style="margin-right: 4%; font-size:1.1em; font-weight:bold;">배우</a>
+        <a href="#" style="font-size:1.1em; font-weight:bold;">감독</a>
+      </nav>
+    </div>
+   </div>
+  <div class="container" style="max-width:1100px; border-bottom:1px solid gainsboro;">
+  <button id="mp-addBtn" class="btn btn-primary" data-toggle="modal" data-target="#mp-add" style="">추가</button>
+  </div>
+  </div>
+
+  <div class="container mp-list">
+  <div class="row" id="mp-array">
+  <!-- template 적용 -->
+  <script id="mp-template" type="text/x-handlebars-template">
+  {{#each list}}
+    <div class='col-sm-6 col-md-3'>
+      <div class="thumbnail">
+      <a href='index.html'>
+        <img src='{{mpPhotoPath}}' alt='...' class='img-responsive'>
+        <div class='caption'>
+          <h3 class='mp-font' style='text-align:center;'>{{mpNickname}}</h3>
+          <div class='' style='margin:10px 0px;'>
+            <span class='glyphicon glyphicon-film' style='color:gray;'></span>
+            <span style='color:gray;'>필모그래피</span><br>
+            <span style='color:gray;'>{{mpFilmo}}</span>
+          </div>
+          <p>{{mpContent}}</p>
+        </div>
+        </a>
+      </div>
+    </div>
+  {{/each}}
+  </script>
+  </div>
+  </div>
+
+  
+  <!-- 내 정보 변경 -->
+  <div class="modal fade" id="mypage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center; font-size:1.5em;"><b>내 정보 변경</b></h4>
+        </div>
+        <div class="modal-body ui-front">
+          <div style="vertical-align:top; width:130%;">
+            <div style="text-align:center; padding-top:3%;">
+              <form action="" class="form-horizontal">
+                <div class="form-group">
+                  <div class="img-bar">
+                  <label for="img-upload" style="margin-right:20%; margin-bottom:5%;">
+                    <img class="img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
+                         alt="profile-sample5" id="imgBtn"/></a>
+                    <div class="" style="margin-top:6%;"><a style="font-weight:bold; color:steelblue">사진 변경</a></div>
+                  </label>
+                  <input id="img-upload" type="file" accept="image/*" style="display:none;">
+                </div>
+                  <label for="inputEmail3" class="col-sm-3 control-label">닉네임</label>
+                  <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputNick_change" placeholder="변경할 닉네임">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label">비밀번호</label>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control" id="inputPassword_change" placeholder="변경할 비밀번호">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label">비밀번호확인</label>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control" id="inputPassword_change" placeholder="변경할 비밀번호 확인">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="bottom:2%;">
+          <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+          <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 영화인 추가 -->
+  <div class="modal fade" id="mp-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content" id="mp-modal-cotent">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center; font-size:1.5em;"><b>영화인 추가</b></h4>
+        </div>
+        <div class="modal-body ui-front ">
+          <div style="vertical-align:top; width:130%;">
+            <div style="text-align:center; padding-top:3%;">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <div class="img-bar" style="margin-right:23%; margin-bottom:5%;">
+                   <label for="fileupload" style="" id="images-div">
+                    <img class="img-circle" src=""
+                         alt="" style="vertical-align:middle" />
+                    <div class="" style="margin-top:6%;"><a style="font-weight:bold; color:steelblue">사진 등록</a></div>
+                   </label>
+                  <input id="fileupload" type="file" name="files" multiple style="display:none;">
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="ui-widget">
+                  <label for="tags" class="col-sm-3 control-label" style="margin-left:-12px;">영화인 이름</label>
+                  <div class="col-sm-6">
+                      <input class="form-control" id="tags" placeholder="영화인 이름을 검색하세요!" style="margin-top:3%;">
+                      <input id="hidden-info" type="hidden">
+                    </div>
+                   </div>
+                  </div>
+                <div class="form-group">
+                  <label for="profile-text" class="col-sm-3 control-label" style="margin-left:-12px; font-size:1.1em">영화인 소개</label>
+                  <div class="col-sm-6">
+                    <textarea class="update-content form-control" id="mp-content"
+                              type="text" placeholder="소개글"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="bottom:2%;">
+          <button type="button" id="close-btn" class="btn btn-default" style="margin-left:10px; float:right; background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+          <button type="button" id="upload-btn" class="btn btn-default" style="background-color:#fa507b; color:white;">추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<footer id="footer"></footer>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/input-auto.js"></script>
+<script src="../../js/mp-fileupload2.js"></script>
+<script src="mypage.js"></script>
+<script src="../../js/calendar.js"></script>
+<script>
+  $('#footer').load('footer.html')
+  $('#close-btn').click(function() {
+  	$('#mp-add').modal('hide')
+  })
+  
+  $("#mp-add").on("hidden.bs.modal", function(){
+    $("#img-uploaded").html("");
+  });
+  
+  $('#upload-btn').click(function() {
+	 $.post('/movieperson/info.json', {
+      'mpNickname': $('#tags').val().split(' ')[0],
+      'mpCode': $('#tags').val().split('(')[1].substring(0, 7),
+      'mpContent': $('#mp-content').val(),
+      'mpInfo': $('#hidden-info').val()
+      }, function(result) {
+      location.href = '/web/movieperson/mypage.html'
+    }, 'json')
+  })
+</script>
+</body>
+</html>
