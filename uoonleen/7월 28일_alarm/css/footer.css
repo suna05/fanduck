@@ -1,0 +1,26 @@
+ html {
+  height:100%;
+}
+
+body {
+  height:100%;
+}
+
+#footer{
+	overflow: hidden;
+	position:absolute;
+    background-color: #424558;
+    margin-top:50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+    color: #CCC;
+}
+
+#footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}
