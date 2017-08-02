@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fanduck.dao.BoardDao">
+
+	<resultMap type="board" id="boardMap">
+		<id column="bd_no" property="bdNo" />
+		<result column="mp_no" property="mpNo" />
+		<result column="titl" property="bdTitle" />
+		<result column="text" property="bdContent" />
+		<result column="rdt" property="bdRegister" />
+		<result column="bd_path" property="bdPhoto" />
+		<!-- <collection property="photoList" ofType="string"> <result column="bd_path"/> 
+			</collection> -->
+	</resultMap>
+
+	<select id="selectList" resultMap="boardMap" parameterType="map">
+		select b.bd_no, b.mp_no, b.titl, b.text, b.rdt, p.bd_path
+		from board b
+		left outer join board_phots p
+		on b.bd_no = p.bd_no
+	</select>
+
+<!-- 	<insert id="insert" parameterType="board">
+		insert into board(mp_no, bd_no, titl, text, rdt) 
+		values(#{mpNo}, #{bdNo}, #{bdTitle},
+		#{bdContent}, #{bdRegister})
+	</insert>
+ -->
+ 
+ 	<insert id="insert" parameterType="board">
+		insert into board(mp_no, bd_no, titl, text, rdt) 
+		values(#{mpNo}, #{bdNo}, #{bdTitle},
+		#{bdContent}, CURRENT_DATE())
+	</insert>
+ 
+ 
+ 
+	<update id="update" parameterType="board">
+		update board set
+			titl=#{bdTitle},
+			text=#{bdContent}
+		where bd_no=#{bdNo}
+	</update>
+	
+	
+	<delete id="delete" parameterType="int">
+		delete from board where bd_no = #{bdNo}
+	</delete>
+	
+
+	<insert id="insertPhoto" parameterType="map">
+		insert into board_phots(bd_no, bd_path)
+		values(#{bdNo}, #{bdPhoto})
+	</insert>
+
+
+
+	<select id="selectOne" resultMap="boardMap" parameterType="int">
+		<!-- 파라미터 타입을 map이 아니라 int 하나로 주기 때문에 #{memberNo}에 들어가는 별칭은 마음대로 줄 수 있다. -->
+		select b.bd_no, b.titl, b.text, b.rdt, p.bd_path
+		from board b
+		left outer join board_phots p
+		on b.bd_no = p.bd_no
+		where b.bd_no = #{bdNo}
+	</select>
+
+
+	<select id="searchListByTitle" resultMap="boardMap" parameterType="map">
+		select b.bd_no, b.titl, b.text, p.bd_path
+		from board b
+		left outer join board_phots p
+		on b.bd_no = p.bd_no
+		where titl like '%${value}%'
+	<!-- 	order by bd_no desc -->
+	</select>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
