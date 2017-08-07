@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fanduck.dao.CastMemberDao">
+  
+  <resultMap type="castMember" id="castMemberMap">
+    <result column="mv_no" property="mvNo"/>
+    <result column="fp_code" property="fpCode"/>
+    <result column="ifread" property="ifRead"/>
+    <result column="mno" property="mno"/>
+    <result column="fp_name" property="fpName"/>
+    <result column="mv_titl" property="mvTitle"/>
+    <result column="mv_day" property="mvDay"/>
+  </resultMap>
+
+  <select id="selectList" resultMap="castMemberMap" parameterType="map">
+    select fp_name, mv_titl, mv_day, ifread, mno, movie.mv_no, fp.fp_code
+    from cast_memb cm inner join movie on cm.mv_no = movie.mv_no
+    				  inner join film_person fp on fp.fp_code = cm.fp_code;
+  </select>
+  
+  <insert id="insert" parameterType="castMember">
+    insert into cast_memb (mv_no, fp_code, ifread, mno)
+	select #{mvNo}, #{fpCode}, #{ifRead}, #{mno}
+	where not exists 
+	(select mv_no, fp_code from cast_memb where mv_no=#{mvNo} and fp_code=#{fpCode})
+  </insert>
+  
+  <delete id="delete" parameterType="castMember">
+    delete from cast_memb where fp_code=#{fpCode} and mno=#{mno}
+  </delete>
+
+  
+  <select id="selectOne" resultMap="castMemberMap" parameterType="map">
+    select cm.mv_no, cm.fp_code from cast_memb cm
+    where cm.mv_no=#{mvNo} and cm.fp_code=#{fpCode}
+  </select>
+  
+  <update id="update" parameterType="castMember">
+    update cast_memb set 
+      ifread=#{ifRead}
+      where mno=#{mno} and mv_no=#{mvNo} and fp_code=#{fpCode}
+  </update>
+<!--   
+  <insert id="insert" parameterType="moviePerson">
+    insert into mp_pro(mno, mp_no, mp_path, mp_nick, mp_cont, mp_alam, mp_filmo, mp_code, mp_type) 
+    values(#{mno}, #{mpNo}, #{mpPhotopath}, #{mpNickname}, #{mpContent}, #{mpAlarm}, #{mpFilmo}, #{mpCode}, #{mpType})
+  </insert>
+   -->
+<!-- limit #{startIndex}, #{pageSize} --> 
+
+<!-- <select id="selectOne" resultMap="teacherMap" parameterType="int"> 
+	파라미터 타입을 map이 아니라 int 하나로 주기 때문에 #{memberNo}에 들어가는 별칭은 마음대로 줄 수 있다.
+    select  m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit, tp.path
+    from tcher t inner join memb m on t.tno=m.mno
+                 left outer join tch_phot tp on t.tno=tp.tno
+    where mno = #{memberNo} 
+  </select>
+  
+  <select id="selectOneByEmailPassword" resultMap="teacherMap" parameterType="map">
+    select  m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit, tp.path
+    from tcher t inner join memb m on t.tno=m.mno
+                 left outer join tch_phot tp on t.tno=tp.tno
+    where email=#{email} and pwd=password(#{password})
+  </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from tcher where tno=#{teacherNo}
+  </delete>
+  
+
+
+  -->  
+</mapper>
