@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FanDuck</title>
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/mypage_miya_edit.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/menu_miya_edit.css" />
+<link rel="stylesheet" href="../../css/style_miya_edit.css" />
+<link rel="stylesheet" href="../../css/footer.css" />
+<link rel="stylesheet"
+	href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		<header class="hheader">
+			<div id="logo" style="display: inline-block">
+				<a class="ha" href="index.html"><img class="himg"
+					src="../../images/logo1.png" /></a> <span id="menu">
+					<ul class="hul">
+						<li class="hli"><a href="index4.html" class="ha" id="1"
+							style="color: black; cursor: pointer">홈</a></li>
+						<li class="hli" style="color: black" data-toggle="modal"
+							data-target="#join"><a class="ha" id="2"
+							style="color: black; cursor: pointer">프로필</a></li>
+						<li class="hli"><button id="logout" class="btn btn-default"
+								style="background-color: #fa507b; color: white; margin-bottom: 5px; right: 0px;"
+								data-toggle="modal" data-target="#login">로그아웃</button></li>
+						<a
+							style="float: right; font-size: 175%; padding-left: 10px; color: black;"
+							data-toggle="modal" data-target="#mypage"> <span
+							class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</a>
+					</ul>
+				</span>
+
+
+			</div>
+
+
+		</header>
+
+
+		<!-- 회원:마이페이지 -->
+		<div class="modal fade" id="mypage" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true"
+			style="position: center;">
+			<div class="modal-dialog joinmodal">
+				<div class="modal-content"
+					style="width: 60%; height: 95%; position: center;">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel"
+							style="text-align: center">
+							<b>내 정보 변경</b>
+						</h4>
+					</div>
+
+					<div class="modal-body">
+						<div style="vertical-align: top; width: 130%;">
+							<div style="text-align: center; padding-top: 3%;">
+
+								<form class="form-horizontal">
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-3 control-label">닉네임</label>
+										<div class="col-sm-6">
+											<input type="email" class="form-control"
+												id="inputNick_change" placeholder="변경할 닉네임">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">비밀번호</label>
+										<div class="col-sm-6">
+											<input type="password" class="form-control"
+												id="inputPassword_change" placeholder="변경할 비밀번호">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">비밀번호확인</label>
+										<div class="col-sm-6">
+											<input type="password" class="form-control"
+												id="inputPassword_change" placeholder="변경할 비밀번호 확인">
+										</div>
+									</div>
+
+
+								</form>
+
+							</div>
+
+
+
+						</div>
+					</div>
+
+
+					<div class="modal-footer" style="bottom: 2%;">
+						<button type="button" class="btn btn-default"
+							style="background-color: #fa507b; color: white;"
+							data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-default"
+							style="background-color: #fa507b; color: white;">저장</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  end of header -->
+
+
+		<div class="outer-wrapper">
+
+
+			<section class="top">
+				<a href="board.html" class="btn btn-info">목록</a>
+				<button type="button" class="btn btn-info bit-new" id="add-btn">추가</button>
+				<a><span class="glyphicon glyphicon-chevron-left"></span></a> <span
+					class="post_option_page">312/333</span> <a><span
+					class="glyphicon glyphicon-chevron-right"></span></a>
+			</section>
+			<!-- 상단 -->
+
+
+			<form class="form-horizontal">
+
+				<!-- 				<div class="form-group bit-view">
+    <label class="col-sm-2 control-label">번호</label>
+    <div class="col-sm-10">
+      <p class="form-control-static" id="fi-BdNo"></p>
+    </div>
+  </div>  -->
+
+				<div class="form-group">
+					<label for="fi-title"></label>
+					<div class="col-sm-7">
+						<h1>
+							<input type="text" id="fi-title"
+								style="border: 0px; margin-top: 5%; width: 150%;"
+								placeholder="제목">
+						</h1>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="fi-date"></label>
+					<div class="col-sm-7">
+						<input type="text" id="fi-date" style="border: 0px;"
+							placeholder="등록일">
+					</div>
+				</div>
+
+
+
+				<div class="form-group">
+
+					<label for="fi-content"></label>
+					<div class="col-sm-11">
+
+						<img id="photo"> <img id="photo1"> <br>
+
+						<textarea rows="15" cols="150" id="fi-content"
+							style="border: 0px; font-size: large; font-family: initial;"></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="fi-photoupload" class="col-sm-2 control-label">사진</label>
+					<div class="col-sm-4">
+						<input id="fi-photoupload" class="form-control" type="file"
+							name="files" multiple> <input id="fi-filenames"
+							name="filenames">
+					</div>
+					<br>
+					<br>
+					<div id='images-div'></div>
+				</div>
+
+
+
+
+				<!-- 				
+		사진: <input id="fileupload" type="file" name="files" multiple><br>
+		<button id='upload-btn' type='button'>등록</button>
+		<div id='images-div'></div> -->
+
+			</form>
+
+			<span style="float: right;">공유하기 &nbsp; </span> <a
+				href="https://twitter.com/share"><img
+				src="../../images/twIcon.png" style="width: 5%; float: right;" /></a> <a
+				href="javascript:shareStory()"><img
+				src="../../images/kakao_mobile.png"
+				style="width: 5%; float: right; margin-right: 2%;"></a>
+		</div>
+
+		<section class="post_detail"></section>
+
+		<div class="bottom">
+			<!-- <a id="del-btn">삭제하기</a> &nbsp;&nbsp; <a>수정하기</a> -->
+			<a href="#" class="bit-view" id="upd-btn" style="font-size: 150%;">변경
+			</a> <a href="#" class="bit-view" id="del-btn" style="font-size: 150%;">삭제</a>
+		</div>
+
+
+
+
+
+		<footer id="footer">
+			<script>
+				$("#footer").load("../footer.html");
+			</script>
+		</footer>
+
+
+		<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script
+			src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+		<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+		<script
+			src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+		<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script
+			src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+		<script
+			src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+		<script
+			src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script
+			src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+		<script
+			src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+		<script
+			src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+		<script
+			src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+		<script src="../../js/view.js"></script>
+
+		<!-- 트위터공유하기버튼 -->
+		<script>
+			!function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+						.test(d.location) ? 'http' : 'https';
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = p + '://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
+		</script>
+
+		<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+		<script>
+Kakao.init('e13d714f44c1e6d96b3ef7d13426541b');
+function shareStory() {
+  Kakao.Story.open({
+    url: 'http://localhost:8080',
+    text: '카카오검색에서 카카오스토리를! #카카오스토리 #카카오검색 :)'
+  });
+}
+</script> -->
+
+		<!-- 
+<script src="../../js/view.js"></script>
+	<script id="view-template" type="text/x-handlebars-template">
+
+
+				
+				{{#each list}}
+						<img src="/fanduck/upload/{{photoList}}.png" style="width:100%; heigh:auto; margin-bottom:3%;">
+						
+					</div>
+				{{/each}}
+	</script> -->
+</body>
+
+
+
+</html>

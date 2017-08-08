@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  <html xmlns:fb="http://ogp.me/ns/fb#">-->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FanDuck</title>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/listComp2_4.css" type="text/css" />
+<link rel="stylesheet" href="../../css/style_miya_edit.css" />
+<link rel="stylesheet" href="../../css/mypage_miya_edit.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/menu_miya_edit.css" />
+<link rel="stylesheet" href="../../css/footer.css" />
+
+<!-- <link rel="stylesheet" href="../../css/search.css"/> -->
+</head>
+
+<style>
+</style>
+
+<body>
+	<div id=frame>
+		<div class="container">
+
+			<header class="hheader">
+				<div id="logo" style="display: inline-block">
+					<a class="ha" href="index.html"><img class="himg"
+						src="../../images/logo1.png" /></a> <span id="menu">
+						<ul class="hul" style="font-size: 0.6em;">
+							<li class="hli"><a href="index4.html" class="ha" id="1"
+								style="color: black; cursor: pointer">홈</a></li>
+							<li class="hli" style="color: black" data-toggle="modal"
+								data-target="#join"><a class="ha" id="2"
+								style="color: black; cursor: pointer">프로필</a></li>
+							<li class="hli"><button id="logout" class="btn btn-default"
+									style="background-color: #fa507b; color: white; margin-bottom: 5px; right: 0px;"
+									data-toggle="modal" data-target="#login">로그아웃</button></li>
+							<a
+								style="float: right; font-size: 175%; padding-left: 10px; color: black;"
+								data-toggle="modal" data-target="#mypage"><span
+								class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+						</ul>
+					</span>
+
+
+				</div>
+
+			</header>
+
+
+			<!-- 회원:마이페이지 -->
+			<div class="modal fade" id="mypage" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true"
+				style="position: center;">
+				<div class="modal-dialog joinmodal">
+					<div class="modal-content"
+						style="width: 60%; height: 95%; position: center;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel"
+								style="text-align: center">
+								<b>내 정보 변경</b>
+							</h4>
+						</div>
+
+						<div class="modal-body">
+							<div style="vertical-align: top; width: 130%;">
+								<div style="text-align: center; padding-top: 3%;">
+
+									<form class="form-horizontal">
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-3 control-label">닉네임</label>
+											<div class="col-sm-6">
+												<input type="email" class="form-control"
+													id="inputNick_change" placeholder="변경할 닉네임">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPassword3" class="col-sm-3 control-label">비밀번호</label>
+											<div class="col-sm-6">
+												<input type="password" class="form-control"
+													id="inputPassword_change" placeholder="변경할 비밀번호">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPassword3" class="col-sm-3 control-label">비밀번호확인</label>
+											<div class="col-sm-6">
+												<input type="password" class="form-control"
+													id="inputPassword_change" placeholder="변경할 비밀번호 확인">
+											</div>
+										</div>
+
+
+									</form>
+
+								</div>
+
+
+
+							</div>
+						</div>
+
+
+						<div class="modal-footer" style="bottom: 2%;">
+							<button type="button" class="btn btn-default"
+								style="background-color: #fa507b; color: white;"
+								data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-default"
+								style="background-color: #fa507b; color: white;">저장</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  end of header -->
+
+
+
+
+
+
+
+
+			<div class="MP_profile">
+				<img class="MP_profile_photo" src="../../images/emma2.jpg">
+				<h5>
+					<br>You make me smile, emma.<br> modal 글쓰기 적용
+				</h5>
+			</div>
+			<!-- MP_profile -->
+
+			<!-- 	<section class="search_write">
+		<input type="text" class="form-control" placeholder="검색">search -->
+
+
+			<form class="s" style="margin: 0px auto 50px auto;">
+				<input type="text" class="form-control" id="value" value="">
+				<button type="button" class="btn btn-default"
+					style="margin-left: 0px" id="btn-search">검색 하기</button>
+			</form>
+			<a href="view.html"><button type="button" class="btn btn-info"
+					style="margin-left: 90%; margin-bottom: 5%;">글쓰기</button></a>
+
+
+
+			<!-- </section> -->
+
+
+
+			<div class="outer-container">
+				<div id="columns" class="grid cs-style-2">
+					<div class="list-box">
+
+						<div id="board-ex"></div>
+						<div id="board-exx"></div>
+
+					</div>
+
+
+				</div>
+				<!-- columns -->
+			</div>
+			<!--outer-container-->
+		</div>
+		<!--container-->
+	</div>
+	<!--frame-->
+
+
+	<footer id="footer">
+		<a> © 2017<a class="ha"
+			style="color: #0a93a6; text-decoration: none; width: 100%;" href="#">
+				김미연 신선아 이유운</a>&nbsp; Fanduck
+		</a>
+	</footer>
+
+
+
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../../js/myboard_handlebars.js"></script>
+	<script id="board-template" type="text/x-handlebars-template">
+
+
+				<div>
+					<div class="share-icons">
+					</div>
+				{{#each list}}
+					<div class="row list-content" data-no='{{bdNo}}'>
+						
+						
+						<img src="/fanduck/upload/{{photoList}}.png" style="width:100%; heigh:auto; margin-bottom:3%;">
+						<a href="https://twitter.com/share"><img src="../../images/twIcon.png" style="width:5%; float: right;"/></a>
+						<a href="javascript:shareStory()"><img src="../../images/kakao_mobile.png"  style="width:5%; float: right; margin-right:2%;"></a>
+						<a><img src="../../images/fbIcon.png" style="width:5%; float: right; margin-right:2%;"/></a>
+										<br><br><br>
+						
+						<a class='detail-link' href='#' data-no='{{bdNo}}'><p style="font-size:140%; font-weight:bold;">{{bdTitle}}</p></a>
+						<p>{{bdContent}}</p>
+					</div>
+				{{/each}}
+
+				
+				{{#each searchList}}
+					<div class="row list-content">
+						
+						
+						<img src="/fanduck/upload/{{photoList}}.png" style="width:100%; heigh:auto; margin-bottom:3%;">
+						<a href="https://twitter.com/share"><img src="../../images/twIcon.png" style="width:5%; float: right;"/></a>
+						<a><img src="../../images/kakao_mobile.png" style="width:5%; float: right; margin-right:2%;"/></a>
+						<a><img src="../../images/fbIcon.png" style="width:5%; float: right; margin-right:2%;"/></a>
+
+										<br><br><br>
+						
+						<a class='detail-link' href='#' data-no='{{bdNo}}'><p style="font-size:140%; font-weight:bold;">{{bdTitle}}</p></a>
+						<p>{{bdContent}}</p>
+					</div>
+
+				{{/each}}
+ 			</div>
+	</script>
+
+	<!-- <script src="../../js/view.js"></script> -->
+
+
+
+	<!-- 트위터공유하기버튼 -->
+	<script>
+		!function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+					: 'https';
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = p + '://platform.twitter.com/widgets.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, 'script', 'twitter-wjs');
+	</script>
+
+
+	<!-- 카카오톡 공유하기 버튼 -->
+	<script>
+Kakao.init('e13d714f44c1e6d96b3ef7d13426541b');
+function shareStory() {
+  Kakao.Story.open({
+    url: 'http://localhost:8080',
+    text: '카카오검색에서 카카오스토리를! #카카오스토리 #카카오검색 :)'
+  });
+}
+</script>
+
+	<!-- 
+
+  	
+/*   	
+  	(function (d,s,id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementsById(id)) return;
+  		js = d.createElecemts(s); js.id = id;
+  		js.src = "//developers.kakao.com/sdk/js/kakao.story.min.js";
+  		fjs.parentNode.insertBefore(js, fjs);
+  	} (document, 'script', 'kakao-js-sdk')); */ -->
+
+
+
+</body>
+</html>
+
+
