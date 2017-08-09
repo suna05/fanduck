@@ -11,8 +11,10 @@ public class Board {
   String bdPhoto;
   
   List<String> photoList;
+
   
-  
+    
+
   public void setPhotoList(List<String> photoList) {
     this.photoList = photoList;
   }
