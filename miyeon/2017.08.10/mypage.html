@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../../css/mypage.css"/>
+  <link rel="stylesheet" href="../../css/font-size.css"/>
+  <link rel="stylesheet" href="../../css/footer.css"/>
+  <link rel="stylesheet" href="../../css/calendar.css"/>
+  <link rel="stylesheet" href="../../css/my-profile.css"/>
+  <link rel="stylesheet" href="../../css/show-filmo.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+  <link rel="stylesheet" type="text/css" href="../../node_modules/sweetalert/dist/sweetalert.css">
+</head>
+<style>
+body {
+
+}
+html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+
+.thumbnail > a {
+	color:black;
+}
+</style>
+<body>
+  <header>
+    <div class="container-fluid" style="background-color:#424558;">
+      <div class="container">
+      <div id="logo" style="display:inline-block">
+        <a href="../../main.html"><img class="img-brand" src="../../images/logo1.png"/></a>
+          <span id="menu">
+            <ul>
+              <li><button id="menu-mypage" class="btn btn-default">목록</button></li>
+              <li><a id="mainpage" href="#">상세게시판</a></li>
+              <li><a id="gralley" href="#">갤러리</a></li>
+               <li><button id="logout1" class="btn btn-primary">로그아웃</button></li>
+              <a id="update-profile" data-toggle="modal" data-target="#mypage">
+                <span onclick="updateMember()" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+  	<div class="container" style="padding: 0 -15%; margin-bottom:2%;">
+   	  <figure class="snip1336" style="width: 25%;">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg"
+          alt="sample69" />
+        <figcaption>
+
+          <div class="my-intro">
+            <script id="intro-template" type="text/x-handlebars-template">
+     		<!--<img src="{{path}}" alt="profile-sample5" class="profile" />-->
+          <div class="profileimage" style="background-image: url('{{path}}')"></div>
+       		<h2>{{nickname}}</h2>
+       		<p>{{selfIntro}}</p>
+ 			</script>
+      	  </div>
+    </figcaption>
+  </figure>
+
+    <div class="wrapper">
+    <div id="calendar"></div>
+    <div id="calendar_data">
+  	
+    <script id="alarm-template" type="text/x-handlebars-template">
+	<div style="text-align:center; background-color:#424558; color:white; font-size:1.2em; margin-bottom:3px">알림</div>
+    {{#each list}}
+	{{#readYN ifRead}}
+	{{#openDate mvDay}}
+	  <div class="alarmList" style="padding-right:2px; padding-left:1px">
+	  <p class="getMovieDay" id='alarmText{{fpCode}}' style="box-shadow:5px 3px 10px; padding:0px 20px 0px 20px; ">
+      <span class="glyphicon glyphicon-volume-up" style="font-size:1.2em; right:5px"></span>
+		{{fpName}} 님이 참여한 영화 <br> &nbsp;&nbsp;&nbsp;&nbsp;{{mvTitle}}가(이) <br>&nbsp;&nbsp;&nbsp;&nbsp;{{mvDay}}에 개봉합니다!    
+	  <span class="glyphicon glyphicon-remove" style="top:1px; margin-left:15px; cursor:pointer" 
+			aria-hidden="true" onclick="deleteCastMember({{mno}},'{{mvNo}}', '{{fpCode}}', '{{mvDay}}')" ></span></p> 
+	  </div>
+	{{/openDate}}
+	{{/readYN}}
+    {{/each}}
+	
+	</script>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+ <!--  -->
+  <div class="container-fluid" style="padding-right:1.7%;">
+    <div class="container article-menu">
+      <div class="text-center article-bar" >
+        <h2 id="article-text">영화인 목록</h2>
+      <nav class="text-center article-bar " id="filter">
+        <a class="type-tag" href="#" style="margin-right: 4%; font-size:1.1em; font-weight:bold;">배우</a>
+        <a class="type-tag" href="#" style="font-size:1.1em; font-weight:bold;">감독</a>
+      </nav>
+    </div>
+   </div>
+  <div class="container" style="max-width:1100px; border-bottom:1px solid gainsboro;">
+  <button id="mp-addBtn" class="btn btn-primary" data-toggle="modal" data-target="#mp-add" style="">추가</button>
+  </div>
+  </div>
+  
+  <div class="container-fluid"  style="position:relative" >
+  <div class="container mp-list">
+  <div class="row" id="mp-array"  style="margin-bottom:200px;">
+  <!-- template 적용 -->
+  <script id="mp-template" type="text/x-handlebars-template">
+  {{#each list}}
+    <div class='col-sm-6 col-md-3 {{mpType}}' style='height:380px; margin-bottom:15%;' id="thumbnail{{mpNo}}">
+      <div class="thumbnail"  style='background-color:ivory; box-shadow:7px 7px 15px'>
+		<a href='#' class='detail-link' data-no='{{mpNo}}' style='cursor:pointer;'>
+        <img src='{{mpPhotopath}}' alt='...' class='img-responsive'>
+		  <div style='border-bottom:1px solid lightgray; margin-bottom:20px;'>
+          <h3 class='mp-font' style='text-align:center;'>{{mpNickname}}</h3>
+		  <h4 class='mpType' style='text-align:center;  color:gray; font-weight:normal;'>{{mpType}}</h3>
+		  </div>
+		</a>
+        <div class='caption'>
+          <div class='' style='margin:10px 0px;'>
+            <span class='glyphicon glyphicon-film' style='color:gray;'></span>
+  			<input style="border:none" type="checkbox" class="read-more-state " id="post-{{mpNo}}" />
+  			<label for="post-{{mpNo}}" class="read-more-trigger"></label>
+			<div class="read-more-wrap">
+            <span class="read-more-target" style='color:gray;'>{{mpFilmo}}</span>
+			</div>
+          </div>
+          <p>{{mpContent}}</p>
+		  <div style="margin-bottom:5%; position:relative;" >
+			<button class="btn btn-warning btn-xs del-btn" onclick="deletePerson({{mno}}, {{mpNo}}, '{{mpNickname}}', '{{mpCode}}')" 
+					style="margin-left:170px;">보내주기</button>
+	      </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  </script>
+  </div>
+  <footer id="footer"></footer></div>
+  </div>
+   
+
+  <!-- 내 정보 변경 -->
+  <div class="modal fade" id="mypage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+          	<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel" 
+            style="text-align:center; font-size:1.5em;">
+            <b>내 정보 변경</b>
+          </h4>
+        </div>
+        <div class="modal-body ui-front">
+          <div style="vertical-align:top; width:130%;">
+            <div style="text-align:center; padding-top:3%;">
+            
+              <form action="" class="form-horizontal">
+                <div class="form-group">
+                <input id="img-upload" type="file" name="files" style="display: none;">
+             	 <div class="bit-view"class="img-bar" id="fileupload-myinfo" style="margin-right: 10%; margin-bottom: 1%;">
+             	 <!-- handlebars 템플릿이 attend 되는 곳 -->
+	            </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="bottom:2%;">
+          <button type="button" class="btn btn-default" style="background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+          <button id="myupload-btn" type="button" class="btn btn-default" style="background-color:#fa507b; color:white;">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script id="fileupload-myinfo-template" type="text/x-handlebars-template">
+<div style="width:90%">
+<label for="img-upload" style="cursor: pointer" id="images-div2">
+  <img id="preview-img" src="{{path}}" style="text-align: center; vertical-align: middle;">  
+</label>
+<div>
+<label for="img-upload" style="margin-top:6%; cursor:pointer">
+  <p id="myimg-add" style="font-weight: bold; color: steelblue;">사진등록</p>
+</label>
+</div>
+</div>
+ <div class="form-group">
+   <label for="inputEmail3" class="col-sm-3 control-label">아이디</label>
+   <div class="col-sm-6">
+       <p style="text-align: left;" class="form-control-static" id="fi-id">{{id}}</p>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <label for="inputEmail3" class="col-sm-3 control-label">닉네임</label>
+   <div class="col-sm-6">
+     <input type="text" class="form-control" id="fi-nickname" value="{{nickname}}"
+       placeholder="변경할 닉네임">
+   </div>
+ </div>
+
+ <div id="social-hidden1" class="form-group">
+   <label for="inputPassword3" class="col-sm-3 control-label">비밀번호</label>
+   <div class="col-sm-6">
+     <input type="password" class="form-control" id="fi-password"
+       placeholder="변경할 비밀번호">
+   </div>
+ </div>
+
+ <div id="social-hidden2" class="form-group">
+   <label for="inputPassword3" class="col-sm-3 control-label">비밀번호확인</label>
+   <div class="col-sm-6">
+     <input type="password" class="form-control" id="fi-password-double-check"
+        placeholder="비밀번호 확인">
+   </div>
+ </div>
+
+ <div class="form-group">
+   <label for="inputEmail3" class="col-sm-3 control-label">소개</label>
+   <div class="col-sm-6">
+     <textarea class="form-control" id="fi-intro"
+       >{{selfIntro}}</textarea>
+   </div>
+ </div>
+</script>
+  
+  <!-- 영화인 추가 -->
+  <div class="modal fade" id="mp-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position:center;">
+    <div class="modal-dialog joinmodal">
+      <div class="modal-content" id="mp-modal-cotent">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center; font-size:1.5em;"><b>영화인 추가</b></h4>
+        </div>
+        <div class="modal-body ui-front">
+          <div style="vertical-align:top; width:130%; height:600px;">
+            <div style="text-align:center; padding-top:3%;">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <div class="img-bar" style="margin-right:23%;">
+                   <label for="fileupload" style="cursor:pointer" id="images-div" >
+                    <img src="../../images/default.jpg">
+                   </label>
+                   <div> 
+                   <label for="fileupload" style="margin-top:6%; cursor:pointer">
+                    <p id="img-add" style="font-weight:bold; color:steelblue;">사진 등록</p>
+                   </label>
+                   </div>
+                  <input id="fileupload" type="file" name="files" style="display:none;">
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="ui-widget">
+                  <label for="tags" class="col-sm-3 control-label" style="margin-left:-12px;">영화인 이름</label>
+                  <div class="col-sm-6">
+                      <input class="form-control" id="tags" placeholder="영화인 이름을 검색하세요!" style="margin-top:3%;">
+                      <input class="hidden-info" type="hidden">
+                    </div>
+                   </div>
+                  </div>
+                <div class="form-group">
+                  <label for="profile-text" class="col-sm-3 control-label" style="margin-left:-12px; font-size:1.1em">영화인 소개</label>
+                  <div class="col-sm-6">
+                    <textarea class="update-content form-control" id="mp-content"
+                              type="text" placeholder="소개글"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="bottom:2%;">
+          <button type="button" id="close-btn" class="btn btn-default" style="margin-left:10px; float:right; background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+          <button type="button" id="upload-btn" class="btn btn-default" style="background-color:#fa507b; color:white;">추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../js/userinfo2.js"></script>
+<script src="../../js/myinfo.js"></script> 
+<script src="../../js/myinfo_edit.js"></script>
+<script src="../../js/mypage.js"></script>
+<script src="../../js/calendar.js"></script>
+<script src="../../js/input-auto.js"></script>
+<script src="../../js/mp-fileupload.js"></script>
+<script src="../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../../js/movie&person-detail.js"></script>
+<script src="../../js/delete.js"></script>
+<script>
+  var MovieOpenDay = [];
+
+  $('#footer').load('footer.html')
+  $('#close-btn').click(function() {
+  	$('#mp-add').modal('hide')
+  })
+  
+  $("#mp-add").on("hidden.bs.modal", function(){
+    $("#img-uploaded").html("")
+  })
+  
+  $('.type-tag').on('click', '.type-tag', function(event) {
+	  $(function(){
+		   	var elem = $('#mp-array').find('div').sort(sortMe);
+		   	$('#mp-array').append(elem);
+		  });
+
+		  function sortMe(a, b) {
+		    return a.className < b.className;
+		  }  
+  })
+  
+</script> 
+</body>
+</html>
