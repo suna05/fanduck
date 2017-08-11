@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+<style>
+    BODY {
+      width : 280px;
+      min-height:450px;
+    }
+</style>
+</head>
+<body>
+  <div style="padding:10px 5px 10px 5px;  background-color:#fa507b">
+    <h4 style="line-height: 5px; text-align:center; color:white;">영화인 등록</h4>
+  </div>
+  <div class="form-group">
+    <div class="img-bar" style="text-align:center; margin-top:5%;">
+     <label for="chrome-upload" style="cursor:pointer" id="images-div">
+      <img src="../../images/default.jpg" style="width:150px; height:150px">
+     </label>
+     <div>
+     <label for="chrome-upload" style="margin-top:6%; cursor:pointer">
+      <p id="img-add" style="font-weight:bold; color:steelblue;">사진 등록</p>
+     </label>
+     </div>
+     </div>
+    <input id="chrome-upload" type="file" name="files" style="display:none;">
+    <div class="ui-widget">
+      <label for="person-tags" class="col-sm-3">영화인 이름</label>
+      <div class="col-sm-6">
+          <input class="form-control" id="person-tags" placeholder="영화인 이름을 검색하세요!" style="margin-top:3%;">
+          <input class="chrome-hidden-info" type="hidden">
+        </div>
+    </div>
+    <button type="button" id="close-btn" class="btn btn-default" style="margin-left:10px; float:right; background-color:#fa507b; color:white;" data-dismiss="modal" >취소</button>
+    <button onclick="check()" type="button" id="upload-btn" class="btn btn-default" style="background-color:#fa507b; color:white;">추가</button>
+  </div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<script src="mp-fileupload.js"></script>
+<script>
+var xhr = new XMLHttpRequest()
+xhr.onreadystatechange = function() {
+  if (xhr.readyState < 4) {
+	  return
+  }
+  var getMoviePersons = JSON.parse(xhr.responseText)
+  
+  console.log('access success!')
+  
+  var list = getMoviePersons.peopleListResult.peopleList
+  console.log(list)   
+  
+}
+
+xhr.open('get', 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=b0cac97aa508433ca9835e54ab51d7cd&itemPerPage=500', true)
+xhr.send()
+
+function check() {
+	alert('check!')
+}
+</script>
+</body>
+</html>
