@@ -1,0 +1,8 @@
+선아
+
+사진 클릭시 팝업창으로
+이미지 크게 나타내는 Magnifig pupup reposiroty
+
+https://github.com/dimsemenov/Magnific-Popup
+
+==>  npm install magnific-popup
