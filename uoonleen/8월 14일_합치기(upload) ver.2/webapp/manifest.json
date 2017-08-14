@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "Hello_World",
+    "description": "Print Hello, World! message",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "images/logo2.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+     "activeTab",
+     "http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=b0cac97aa508433ca9835e54ab51d7cd&itemPerPage=500",
+     "http://www.kobis.or.kr/"
+   ],
+   
+   "background": {
+        "scripts": ["background.js"]
+    }
+}
