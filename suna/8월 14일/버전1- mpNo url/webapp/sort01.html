@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="container">
+    <div>1</div>
+    <div class="red">2</div>
+    <div class="red">3</div>
+    <div class="blue">4</div>
+    <div>5</div>
+    <div class="red">6</div>
+    <div class="blue">7</div>
+</div>
+<button class="sort">SORT</button>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+
+$('.sort').click(function(){
+	$('div.blue').wrapAll('<div class="parent1" />');
+	$('div.red').wrapAll('<div class="parent2" />');
+	 var elem = $('#container').find('div').sort(doSort);
+	 console.log($('#container').find('div'))
+	 console.log(elem)
+	 $('#container').append(elem);
+})
+	
+function doSort(a, b) {
+	 return a.className < b.className;
+}
+</script>
+</body>
+</html>
