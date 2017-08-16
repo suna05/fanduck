@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, button{
+  font-family: 'Helvetica Neue', arial, sans-serif;
+}
+
+.controls{
+  padding: 2%;
+  background: #333;
+  color: #eee;
+}
+
+label{
+  font-weight: 300;
+  margin: 0 .4em 0 0;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: .5em;
+}
+
+button{
+  display: inline-block;
+  padding: .4em .8em;
+  background: #666;
+  border: 0;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.active{
+  background: #68b8c4;
+}
+
+button:focus{
+  outline: 0 none;
+}
+
+button + label{
+  margin-left: 1em;
+}
+
+.container{
+  padding: 2% 2% 0;
+  text-align: justify;
+  font-size: 0.1px;
+  background: #68b8c4;
+  
+  -webkit-backface-visibility: hidden;
+}
+
+.container:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.container .mix,
+.container .gap{
+  display: inline-block;
+  width: 49%;
+}
+
+.container .mix{
+  text-align: left;
+  background: #03899c;
+  margin-bottom: 2%;
+  display: none;
+}
+
+.container .mix.category-1{
+  border-top: 2px solid limegreen;
+}
+
+.container .mix.category-2{
+  border-top: 2px solid yellow;
+}
+
+.container .mix:after{
+  content: attr(data-myorder);
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 4% 6%;
+  font-weight: 700;
+}
+
+.container .mix:before{
+  content: '';
+  display: inline-block;
+  padding-top: 60%;
+}
+
+@media all and (min-width: 420px){
+  .container .mix,
+  .container .gap{
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 640px){
+  .container .mix,
+  .container .gap{
+    width: 23.5%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="controls">
+  <label>Filter:</label>
+  
+  <button class="filter" data-filter="all">All</button>
+  <button class="filter" data-filter=".배우">Category 1</button>
+  <button class="filter active" data-filter=".감독">Category 2</button>
+  
+  <label>Sort:</label>
+  
+  <button class="sort" data-sort="myorder:asc">Asc</button>
+  <button class="sort" data-sort="myorder:desc">Desc</button>
+</div>
+
+<div class="my-shuffle-container">
+<div class='col-sm-6 col-md-3 mix 배우'  style='height:380px; margin-bottom:15%;' id="thumbnail{{mpNo}}">
+      <div class="thumbnail"  style='background-color:ivory; box-shadow:7px 7px 15px'>
+		<a href='#' class='detail-link' data-no='{{mpNo}}' style='cursor:pointer;'>
+        <img src='images/송강호.jpg' alt='...' class='img-responsive'>
+		  <div style='border-bottom:1px solid lightgray; margin-bottom:20px;'>
+          <h3 class='mp-font' style='text-align:center;'>{{mpNickname}}</h3>
+		  <h4 class='mpType' style='text-align:center;  color:gray; font-weight:normal;'>{{mpType}}</h3>
+		  </div>
+		</a>
+        <div class='caption'>
+          <div class='' style='margin:10px 0px;'>
+            <span class='glyphicon glyphicon-film' style='color:gray;'></span>
+  			<input style="border:none" type="checkbox" class="read-more-state " id="post-{{mpNo}}" />
+  			<label for="post-{{mpNo}}" class="read-more-trigger"></label>
+			<div class="read-more-wrap">
+            <span class="read-more-target" style='color:gray;'>{{mpFilmo}}</span>
+			</div>
+          </div>
+          <p>{{mpContent}}</p>
+		  <div style="margin-bottom:5%; position:relative;" >
+			<button class="btn btn-warning btn-xs del-btn" onclick="deletePerson({{mno}}, {{mpNo}}, '{{mpNickname}}', '{{mpCode}}')" 
+					style="margin-left:170px;">보내주기</button>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-sm-6 col-md-3 mix 감독'  style='height:380px; margin-bottom:15%;' id="thumbnail{{mpNo}}">
+      <div class="thumbnail"  style='background-color:ivory; box-shadow:7px 7px 15px'>
+		<a href='#' class='detail-link' data-no='{{mpNo}}' style='cursor:pointer;'>
+        <img src='images/kimhyesu.jpg' alt='...' class='img-responsive'>
+		  <div style='border-bottom:1px solid lightgray; margin-bottom:20px;'>
+          <h3 class='mp-font' style='text-align:center;'>{{mpNickname}}</h3>
+		  <h4 class='mpType' style='text-align:center;  color:gray; font-weight:normal;'>{{mpType}}</h3>
+		  </div>
+		</a>
+        <div class='caption'>
+          <div class='' style='margin:10px 0px;'>
+            <span class='glyphicon glyphicon-film' style='color:gray;'></span>
+  			<input style="border:none" type="checkbox" class="read-more-state " id="post-{{mpNo}}" />
+  			<label for="post-{{mpNo}}" class="read-more-trigger"></label>
+			<div class="read-more-wrap">
+            <span class="read-more-target" style='color:gray;'>{{mpFilmo}}</span>
+			</div>
+          </div>
+          <p>{{mpContent}}</p>
+		  <div style="margin-bottom:5%; position:relative;" >
+			<button class="btn btn-warning btn-xs del-btn" onclick="deletePerson({{mno}}, {{mpNo}}, '{{mpNickname}}', '{{mpCode}}')" 
+					style="margin-left:170px;">보내주기</button>
+	      </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-sm-6 col-md-3 mix 배우'  style='height:380px; margin-bottom:15%;' id="thumbnail{{mpNo}}">
+      <div class="thumbnail"  style='background-color:ivory; box-shadow:7px 7px 15px'>
+		<a href='#' class='detail-link' data-no='{{mpNo}}' style='cursor:pointer;'>
+        <img src='images/L.jpg' alt='...' class='img-responsive'>
+		  <div style='border-bottom:1px solid lightgray; margin-bottom:20px;'>
+          <h3 class='mp-font' style='text-align:center;'>{{mpNickname}}</h3>
+		  <h4 class='mpType' style='text-align:center;  color:gray; font-weight:normal;'>{{mpType}}</h3>
+		  </div>
+		</a>
+        <div class='caption'>
+          <div class='' style='margin:10px 0px;'>
+            <span class='glyphicon glyphicon-film' style='color:gray;'></span>
+  			<input style="border:none" type="checkbox" class="read-more-state " id="post-{{mpNo}}" />
+  			<label for="post-{{mpNo}}" class="read-more-trigger"></label>
+			<div class="read-more-wrap">
+            <span class="read-more-target" style='color:gray;'>{{mpFilmo}}</span>
+			</div>
+          </div>
+          <p>{{mpContent}}</p>
+		  <div style="margin-bottom:5%; position:relative;" >
+			<button class="btn btn-warning btn-xs del-btn" onclick="deletePerson({{mno}}, {{mpNo}}, '{{mpNickname}}', '{{mpCode}}')" 
+					style="margin-left:170px;">보내주기</button>
+	      </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/mixitup/dist/mixitup.min.js"></script>
+<script type="text/javascript">
+var mixer = mixitup('.my-shuffle-container');
+</script>
+
+</body>
+</html>
