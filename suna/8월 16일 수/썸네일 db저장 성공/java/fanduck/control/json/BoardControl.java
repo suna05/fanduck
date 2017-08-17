@@ -1,4 +1,4 @@
-package fanduck.control.json;
+﻿package fanduck.control.json;
 
 import java.io.File;
 import java.util.ArrayList;

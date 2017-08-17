@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fanduck.dao.BoardDao">
+
+	<resultMap type="board" id="boardMap">
+		<id column="bd_no" property="bdNo" />
+		<result column="mp_no" property="mpNo" />
+		<result column="titl" property="bdTitle" />
+		<result column="text" property="bdContent" />
+		<result column="rdt" property="bdRegister" />
+		<result column="photo" property="bdPhoto" />
+		<result column="list1" property="bdList1" />
+		<result column="list2" property="bdList2" />
+		<result column="list3" property="bdList3" />
+		<result column="list4" property="bdList4" />
+		<result column="list5" property="bdList5" />
+		<result column="list6" property="bdList6" />
+		<result column="list7" property="bdList7" />
+		<result column="list8" property="bdList8" />
+		<result column="list9" property="bdList9" />
+		
+		<result column="bd_phot" property="bpPhoto" /> 
+ 		<collection property="photoList" ofType="string"> 
+			<result column="bd_path"/> 
+		</collection>  
+	</resultMap>
+	
+<!-- 	<resultMap type="board_phots" id="boardPhotoMap">
+		<id column="bd_phot" property="bdPhotoNo"/>
+		<result column="bd_path" property="bdPhotoPath"/>
+	</resultMap> -->
+
+ 	<select id="selectList" resultMap="boardMap" parameterType="map">
+		select b.bd_no, b.mp_no, b.titl, b.text, b.rdt, b.photo, b.list1, b.list2, b.list3, b.list4, b.list5, b.list6, b.list7, b.list8, b.list9, p.bd_path
+		from board b
+		left outer join board_phots p
+		on b.bd_no = p.bd_no 
+		where b.mp_no= #{mpNo}
+		order by b.bd_no asc
+	</select> 
+	
+  
+  
+<!--   <insert id="insert" parameterType="board"
+ 					useGeneratedKeys="true" keyColumn="bd_no" keyProperty="bdNo">
+		insert into board(mp_no, titl, text, rdt, photo, list1, list2, list3, list4, list5, list6, list7, list8, list9) 
+		values(#{mpNo}, #{bdTitle},
+		#{bdContent}, CURRENT_DATE(), #{bdPhoto}, #{bdList1}, #{bdList2}, #{bdList3}, #{bdList4}, #{bdList5}, #{bdList6}, #{bdList7}, #{bdList8}, #{bdList9})
+	</insert> -->
+ 
+ 
+   <insert id="insert" parameterType="board"
+ 					useGeneratedKeys="true" keyColumn="bd_no" keyProperty="bdNo">
+		insert into board(mp_no, titl, text, rdt, photo, list1) 
+		values(#{mpNo}, #{bdTitle}, #{bdContent}, CURRENT_DATE(), #{bdPhoto}, 
+		       #{bdList1})
+	</insert>
+  
+ 
+<!-- 	<update id="update" parameterType="board"
+	useGeneratedKeys="true" keyColumn="bd_no" keyProperty="bdNo">
+		update board 
+		set
+			titl=#{bdTitle},
+			text=#{bdContent},
+			photo=#{bdPhoto}
+
+		where bd_no=#{bdNo}
+	</update>
+	 -->
+	
+ 	<update id="update" parameterType="board"
+ 	useGeneratedKeys="true" keyColumn="bd_no" keyProperty="bdNo">
+		update board set
+			titl=#{bdTitle},
+			text=#{bdContent},
+			photo=#{bdPhoto},
+			list1 #{bdList1}
+		where bd_no=#{bdNo}
+	</update> 
+	
+	
+	<delete id="delete" parameterType="int">
+		delete from board where bd_no = #{bdNo}
+	</delete>
+	
+	<delete id="deletePhoto" parameterType="map">
+		delete from board_phots
+		where bd_no = #{bdNo}	
+	</delete>
+
+	<insert id="insertPhoto" parameterType="map">
+		insert into board_phots(bd_no, bd_path)
+		values(#{bdNo}, #{bdPhoto})
+	</insert>
+	
+	
+	
+ 	<update id="updatePhoto" parameterType="map"
+ 	useGeneratedKeys="true" keyColumn="bd_no" keyProperty="bdNo">
+		update board_phots 
+		set bd_path = #{bdPhoto}
+		where bd_no = #{bdNo} 
+		and bd_phot = #{bpPhoto}
+	</update> 
+	
+<!-- 	<delete id="deletePhoto" parameterType="int">
+		delete from board_phots
+    where bd_no=#{bdNo}	
+	</delete> -->
+	
+
+
+
+	<select id="selectOne" resultMap="boardMap" parameterType="int">
+		<!-- 파라미터 타입을 map이 아니라 int 하나로 주기 때문에 #{memberNo}에 들어가는 별칭은 마음대로 줄 수 있다. -->
+		select b.bd_no, b.titl, b.text, b.rdt, b.photo,b.list1, b.list2, b.list3, b.list4, b.list5, b.list6, b.list7, b.list8, b.list9, p.bd_path
+		from board b
+		left outer join board_phots p
+		on b.bd_no = p.bd_no
+		where b.bd_no = #{bdNo} 
+	</select> 
+	
+	
+<!-- 		<select id="selectOne" resultMap="boardMap" parameterType="int">
+		파라미터 타입을 map이 아니라 int 하나로 주기 때문에 #{memberNo}에 들어가는 별칭은 마음대로 줄 수 있다.
+		select b.bd_no, b.titl, b.text, b.rdt, b.photo , 
+		from board b
+		where b.bd_no = #{bdNo} 
+	</select> -->
+
+
+	<select id="searchListByTitle" resultMap="boardMap" parameterType="map">
+		select b.bd_no, b.titl, b.text, b.photo, p.bd_path
+		from board b
+	 	left outer join board_phots p
+		on b.bd_no = p.bd_no 
+		where titl like '%${value}%' ||
+		      text like '%${value}%'
+	<!-- 	order by bd_no desc -->
+	</select>
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
