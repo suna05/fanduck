@@ -1,0 +1,267 @@
+{
+    "extension_install": {
+        "message": "\ud655\uc7a5 \ud504\ub85c\uadf8\ub7a8 \uc124\uce58\ud558\uae30"
+    },
+    "modal_ok": {
+        "message": "\ud655\uc778"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "edit": {
+        "message": "\uc218\uc815"
+    },
+    "exp": {
+        "message": "\ub9cc\ub8cc\uc77c:"
+    },
+    "month_9": {
+        "message": "9\uc6d4"
+    },
+    "month_10": {
+        "message": "10\uc6d4"
+    },
+    "month_11": {
+        "message": "11\uc6d4"
+    },
+    "month_12": {
+        "message": "12\uc6d4"
+    },
+    "share_qrcode": {
+        "message": "QR \ucf54\ub4dc"
+    },
+    "share_device": {
+        "message": "\uae30\uae30\ub85c \uc804\uc1a1"
+    },
+    "filelist_more_desc": {
+        "message": "\u2026  \uc678 $1\uac1c \ud30c\uc77c"
+    },
+    "reset": {
+        "message": "\ucd08\uae30\ud654"
+    },
+    "exp_format": {
+        "message": "$1 $2\uc77c"
+    },
+    "month_1": {
+        "message": "1\uc6d4"
+    },
+    "month_2": {
+        "message": "2\uc6d4"
+    },
+    "month_3": {
+        "message": "3\uc6d4"
+    },
+    "month_4": {
+        "message": "4\uc6d4"
+    },
+    "month_5": {
+        "message": "5\uc6d4"
+    },
+    "month_6": {
+        "message": "6\uc6d4"
+    },
+    "month_7": {
+        "message": "7\uc6d4"
+    },
+    "month_8": {
+        "message": "8\uc6d4"
+    },
+    "size_exceed": {
+        "message": "\uc6a9\ub7c9 \ucd08\uacfc"
+    },
+    "expiration": {
+        "message": "\ub9cc\ub8cc \uc77c\uc2dc"
+    },
+    "size": {
+        "message": "\ud06c\uae30"
+    },
+    "name": {
+        "message": "\uc774\ub984"
+    },
+    "no_files": {
+        "message": "\ud30c\uc77c\uc774 \uc5c6\uc2b5\ub2c8\ub2e4"
+    },
+    "conf_profile_name": {
+        "message": "\ud504\ub85c\ud544 \ubcc0\uacbd"
+    },
+    "key": {
+        "message": "\ud0a4"
+    },
+    "error": {
+        "message": "\uc5d0\ub7ec"
+    },
+    "size_exceed_desc": {
+        "message": "<p>\ud06c\ub86c \uc571\uc740 1\ud68c \ucd5c\ub300 2GB\uc758 \ud30c\uc77c\uc744 \uc5c5\ub85c\ub4dc\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.<\/p> <p>\ud06c\ub86c \ud655\uc7a5 \ud504\ub85c\uadf8\ub7a8\uc744 \uc774\uc6a9\ud558\uba74 1\ud68c \ucd5c\ub300 10GB\uc758 \ud30c\uc77c\uc744 \uc5c5\ub85c\ub4dc\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. Gmail\uacfc Slack\uc5d0\uc11c\ub3c4 \uc190\uc27d\uac8c \ub300\uc6a9\ub7c9 \ud30c\uc77c\uc744 \ucca8\ubd80\ud560 \uc218 \uc788\ub294 \ud655\uc7a5 \ud504\ub85c\uadf8\ub7a8\uc744 \uc774\uc6a9\ud574\ubcf4\uc138\uc694!<\/p>"
+    },
+    "length_exceed_desc": {
+        "message": "<p>\ud06c\ub86c \uc571 \uc81c\ud55c\uc744 \ucd08\uacfc\ud588\uc2b5\ub2c8\ub2e4.<\/p><p>\ud06c\ub86c \ud655\uc7a5 \ud504\ub85c\uadf8\ub7a8\uc744 \uc774\uc6a9\ud558\uba74 \uc81c\ud55c \uc5c6\uc774 \ud30c\uc77c\uc744 \uc804\uc1a1\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. Gmail\uacfc Slack\uc5d0\uc11c\ub3c4 \uc190\uc27d\uac8c \ub300\uc6a9\ub7c9 \ud30c\uc77c\uc744 \ucca8\ubd80\ud560 \uc218 \uc788\ub294 \ud655\uc7a5 \ud504\ub85c\uadf8\ub7a8\uc744 \uc774\uc6a9\ud574\ubcf4\uc138\uc694!<\/p>"
+    },
+    "complete": {
+        "message": "\uc644\ub8cc"
+    },
+    "go_main": {
+        "message": "\uba54\uc778\uc73c\ub85c \uac00\uae30"
+    },
+    "go_list": {
+        "message": "\ubcf4\uad00\ud568\uc73c\ub85c \uac00\uae30"
+    },
+    "noti_copy": {
+        "message": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4."
+    },
+    "will_expire": {
+        "message": "6\uc790\ub9ac \ubcf4\uc548\ud0a4\ub294 ($1) \ud6c4\uc5d0 \ub9cc\ub8cc\ub429\ub2c8\ub2e4."
+    },
+    "push_comment": {
+        "message": "Send Anywhere\uc5d0\uc11c \ud30c\uc77c\uc744 \uc804\uc1a1\ud588\uc2b5\ub2c8\ub2e4. \ud30c\uc77c\uc744 \ubc1b\uc73c\uc2dc\uaca0\uc2b5\ub2c8\uae4c?"
+    },
+    "yes": {
+        "message": "\ub124"
+    },
+    "gcm_push_title": {
+        "message": "\uc0c8\ub85c\uc6b4 \ud30c\uc77c"
+    },
+    "no": {
+        "message": "\uc544\ub2c8\uc624"
+    },
+    "gcm_push_desc": {
+        "message": "\ud074\ub9ad\ud558\uc5ec \uc804\uc1a1 \ub300\uae30 \uc911\uc778 \ud30c\uc77c\uc744 \ud655\uc778\ud558\uc138\uc694!"
+    },
+    "to_extension": {
+        "message": "<h4>\ud06c\ub86c \uc571 \uc11c\ube44\uc2a4 \uc548\ub0b4<\/h4><p>\uc13c\ub4dc\uc560\ub2c8\uc6e8\uc5b4 \ud06c\ub86c \uc571\uc740 <a href=\"$2\" target=\"_blank\">\uad6c\uae00\uc5d0\uc11c \uacf5\uc2dd \uc9c0\uc6d0\ud558\ub294 2018\ub144 \uae4c\uc9c0<\/a>\ub9cc \uc11c\ube44\uc2a4 \ub429\ub2c8\ub2e4.<\/p><p>\uc55e\uc73c\ub85c\ub3c4 \uc13c\ub4dc\uc560\ub2c8\uc6e8\uc5b4\uc758 \uac15\ub825\ud55c \ud30c\uc77c\uc804\uc1a1 \uc11c\ube44\uc2a4\ub97c \uc990\uae30\uace0 \uc2f6\ub2e4\uba74 <a href='$store_link$' target='_blank'>\ud06c\ub86c \ud655\uc7a5\ud504\ub85c\uadf8\ub7a8<\/a>\uc744 \uc774\uc6a9\ud574\ubcf4\uc138\uc694! 1\ud68c \ucd5c\ub300 10GB\uc758 \ud30c\uc77c\uc744 \uc804\uc1a1\ud560 \uc218 \uc788\uace0 Gmail\uacfc Slack\uc5d0\uc11c\ub3c4 \uc190\uc27d\uac8c \ub300\uc6a9\ub7c9 \ud30c\uc77c\uc744 \ucca8\ubd80\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.<\/p>",
+        "placeholders": {
+            "store_link": {
+                "content": "$1"
+            }
+        }
+    },
+    "help_list01": {
+        "message": "QR \ucf54\ub4dc \uacf5\uc720"
+    },
+    "noti_delete": {
+        "message": "\uc5c5\ub85c\ub4dc\ub41c \ud30c\uc77c\uc774 \uc0ad\uc81c\ub429\ub2c8\ub2e4. \uc815\ub9d0 \uc0ad\uc81c\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?"
+    },
+    "noti_send_done": {
+        "message": "\ubcf4\ub0b4\uae30 \uc644\ub8cc"
+    },
+    "noti_save_done": {
+        "message": "\uc5c5\ub85c\ub4dc \uc644\ub8cc"
+    },
+    "noti_download_done": {
+        "message": "\ubc1b\uae30 \uc644\ub8cc"
+    },
+    "help_desc01": {
+        "message": "\uc804\uc1a1\ubc1b\uc744 \ub514\ubc14\uc774\uc2a4 \"\ubc1b\uae30\" \uba54\ub274\uc5d0 \uc5ec\uc12f \uc790\ub9ac \uc22b\uc790\ud0a4\ub97c \uc785\ub825\ud558\uba74 \uc804\uc1a1\uc774 \uc2dc\uc791\ub429\ub2c8\ub2e4."
+    },
+    "help_desc02": {
+        "message": "\uc544\ub798\uc640 \uac19\uc740 \ubc29\ubc95\uc73c\ub85c\ub3c4 \ud30c\uc77c\uc744 \uc804\uc1a1\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."
+    },
+    "help_list03": {
+        "message": "\ub514\ubc14\uc774\uc2a4\ub97c \uc120\ud0dd\ud558\uc5ec \ud478\uc2dc \ubcf4\ub0b4\uae30"
+    },
+    "already_uploading": {
+        "message": "\ud30c\uc77c \uc5c5\ub85c\ub4dc \uc911\uc785\ub2c8\ub2e4. \uc7a0\uc2dc \ud6c4\uc5d0 \ub2e4\uc2dc \uc2dc\ub3c4\ud574\uc8fc\uc138\uc694."
+    },
+    "send_files": {
+        "message": "\ubc14\ub85c \ubcf4\ub0b4\uae30"
+    },
+    "save_files": {
+        "message": "\ub9c1\ud06c \uacf5\uc720"
+    },
+    "copy_key": {
+        "message": "\ud0a4 \ubcf5\uc0ac"
+    },
+    "copy_url": {
+        "message": "URL \ubcf5\uc0ac"
+    },
+    "key_title": {
+        "message": "\uc804\uc1a1 \ub300\uae30 \uc911"
+    },
+    "upload_title": {
+        "message": "\uc5c5\ub85c\ub4dc"
+    },
+    "wait_notice": {
+        "message": "'$profile_name$ ($device_name$)' \ub2d8\uc774 \ud30c\uc77c\uc744 \uc804\uc1a1\ud588\uc2b5\ub2c8\ub2e4. \ud30c\uc77c\uc744 \ubc1b\uc73c\uc2dc\uaca0\uc2b5\ub2c8\uae4c?",
+        "placeholders": {
+            "profile_name": {
+                "content": "$1"
+            },
+            "device_name": {
+                "content": "$2"
+            }
+        }
+    },
+    "app_desc": {
+        "message": "\uc27d\uace0 \ube60\ub978 \ubb34\uc81c\ud55c \ud30c\uc77c \uc804\uc1a1 \uc11c\ube44\uc2a4 Send Anywhere"
+    },
+    "list_title": {
+        "message": "\uc5c5\ub85c\ub4dc \ud30c\uc77c \ubcf4\uad00\ud568"
+    },
+    "send_tab": {
+        "message": "\ubcf4\ub0b4\uae30"
+    },
+    "recv_tab": {
+        "message": "\ubc1b  \uae30"
+    },
+    "send_title": {
+        "message": "\ud30c\uc77c \ubaa9\ub85d"
+    },
+    "recv_title": {
+        "message": "\ud30c\uc77c \ubc1b\uae30"
+    },
+    "list_tab": {
+        "message": "\ubcf4\uad00\ud568"
+    },
+    "app_name": {
+        "message": "Send Anywhere (\ud30c\uc77c \uc804\uc1a1)"
+    },
+    "main_title": {
+        "message": "Send Anywhere"
+    },
+    "device": {
+        "message": "\ud074\ub9ad\ud574\uc11c \ud478\uc2dc \ubcf4\ub0b4\uae30"
+    },
+    "delete": {
+        "message": "\uc0ad\uc81c"
+    },
+    "receiving": {
+        "message": "\ubc1b\ub294 \uc911..."
+    },
+    "sending": {
+        "message": "\ubcf4\ub0b4\ub294 \uc911..."
+    },
+    "cancelled": {
+        "message": "\ucde8\uc18c\ub428"
+    },
+    "server_error": {
+        "message": "\uc11c\ubc84\uc5d0 \uc624\ub958\uac00 \ubc1c\uc0dd\ud558\uc600\uc2b5\ub2c8\ub2e4!"
+    },
+    "cancel": {
+        "message": "\ucde8\uc18c"
+    },
+    "profile": {
+        "message": "\ud504\ub85c\ud544"
+    },
+    "recent_devices": {
+        "message": "\ucd5c\uadfc \uacf5\uc720 \uae30\uae30"
+    },
+    "drop_files": {
+        "message": "\uc5ec\uae30\ub97c \ud074\ub9ad\ud558\uac70\ub098 \ud30c\uc77c \ub610\ub294 \ud3f4\ub354\ub97c \ub04c\uc5b4\ub2e4 \ub193\uc73c\uc138\uc694"
+    },
+    "nearby_devices": {
+        "message": "\uc8fc\ubcc0 \uae30\uae30"
+    },
+    "input_key": {
+        "message": "\ud0a4 \uc785\ub825"
+    },
+    "qr_desc": {
+        "message": "\uc13c\ub4dc\uc560\ub2c8\uc6e8\uc5b4 \uc571\uc758 QR \ucf54\ub4dc \uc2a4\uce90\ub108\ub85c \uc2a4\uce94\ud558\uc138\uc694."
+    },
+    "invalid_key": {
+        "message": "\ub9cc\ub8cc\ub418\uac70\ub098 \uc720\ud6a8\ud558\uc9c0 \uc54a\uc740 \ud0a4\uc785\ub2c8\ub2e4."
+    },
+    "recv_file": {
+        "message": "\ubc1b\uae30"
+    },
+    "not_supported_browser": {
+        "message": "\uc9c0\uc6d0\ud558\uc9c0 \uc54a\ub294 \ube0c\ub77c\uc6b0\uc800 \uc77c \uc218 \uc788\uc2b5\ub2c8\ub2e4."
+    }
+}

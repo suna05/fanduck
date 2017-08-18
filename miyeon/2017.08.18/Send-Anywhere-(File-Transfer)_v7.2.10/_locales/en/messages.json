@@ -1,0 +1,267 @@
+{
+    "extension_install": {
+        "message": "Install Chrome Extension"
+    },
+    "modal_ok": {
+        "message": "OK"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "edit": {
+        "message": "Edit"
+    },
+    "exp": {
+        "message": "Exp."
+    },
+    "month_9": {
+        "message": "Sep"
+    },
+    "month_10": {
+        "message": "Oct"
+    },
+    "month_11": {
+        "message": "Nov"
+    },
+    "month_12": {
+        "message": "Dec"
+    },
+    "share_qrcode": {
+        "message": "QR Code"
+    },
+    "share_device": {
+        "message": "Device"
+    },
+    "filelist_more_desc": {
+        "message": "\u2026 $1 more files"
+    },
+    "reset": {
+        "message": "Reset"
+    },
+    "exp_format": {
+        "message": "$1 $2,"
+    },
+    "month_1": {
+        "message": "Jan"
+    },
+    "month_2": {
+        "message": "Feb"
+    },
+    "month_3": {
+        "message": "Mar"
+    },
+    "month_4": {
+        "message": "Apr"
+    },
+    "month_5": {
+        "message": "May"
+    },
+    "month_6": {
+        "message": "Jun"
+    },
+    "month_7": {
+        "message": "Jul"
+    },
+    "month_8": {
+        "message": "Aug"
+    },
+    "size_exceed": {
+        "message": "size exceeded"
+    },
+    "expiration": {
+        "message": "Expiration"
+    },
+    "size": {
+        "message": "Size"
+    },
+    "name": {
+        "message": "Name"
+    },
+    "no_files": {
+        "message": "No Files"
+    },
+    "conf_profile_name": {
+        "message": "Device Name "
+    },
+    "key": {
+        "message": "Key"
+    },
+    "error": {
+        "message": "Error"
+    },
+    "size_exceed_desc": {
+        "message": "<P> You can only upload up to 2GB at a time. <\/ P> <p> Try our Chrome extension to send up to 10GB! <\/ P>"
+    },
+    "length_exceed_desc": {
+        "message": "Chrome App limit exceeded. Try our Chrome extension to send up to 10GB!"
+    },
+    "complete": {
+        "message": "Complete"
+    },
+    "go_main": {
+        "message": "Go Main"
+    },
+    "go_list": {
+        "message": "Go Storage"
+    },
+    "noti_copy": {
+        "message": "It's copied to clipboard!"
+    },
+    "will_expire": {
+        "message": "This key expires in ($1)"
+    },
+    "push_comment": {
+        "message": "Shared instantly from Send Anywhere. Accept now before it expires!"
+    },
+    "yes": {
+        "message": "YES"
+    },
+    "gcm_push_title": {
+        "message": "Incoming file(s)"
+    },
+    "no": {
+        "message": "NO"
+    },
+    "gcm_push_desc": {
+        "message": "Click to view my incoming files"
+    },
+    "to_extension": {
+        "message": "<H4> Chrome App Service Announcment <\/ h4> <p> Send Anywhere Chrome App is only available until 2018, <a href=\"$2\" target=\"_blank\"> officially supported by Google <\/a>. <\/ P> <p> If you would like to continue to use Send Anywhere's powerful file-transfer service in the future, try our <a href='$store_link$' target='_blank'> Chrome extensions <\/a>! You can transfer files up to 10GB at a time and easily attach large files to Gmail and Slack. <\/ P>",
+        "placeholders": {
+            "store_link": {
+                "content": "$1"
+            }
+        }
+    },
+    "help_list01": {
+        "message": "Sharing the QR Code"
+    },
+    "noti_delete": {
+        "message": "This file(s) will be deleted. Are you sure?"
+    },
+    "noti_send_done": {
+        "message": "Send complete"
+    },
+    "noti_save_done": {
+        "message": "Upload complete"
+    },
+    "noti_download_done": {
+        "message": "Download complete"
+    },
+    "help_desc01": {
+        "message": "Once the receiving device inputs the 6-digit key in the 'Receive' box, the transfer will start immediately."
+    },
+    "help_desc02": {
+        "message": "You can also share this 6-digit key by:"
+    },
+    "help_list03": {
+        "message": "Sending a push-alert to the receiving device"
+    },
+    "already_uploading": {
+        "message": "The file is being uploaded. Please try again in a few minutes."
+    },
+    "send_files": {
+        "message": "Send Directly"
+    },
+    "save_files": {
+        "message": "Share Link"
+    },
+    "copy_key": {
+        "message": "Copy a key"
+    },
+    "copy_url": {
+        "message": "Copy URL"
+    },
+    "key_title": {
+        "message": "Share the 6-Digit Key"
+    },
+    "upload_title": {
+        "message": "Upload"
+    },
+    "wait_notice": {
+        "message": "'$profile_name$ ($device_name$)' wants to send a file to you. Do you receive?",
+        "placeholders": {
+            "profile_name": {
+                "content": "$1"
+            },
+            "device_name": {
+                "content": "$2"
+            }
+        }
+    },
+    "app_desc": {
+        "message": "Send whatever you want, wherever you want"
+    },
+    "list_title": {
+        "message": "Upload History"
+    },
+    "send_tab": {
+        "message": "Send"
+    },
+    "recv_tab": {
+        "message": "Receive"
+    },
+    "send_title": {
+        "message": "Send Your Files"
+    },
+    "recv_title": {
+        "message": "Receive Files"
+    },
+    "list_tab": {
+        "message": "Storage"
+    },
+    "app_name": {
+        "message": "Send Anywhere (File Transfer)"
+    },
+    "main_title": {
+        "message": "Send Anywhere"
+    },
+    "device": {
+        "message": "Receiving Device"
+    },
+    "delete": {
+        "message": "Delete"
+    },
+    "receiving": {
+        "message": "Receiving..."
+    },
+    "sending": {
+        "message": "Sending..."
+    },
+    "cancelled": {
+        "message": "Cancelled"
+    },
+    "server_error": {
+        "message": "Sorry, Internal server error!"
+    },
+    "cancel": {
+        "message": "Cancel"
+    },
+    "profile": {
+        "message": "Profile"
+    },
+    "recent_devices": {
+        "message": "Recent devices"
+    },
+    "drop_files": {
+        "message": "Click here or Drag & Drop to send files"
+    },
+    "nearby_devices": {
+        "message": "Nearby Devices"
+    },
+    "input_key": {
+        "message": "Input Key"
+    },
+    "qr_desc": {
+        "message": "Scan QR Code to Receive Files"
+    },
+    "invalid_key": {
+        "message": "Invalid Key!"
+    },
+    "recv_file": {
+        "message": "Receive"
+    },
+    "not_supported_browser": {
+        "message": "Or your browser is not supported."
+    }
+}
