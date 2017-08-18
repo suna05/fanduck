@@ -1,0 +1,267 @@
+{
+    "extension_install": {
+        "message": "\u30d6\u30e9\u30a6\u30b6\u306b\u62e1\u5f35\u6a5f\u80fd\u3092\u8ffd\u52a0"
+    },
+    "modal_ok": {
+        "message": "OK"
+    },
+    "url": {
+        "message": "\u30ea\u30f3\u30af"
+    },
+    "edit": {
+        "message": "\u5909\u66f4"
+    },
+    "exp": {
+        "message": "\u4f7f\u7528\u671f\u9650\uff1a"
+    },
+    "month_9": {
+        "message": "9"
+    },
+    "month_10": {
+        "message": "10"
+    },
+    "month_11": {
+        "message": "11"
+    },
+    "month_12": {
+        "message": "12"
+    },
+    "share_qrcode": {
+        "message": "QR\u30b3\u30fc\u30c9"
+    },
+    "share_device": {
+        "message": "\u6a5f\u5668\u306b\u9001\u4fe1"
+    },
+    "filelist_more_desc": {
+        "message": "\u2026 \u5916 $1 \u30d5\u30a1\u30a4\u30eb"
+    },
+    "reset": {
+        "message": "\u30ea\u30bb\u30c3\u30c8"
+    },
+    "exp_format": {
+        "message": "$1\u6708$2\u65e5,"
+    },
+    "month_1": {
+        "message": "1"
+    },
+    "month_2": {
+        "message": "2"
+    },
+    "month_3": {
+        "message": "3"
+    },
+    "month_4": {
+        "message": "4"
+    },
+    "month_5": {
+        "message": "5"
+    },
+    "month_6": {
+        "message": "6"
+    },
+    "month_7": {
+        "message": "7"
+    },
+    "month_8": {
+        "message": "8"
+    },
+    "size_exceed": {
+        "message": "\u5bb9\u91cf\u5236\u9650"
+    },
+    "expiration": {
+        "message": "\u4f7f\u7528\u671f\u9650"
+    },
+    "size": {
+        "message": "\u30b5\u30a4\u30ba"
+    },
+    "name": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u540d"
+    },
+    "no_files": {
+        "message": "\u8868\u793a\u3059\u308b\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002"
+    },
+    "conf_profile_name": {
+        "message": "\u30c7\u30d0\u30a4\u30b9\u306e\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb\u5909\u66f4"
+    },
+    "key": {
+        "message": "\u30ad\u30fc"
+    },
+    "error": {
+        "message": "\u30a8\u30e9\u30fc"
+    },
+    "size_exceed_desc": {
+        "message": "<p>Chrome\u30a2\u30d7\u30ea\u3067\u306f\u4e00\u56de\u6700\u59272GB\u307e\u3067\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u53ef\u80fd\u3067\u3059\u3002<\/p> <p>Send Anywhere Chrome\u62e1\u5f35\u6a5f\u80fd\u3067\u306f\u4e00\u56de\u6700\u592710GB\u307e\u3067\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002Gmail\u3068Slack\u306b\u624b\u8efd\u306b\u5927\u5bb9\u91cf\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u6dfb\u4ed8\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u308bChrome\u62e1\u5f35\u6a5f\u80fd\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\uff01<\/p>"
+    },
+    "length_exceed_desc": {
+        "message": "<p>Chrome\u30a2\u30d7\u30ea\u306e\u5236\u9650\u3092\u8d85\u3048\u307e\u3057\u305f\u3002<\/p> <p>Send Anywhere Chrome\u62e1\u5f35\u6a5f\u80fd\u3067\u306f\u5236\u9650\u306a\u304f\u5e9c\u30d5\u30a1\u30a4\u30eb\u3092\u8ee2\u9001\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002Gmail\u3068Slack\u306b\u624b\u8efd\u306b\u5927\u5bb9\u91cf\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u6dfb\u4ed8\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u308bChrome\u62e1\u5f35\u6a5f\u80fd\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\uff01<\/p>"
+    },
+    "complete": {
+        "message": "\u8ee2\u9001\u5b8c\u4e86"
+    },
+    "go_main": {
+        "message": "\u30e1\u30a4\u30f3\u306b\u623b\u308b"
+    },
+    "go_list": {
+        "message": "\u4fdd\u7ba1\u5eab\u3078"
+    },
+    "noti_copy": {
+        "message": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u306b\u30b3\u30d4\u30fc\u3055\u308c\u307e\u3057\u305f\u3002"
+    },
+    "will_expire": {
+        "message": "($1) \u5f8c\u306b\u30ad\u30fc\u306e\u4f7f\u7528\u671f\u9650\u304c\u5207\u308c\u307e\u3059"
+    },
+    "push_comment": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u304c\u9001\u4fe1\u3055\u308c\u307e\u3057\u305f\u3002\u4eca\u3059\u3050\u30d5\u30a1\u30a4\u30eb\u3092\u53d7\u4fe1\u3057\u307e\u3059\u304b\uff1f"
+    },
+    "yes": {
+        "message": "\u306f\u3044"
+    },
+    "gcm_push_title": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u304c\u5c4a\u304d\u307e\u3057\u305f\u3002"
+    },
+    "no": {
+        "message": "\u3044\u3044\u3048"
+    },
+    "gcm_push_desc": {
+        "message": "\u8a73\u7d30\u3092\u78ba\u8a8d\u3059\u308b\u306b\u306f\u3001\u30af\u30ea\u30c3\u30af\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+    },
+    "to_extension": {
+        "message": "<h4>\u30b5\u30fc\u30d3\u30b9\u306b\u95a2\u3059\u308b\u3054\u6848\u5185<\/h4><p>Send Anywhere Chrome\u30a2\u30d7\u30ea\u306f<a href=\"$2\" target=\"_blank\">Google\u304cChrome\u30a2\u30d7\u30ea\u306e\u63d0\u4f9b\u3092\u7d42\u4e86\u3059\u308b2018\u5e74\u306e\u521d\u3081<\/a>\u306b\u30b5\u30fc\u30d3\u30b9\u306e\u63d0\u4f9b\u3092\u7d42\u4e86\u3044\u305f\u3057\u307e\u3059\u3002<\/p><br><p>\u4eca\u5f8c\u3001 <a href='$store_link$' target='_blank'>Chrome\u62e1\u5f35\u6a5f\u80fd<\/a>\u306b\u3066\u3088\u308a\u9032\u5316\u3057\u305f\u30d5\u30a1\u30a4\u30eb\u8ee2\u9001\u30b5\u30fc\u30d3\u30b9\u3092\u5f15\u304d\u7d9a\u304d\u63d0\u4f9b\u3044\u305f\u3057\u307e\u3059\u306e\u3067\u3001\u305c\u3072\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\uff01<\/p>",
+        "placeholders": {
+            "store_link": {
+                "content": "$1"
+            }
+        }
+    },
+    "help_list01": {
+        "message": "QR\u30b3\u30fc\u30c9\u3092\u5171\u6709"
+    },
+    "noti_delete": {
+        "message": "\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3057\u305f\u30d5\u30a1\u30a4\u30eb\u3092\u524a\u9664\u3057\u307e\u3059\u304b\uff1f\u524a\u9664\u3059\u308b\u5834\u5408\u3001\u524a\u9664\u3057\u305f\u30d5\u30a1\u30a4\u30eb\u306f\u3082\u3046\u53d7\u4fe1\u3067\u304d\u307e\u305b\u3093\u3002"
+    },
+    "noti_send_done": {
+        "message": "\u9001\u4fe1\u5b8c\u4e86"
+    },
+    "noti_save_done": {
+        "message": "\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u5b8c\u4e86"
+    },
+    "noti_download_done": {
+        "message": "\u53d7\u4fe1\u5b8c\u4e86"
+    },
+    "help_desc01": {
+        "message": "6\u6841\u306e\u30ad\u30fc\u3092\u53d7\u4fe1\u8005\u306b\u304a\u77e5\u3089\u305b\u307e\u3059\u3002\u53d7\u4fe1\u8005\u304cSend Anywhere\u306e\u53d7\u4fe1\u306e\u30ad\u30fc\u5165\u529b\u6b04\u306b\u30ad\u30fc\u3092\u5165\u529b\u3059\u308b\u3068\u3001\u8ee2\u9001\u304c\u958b\u59cb\u3055\u308c\u307e\u3059\u3002"
+    },
+    "help_desc02": {
+        "message": "\u4ee5\u4e0b\u306e\u65b9\u6cd5\u3067\u3082\u30d5\u30a1\u30a4\u30eb\u306e\u8ee2\u9001\u304c\u53ef\u80fd\u3067\u3059\u3002"
+    },
+    "help_list03": {
+        "message": "\u6a5f\u5668\u306b\u9001\u4fe1\u3067\u30c7\u30d0\u30a4\u30b9\u3092\u9078\u629e\u3057\u3066\u30d7\u30c3\u30b7\u30e5\u901a\u77e5\u3092\u9001\u4fe1"
+    },
+    "already_uploading": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u3092\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u4e2d\u3067\u3059\u3002\u3057\u3070\u3089\u304f\u3057\u3066\u304b\u3089\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+    },
+    "send_files": {
+        "message": "\u4eca\u3059\u3050\u9001\u4fe1"
+    },
+    "save_files": {
+        "message": "\u30ea\u30f3\u30af\u5171\u6709"
+    },
+    "copy_key": {
+        "message": "\u30ad\u30fc\u30b3\u30d4\u30fc"
+    },
+    "copy_url": {
+        "message": "\u30ea\u30f3\u30af\u30b3\u30d4\u30fc"
+    },
+    "key_title": {
+        "message": "\u8ee2\u9001\u5f85\u3061\u4e2d"
+    },
+    "upload_title": {
+        "message": "\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9"
+    },
+    "wait_notice": {
+        "message": "'$profile_name$ ($device_name$)'  \u3055\u3093\u304b\u3089\u30d5\u30a1\u30a4\u30eb\u304c\u5c4a\u304d\u307e\u3057\u305f\u3002\u53d7\u4fe1\u3092\u958b\u59cb\u3057\u307e\u3059\u304b\uff1f",
+        "placeholders": {
+            "profile_name": {
+                "content": "$1"
+            },
+            "device_name": {
+                "content": "$2"
+            }
+        }
+    },
+    "app_desc": {
+        "message": "\u7c21\u5358\u304b\u3064\u8fc5\u901f\u306a\u7121\u5236\u9650\u306e\u30d5\u30a1\u30a4\u30eb\u8ee2\u9001\u30b5\u30fc\u30d3\u30b9\u3001Send Anywhere"
+    },
+    "list_title": {
+        "message": "\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3057\u305f\u30d5\u30a1\u30a4\u30eb"
+    },
+    "send_tab": {
+        "message": "\u9001\u4fe1"
+    },
+    "recv_tab": {
+        "message": "\u53d7\u4fe1"
+    },
+    "send_title": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u30ea\u30b9\u30c8"
+    },
+    "recv_title": {
+        "message": "\u30d5\u30a1\u30a4\u30eb\u53d7\u4fe1"
+    },
+    "list_tab": {
+        "message": "\u4fdd\u5b58\u5eab"
+    },
+    "app_name": {
+        "message": "Send Anywhere (\u30d5\u30a1\u30a4\u30eb\u8ee2\u9001\u30fb\u9001\u4fe1)"
+    },
+    "main_title": {
+        "message": "Send Anywhere"
+    },
+    "device": {
+        "message": "\u30c7\u30d0\u30a4\u30b9\u3092\u9078\u629e\u3057\u3066\u30d7\u30c3\u30b7\u30e5\u901a\u77e5\u3092\u9001\u4fe1"
+    },
+    "delete": {
+        "message": "\u524a\u9664"
+    },
+    "receiving": {
+        "message": "\u53d7\u4fe1\u4e2d\u2026"
+    },
+    "sending": {
+        "message": "\u9001\u4fe1\u4e2d\u2026"
+    },
+    "cancelled": {
+        "message": "\u30ad\u30e3\u30f3\u30bb\u30eb"
+    },
+    "server_error": {
+        "message": "\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30a8\u30e9\u30fc"
+    },
+    "cancel": {
+        "message": "\u30ad\u30e3\u30f3\u30bb\u30eb"
+    },
+    "profile": {
+        "message": "\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb"
+    },
+    "recent_devices": {
+        "message": "\u6700\u8fd1\u8ee2\u9001\u3057\u305f\u30c7\u30d0\u30a4\u30b9"
+    },
+    "drop_files": {
+        "message": "\u30af\u30ea\u30c3\u30af\u307e\u305f\u306f\u30c9\u30e9\u30c3\u30b0\uff06\u30c9\u30ed\u30c3\u30d7\u3057\u3066\u30d5\u30a1\u30a4\u30eb\u8ffd\u52a0"
+    },
+    "nearby_devices": {
+        "message": "\u5468\u8fba\u30c7\u30d0\u30a4\u30b9"
+    },
+    "input_key": {
+        "message": "\u30ad\u30fc\u5165\u529b"
+    },
+    "qr_desc": {
+        "message": "Send Anywhere\u30a2\u30d7\u30ea\u306eQR\u30b3\u30fc\u30c9\u30b9\u30ad\u30e3\u30ca\u30fc\u3067\u8aad\u307f\u53d6\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    },
+    "invalid_key": {
+        "message": "\u7121\u52b9\u306a\u30ad\u30fc\u3067\u3059\u3002\n"
+    },
+    "recv_file": {
+        "message": "\u53d7\u4fe1"
+    },
+    "not_supported_browser": {
+        "message": "\u307e\u305f\u306f\u3001\u3053\u306e\u30d6\u30e9\u30a6\u30b6\u306f\u672a\u5bfe\u5fdc\u3067\u3059\u3002"
+    }
+}
