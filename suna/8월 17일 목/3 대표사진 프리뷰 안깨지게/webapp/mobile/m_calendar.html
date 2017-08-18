@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/m_calendar.css"/>
+  <title>Fanduck</title>
+  <style media="screen">
+  a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+  }
+  .ui-grid-b {
+    top:0;
+    right:0;
+    left:0;
+    padding:15px;
+    background-color:white;
+  }
+
+  .mobile-headar {
+    position: relative;
+  }
+
+  .header-title {
+    font-weight:bold;
+    font-size:1.3em;
+    margin-left:5%;
+    position:absolute;
+    margin-top:1px;
+  }
+  </style>
+</head>
+<body>
+  <div class="ui-grid-b">
+    <div class="mobile-headar">
+      <a href="m_mypage.html"><img src="images/back2.png" style="width:4%;" alt=""></a>
+      <span class="header-title">달력</span>
+    </div>
+  </div>
+  <div id="calendar"></div>
+  <div id="calendar_data">
+    <h3>알림</h3>
+    <dl>
+      <dt><dfn>Title:</dfn></dt><dd>도끼</dd>
+      <dt><dfn>Hour:</dfn></dt><dd>2017.08.25</dd>
+      <dt><dfn>name:</dfn></dt><dd>박찬욱</dd>
+      <dt><dfn>More Info:</dfn></dt><dd><a href="#" title="More info">Here</a><dt></dd>
+    </dl>
+  </div>
+  <div class="clearfix"></div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/m_calendar.js"></script>
+</body>
+</html>
