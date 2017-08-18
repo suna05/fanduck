@@ -1,1 +1,0 @@
-var contextRoot = "/fanduck"
