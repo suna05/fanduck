@@ -1,0 +1,206 @@
+package fanduck.control.json;
+
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import fanduck.domain.MoviePerson;
+import fanduck.service.MoviePersonService;
+import net.coobird.thumbnailator.Thumbnails;
+
+@RestController
+@RequestMapping("/movieperson/")
+public class MoviePersonControl {
+  
+  @Autowired ServletContext ctx;
+  @Autowired MoviePersonService moviePersonService;
+  
+  
+  @RequestMapping("list")
+  public JsonResult list(@RequestParam(value="mno") int mno) throws Exception {
+    System.out.println("mno를 추가합니다! " + mno);
+    HashMap<String,Object> dataMap = new HashMap<>();
+    dataMap.put("list", moviePersonService.list(mno));
+    System.out.println(dataMap);
+    
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+  }
+  
+  @RequestMapping("detail")
+  public JsonResult detail(@RequestParam(value="mno") int mno,
+		  				   @RequestParam(value="mpNo") int mpNo) throws Exception {
+    MoviePerson moviePerson = moviePersonService.get(mno, mpNo);
+    System.out.println(mno + " : " + mpNo + " : " + moviePerson);
+    if (moviePerson == null) {
+      return new JsonResult(JsonResult.FAIL, mpNo + "번 영화인이 없습니다.");
+    }
+    return new JsonResult(JsonResult.SUCCESS, moviePerson);
+  }
+  
+  @RequestMapping(path="add")
+  public Object add(MoviePerson moviePerson, MultipartFile files) throws Exception {
+    HashMap<String,Object> resultMap = new HashMap<>();
+    
+    System.out.println("서버 응답 완료!"); 
+    
+    if (moviePerson.getSearchInfo() != null) {
+	    String personName = moviePerson.getSearchInfo().split(" ")[0];
+	    System.out.println(personName);
+	    String personType = moviePerson.getHiddenInfo().split("-")[0];
+	    System.out.println(personType);
+	    String filmoNames = moviePerson.getHiddenInfo().split("-")[1];
+	    System.out.println(filmoNames);
+	    String personCode = moviePerson.getHiddenInfo().split("--")[1].substring(0, 8);
+	    System.out.println(personCode);
+	    
+	    moviePerson.setMpCode(personCode);
+	    moviePerson.setMpNickname(personName);
+	    moviePerson.setMpFilmo(filmoNames);
+	    moviePerson.setMpType(personType);
+	    moviePerson.setMno(27);
+	    moviePerson.setMpContent("소개글을 입력해주세요.");
+    }
+    
+    ArrayList<Object> fileList = new ArrayList<>();
+    
+        HashMap<String,Object> fileMap = new HashMap<>();
+
+        String newFilename = this.getNewFilename();
+        File file = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename));
+        files.transferTo(file);
+        
+        File thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_80"));
+        Thumbnails.of(file).size(80, 80).outputFormat("png").toFile(thumbnail); 
+
+        thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_140"));
+        Thumbnails.of(file).size(140, 140).outputFormat("png").toFile(thumbnail);
+        
+        thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_200"));
+        Thumbnails.of(file).size(200, 200).outputFormat("png").toFile(thumbnail);
+          
+        fileMap.put("filename", newFilename);
+        fileMap.put("filesize", files.getSize());
+        fileList.add(fileMap);
+        
+        resultMap.put("fileList", fileList);    
+        
+	    moviePerson.setMpPhotopath("photo/" + newFilename + "_200.png");
+	    moviePersonService.add(moviePerson);
+	    
+	    //////////////////////////////////////////////////////////////////////////////////////////
+	    
+	    ScriptEngineManager manager = new ScriptEngineManager();
+	    ScriptEngine engine = manager.getEngineByName("JavaScript");
+	    // read script file
+	    engine.eval(Files.newBufferedReader(Paths.get("C:/workspace/fanduck/src/main/webapp/js/jquery.min.js"), StandardCharsets.UTF_8));
+	    Invocable inv = (Invocable) engine;
+	    
+	    engine.eval(Files.newBufferedReader(Paths.get("C:/workspace/fanduck/src/main/webapp/js/movie&person-detail.js"), StandardCharsets.UTF_8));
+	    inv = (Invocable) engine;
+	    // call function from script file
+	    inv.invokeFunction("movieCastInsert", "param");
+	    
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
+
+  
+  int count = 0;
+  synchronized private String getNewFilename() {
+	  if (count > 100) {
+		  count = 0;
+	  }
+	  return String.format("%d_%d", System.currentTimeMillis(), ++count); 
+  }
+
+  
+  @RequestMapping("delete")
+  public JsonResult delete(MoviePerson moviePerson) throws Exception {
+    moviePersonService.remove(moviePerson);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }  
+  
+  @RequestMapping("update")
+  public Object update(MoviePerson moviePerson, MultipartFile files) throws Exception {
+    HashMap<String,Object> resultMap = new HashMap<>();   
+	    
+    ArrayList<Object> fileList = new ArrayList<>();
+    HashMap<String,Object> fileMap = new HashMap<>();  
+    
+    if (files != null) {
+	    String newFilename = this.getNewFilename();
+	    File file = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename));
+	    files.transferTo(file);
+	    
+	    File thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_80"));
+	
+	    thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_140"));
+	    Thumbnails.of(file).size(140, 140).outputFormat("png").toFile(thumbnail);
+	    
+	    thumbnail = new File(ctx.getRealPath("/web/movieperson/photo/" + newFilename + "_200"));
+	    Thumbnails.of(file).size(200, 200).outputFormat("png").toFile(thumbnail);
+	      
+	    fileMap.put("filename", newFilename);
+	    fileMap.put("filesize", files.getSize());
+	    fileList.add(fileMap);
+	    
+	    resultMap.put("fileList", fileList);    
+	    moviePerson.setMpPhotopath("photo/" + newFilename + "_200.png");
+	    resultMap.put("moviePerson", moviePerson);
+	    
+    	System.out.println(moviePerson.getMpContent());
+	    moviePersonService.update(moviePerson);
+    } else {
+    	System.out.println(moviePerson.getMpContent());
+    	moviePersonService.update(moviePerson);
+    }
+    resultMap.put("fileList", fileList);
+    return resultMap;
+  }
+  
+  @RequestMapping("test")
+  public JsonResult test() throws Exception {
+	System.out.println("서버에 전송은 됩니당");  
+	  
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
+  
+  @RequestMapping("test01")
+  public JsonResult test01() throws Exception {
+	  
+	  
+	  return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
+  
+  
+  
+  private String processMultipartFiles(MultipartFile files) throws Exception {
+	    String photopath;
+        String filename = getNewFilename();
+        files.transferTo(new File(ctx.getRealPath("/teacher/photo/" + filename)));
+        photopath = filename;
+	    return photopath;
+  }
+}
+
+
+
+
+
+
+
+
+

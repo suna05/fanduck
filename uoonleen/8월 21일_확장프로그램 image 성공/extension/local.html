@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style media="screen">
+    .add-Close-btn {
+      margin-right:5px;
+      float:right;
+      background-color:#fa507b;
+      color:white;
+    }
+
+    .person-array {
+      border: 1px solid lightgray;
+      border-radius:5px;
+      padding-left: 10px;
+      cursor:pointer;
+    }
+
+    #person-tags {
+      background-image:url('remove.png');
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+    }
+
+    #remove-btn{
+      border: 1px solid lightgray;
+      border-radius: 5px; padding: 5px;
+      margin-left: 5px;
+      font-size:1em;
+      display:inline-block;
+    }
+    </style>
+  </head>
+  <body>
+    <div style="padding:10px 5px 10px 5px;  background-color:#fa507b">
+      <h4 style="line-height: 5px; text-align:center; color:white;">영화인 등록</h4>
+    </div>
+    <form action="http://localhost:8080/movieperson/add.json" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <div class="img-bar" style="text-align:center; margin-top:5%;">
+       <label for="chrome-upload" style="cursor:pointer" id="images-div">
+        <img src="http://localhost:8080/images/default.jpg" style="width:150px; height:150px">
+       </label>
+       <div>
+       <label for="chrome-upload" style="margin-top:6%; cursor:pointer">
+        <p id="img-add" style="font-weight:bold; color:steelblue;">사진 등록</p>
+       </label>
+       </div>
+       </div>
+      <input id="chrome-upload" type="file" name="files" onchange="handleFiles(this.files)" style="display:none;">
+      <div class="ui-widget" style="margin-bottom:20px;">
+        <label for="person-tags" class="col-sm-3">영화인 이름</label>
+        <div class="person-list">
+            <input type="text" class="form-control" id="person-tags" placeholder="이름을 검색하세요!"
+                   style="margin-top:3%; margin-left: 16px; width:185px; display:inline-block" name="searchInfo">
+            <input id="chrome-hidden-info" type="hidden" name="hiddenInfo">
+            <div id="remove-btn" style="cursor:pointer" name="button">초기화</div>
+        </div>
+      </div>
+      <button type="button" id="close-btn" class="btn btn-default add-Close-btn">취소</button>
+      <button type="submit" id="upload-btn" class="btn btn-default add-Close-btn">추가</button>
+    </div>
+  </form>
+  <script src="jquery.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="content.js"></script>
+  <script src="content0.js"></script>
+  </body>
+</html>
