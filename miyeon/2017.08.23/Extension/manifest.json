@@ -4,7 +4,8 @@
   "name": "fanduck",
   "description": "movie alarm and ....",
   "background" : {
-
+    "scripts": ["js/jquery.js",
+                "js/background.js"]
 
   },
   "version" : "1.1",

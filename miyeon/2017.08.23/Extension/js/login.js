@@ -22,7 +22,16 @@ function loginPerson() {
 	   alert('ID와 비밀번호가 일치하지 않습니다.')
    }
   }, 'json')
+window.close();
 chrome.browserAction.setPopup({popup: "toolbar.html"});
-  // window.close();
   //self.close();
 }
+
+
+
+//open-login tab
+document.querySelector('#add-btn').addEventListener('click',
+  function () {
+    var url = "http://localhost:8080/main.html";
+           chrome.tabs.create({ url: url });
+    });
