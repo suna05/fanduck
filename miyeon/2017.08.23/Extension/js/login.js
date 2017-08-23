@@ -14,15 +14,15 @@ function loginPerson() {
     'id': fiId.val(),
     'password': fiPassword.val()
   }, function(result) {
-  //   alert(result)
-  //   if (result.data == 'ok') {
-  //     alert(result.data)
-  //
-  //  } else {
-	//    alert('ID와 비밀번호가 일치하지 않습니다.')
-  //  }
+    alert(result)
+    if (result.data == 'ok') {
+      alert(result.data)
+
+   } else {
+	   alert('ID와 비밀번호가 일치하지 않습니다.')
+   }
   }, 'json')
 chrome.browserAction.setPopup({popup: "toolbar.html"});
-  window.close();
+  // window.close();
   //self.close();
 }
