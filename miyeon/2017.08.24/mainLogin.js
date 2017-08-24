@@ -1,3 +1,5 @@
+
+console.log("호룿")
 //--------------------------------------로그인
 var fiId = $('#fi-id'),
     fiPassword = $('#fi-password'),
@@ -12,12 +14,16 @@ $('#login-btn').click(function() {
     'id': fiId.val(),
     'password': fiPassword.val()
   }, function(result) {
-    console.log('로그인result:')
-    console.log(result)
     if (result.data == 'ok') {
     location.href = 'web/movieperson/mypage.html'
    } else {
-	   alert('ID와 비밀번호가 일치하지 않습니다.')
+	   swal({
+		   title: "회원정보 불일치",
+		   text: "아이디와 비밀번호를 다시 확인해주세요",
+		   html: true,
+		   type: "warning",
+		   customClass: 'swal-wide'
+		 });
    }
   }, 'json') 
 })
@@ -34,10 +40,23 @@ $('#fi-id-check-add').click(function() {
     console.log(result)
     console.log("aa")
      if (result.data == 'ok') {
-     alert("사용할 수 없는 아이디 입니다.")
+    	 swal({
+    		   title: "쏘리",
+    		   text: "이미 존재합니다.",
+    		   html: true,
+    		   type: "warning",
+    		   customClass: 'swal-wide'
+    		 });
+
     $('#fi-id-add').val("");
    } else {
-     alert("사용할 수 있는 아이디 입니다.") 
+  	 swal({
+		   title: "오케이.",
+		   text: "사용가능합니다.",
+		   html: true,
+		   type: "success",
+		   customClass: 'swal-wide'
+		 });
    }
   }, 'json')
 })
@@ -61,6 +80,7 @@ if(fiPasswordAdd.val() != fiPasswordCheckAdd.val()) {
 
 
 $('#add-btn').click(function() {
+	console.log("add-btn xlixks")
 	fillUp();
 	})
 
@@ -70,16 +90,40 @@ $('#add-btn').click(function() {
 
 function fillUp() {
 if(fiIdAdd.val()==false){
-      alert("아이디를 입력하세요");
+	 swal({
+		   title: "헛",
+		   text: "아이디를 입력하세요.",
+		   html: true,
+		   type: "warning",
+		   customClass: 'swal-wide'
+		 });
       return;
 }if(fiNicknameAdd.val()==false){
-      alert("닉네임를 입력하세요");
+	 swal({
+		   title: "헛",
+		   text: "닉네임을 입력하세요.",
+		   html: true,
+		   type: "warning",
+		   customClass: 'swal-wide'
+		 });
       return;
 }if(fiPasswordAdd.val()==false){
-      alert("비밀번호를 입력하세요");
+	 swal({
+		   title: "헛",
+		   text: "비밀번호를 입력하세요",
+		   html: true,
+		   type: "warning",
+		   customClass: 'swal-wide'
+		 });
       return;
 }if(fiPasswordCheckAdd.val()==false) {
-     alert("비밀번호 확인란을 확인하세요");
+	 swal({
+		   title: "헛",
+		   text: "비밀번호 확인란을 확인하세요",
+		   html: true,
+		   type: "warning",
+		   customClass: 'swal-wide'
+		 });
       return;  
 //회원가입 - 비밀번호 중복 체크
 }/*if (fiPasswordAdd.val() !== fiPasswordCheckAdd.val()) {     
@@ -96,12 +140,25 @@ $.post('/web/member/add.json', {
    'password': fiPasswordAdd.val()
  }, function(result) {
 	 if (result.data == 'ok') {
-		 alert("가입되었습니다.방가방가")
+		  swal({
+			    title: "가입완료!",
+			    text: "어서오세요.",
+			    timer: 2000,
+			    showConfirmButton: false
+			  });
+	  	location.href = "main.html"
 	 } else {
-		 alert("가입 안되었네요. ㅋㅋㅋㅋ")
+	  	 swal({
+			   title: "가입실패",
+			   text: "한번더?",
+			   html: true,
+			   type: "warning",
+			   customClass: 'swal-wide'
+			 });
+	  	location.href = "main.html"
 	 }
  }, 'json') 
- location.href = "main.html"
+// location.href = "main.html"
   }
 
 //아이디 기억하기
