@@ -16,6 +16,37 @@
   <link rel="stylesheet" type="text/css" href="../../node_modules/sweetalert/dist/sweetalert.css">
 </head>
 <style>
+
+@media screen and (max-width: 991px) {
+    .snip1336 {
+      width:23%;
+      min-width: 167px;
+    }
+	
+	div#calendar{
+	  margin:10px 20px 0px 10px;
+	}
+	
+	.head_cal {
+	  margin-right:-2px
+	}
+}
+
+@media screen and (max-width: 1199px) {
+    .snip1336 {
+      width:23%;
+      max-width: 250px;
+    }
+	
+	div#calendar{
+	  margin:10px 10px 0px 20px;
+	}
+	
+	.head_cal {
+	  margin-right:-4px
+	}
+}
+
 body {
 
 }
@@ -28,6 +59,8 @@ html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
 .hidden {
 	display: none;
 }
+
+
 </style>
 <body>
   <header>
@@ -52,7 +85,7 @@ html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
 
   <div class="container-fluid">
   	<div class="container" style="padding: 0 -15%; margin-bottom:2%;">
-   	  <figure class="snip1336" style="width: 25%;">
+   	  <figure class="snip1336">
         <img
           src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg"
           alt="sample69" />
@@ -70,8 +103,8 @@ html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
     </figcaption>
     </figure>
 
-    <div id="calendar" style="width:450px; margin:10px 20px 0px 30px;"></div>
-    <div id="calendar_data" style="width:300px; margin:10px">
+    <div id="calendar" style=""></div>
+    <div id="calendar_data" style="width:26%; margin:10px">
 
     <script id="alarm-template" type="text/x-handlebars-template">
 	<div style="text-align:center; background-color:#424558; color:white; font-size:1.2em; margin-bottom:3px">알림</div>
@@ -137,9 +170,9 @@ html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
 			</div>
           </div>
           <p>{{mpContent}}</p>
-		  <div style="margin-bottom:5%; position:relative;">
+		  <div style="margin-bottom:12%; position:relative;">
 			<button class="btn btn-xs del-btn" onclick="deletePerson({{mno}}, {{mpNo}}, '{{mpNickname}}', '{{mpCode}}')"
-					style="margin-left:170px; background-color:black; color:white;">지우기</button>
+					style="float:right; background-color:black; color:white;">지우기</button>
 	      </div>
         </div>
       </div>
