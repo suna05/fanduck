@@ -164,6 +164,10 @@
 /*desktop*/
 @media (min-width: 741px) {
 
+	/* #logo {
+    min-width: 940px;
+	} */
+	
   iframe {
     /*margin-left: 405px;*/
     position: absolute;
