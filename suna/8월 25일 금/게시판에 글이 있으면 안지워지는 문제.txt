@@ -1,0 +1,15 @@
+mp_pro 지우기 할 때
+게시판에 글이 있으면 안지워지는 문제   ===>
+해결
+1) board 테이블에서 mp_no 컬럼 삭제
+2 )
+ALTER TABLE `BOARD`
+	ADD CONSTRAINT `FK_MP_PRO_TO_BOARD` -- 영화인프로필 -> 게시판 상세
+		FOREIGN KEY (
+			`MP_NO` -- 영화인일련번호
+		)
+		REFERENCES `MP_PRO` ( -- 영화인프로필
+			`MP_NO` -- 영화인일련번호
+		) ON DELETE CASCADE;
+
+위 쿼리 복붙
