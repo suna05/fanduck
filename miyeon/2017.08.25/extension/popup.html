@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fanduck 로그인</title>
+<!-- <link rel="stylesheet" type="text/css" href="/js/sweetalert-master/dist/sweetalert.css"> -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	#loginBox {
+		width: 314px; height: 200px;
+	}
+	#loginInfo {
+		width: 214px;
+		padding: 10px 10px 10px 10px;
+	}
+	table {
+		text-align: center;
+	}
+	th {
+		text-align: left;
+	}
+	btns {
+		text-align: center;
+	}
+body{font-family: "Raleway", sans-serif}
+body, html {height: 10%}
+img {
+    /*min-height: 2%;*/
+		width: 180px;
+    margin: 25px 0px 15px 73px;
+    /*background-size: cover;*/
+}
+</style>
+</head>
+<body>
+	<div style="border: 0.4px lightgray solid;"></div>
+	<img src="/images/logo1.png">
+	<div id="loginBox" >
+		<form name="loginfrm" id="loginfrm" >
+	    	<table id="loginInfo">
+	    		<tr>
+	    			<div class="form-group">
+	    			 <input type="text" class="form-control" id="fi-id" name="ID" placeholder="ID" style="width: 295px;  margin-left: 7px;"/>
+	    			</div>
+	    		</tr>
+	    		<tr>
+	    			<div class="form-group">
+					    <input type="password" class="form-control" id="fi-password" name="password" placeholder="PASSWORD" style="width: 295px;  margin-left: 7px;"/>
+	    			</div>
+	    		</tr>
+			    <tr>
+			    	<td id="btns">
+					    <button id="login-btn"
+							class="btn btn-info"
+							style="width: 300px; color: white; margin: 5px 0px 0px 10px;">로그인</button>
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td id="btns" style="padding-top: 5px;">
+					    <button id="add-btn"
+							class="btn btn-info"
+							style="width: 300px; color: white; margin: 3px 0px 0px 10px;"
+							data-dismiss="modal">회원가입</button>
+			    	</td>
+			    </tr>
+    		</table>
+	    </form>
+  	</div>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/login.js"></script>
+	<!-- <script src="js/popup.js"></script> -->
+	<!-- <script src="js/mainLogin.js"></script> -->
+	<!-- <script src="/js/sweetalert-master/dist/sweetalert.min.js"></script> -->
+</body>
+</html>
