@@ -145,46 +145,41 @@ $.getJSON('/board/searchList.json', {
 		console.log("현재 mpNo?", mpNo)
 		 
 		for(var i = 0 ; i < result.data.searchList.length ; i++) {
-		
-		if(result.data.searchList[i].mpNo != mpNo) {
-			//console.log(mpNo)
-			//console.log(result.data.searchList[0].mpNo)
-			
-			swal({
-			  title: "검색결과가 없습니다.",
-			  timer: 2000,
-			  showConfirmButton: true
-			});
+			if(result.data.searchList[i].mpNo != mpNo) {
+				//console.log(mpNo)
+				//console.log(result.data.searchList[0].mpNo)
+				
+				swal({
+				  title: "검색결과가 없습니다.",
+				  timer: 2000,
+				  showConfirmButton: true
+				});
 			
 		} else {
-			//console.log("검색결과", result.data.searchList.length )
-			var searchCount = result.data.searchList.length;
-			
-			console.log("==>", searchCount)
-			
-			
-			
-			
-			
-			swal({
-			  title: "검색 결과: " + searchCount + " 개",
-			  timer: 5000,
-			  showConfirmButton: true
-			});
-			
-			console.log(result)
-			tbody.text('')
-			var totalCount = result.data.totalCount;
-			
-			// 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
-			var templateFn = Handlebars.compile($('#board-template').text())
-			var generatedHTML = templateFn(result.data) // 템플릿 함수에 데이터를 넣고 HTML을 생성한다.
-			
-			tbodyy.text('') // tbody의 기존 tr 태그들을 지우고
-			tbodyy.html(generatedHTML) // 새 tr 태그들로 설정한다.
+				//console.log("검색결과", result.data.searchList.length )
+				var searchCount = result.data.searchList.length;
+				
+				//console.log("==>", searchCount)
+				
+				swal({
+				  title: "검색 결과: " + searchCount + " 개",
+				  timer: 2000,
+				  showConfirmButton: true
+				});
+				
+				console.log(result)
+				tbody.text('')
+				var totalCount = result.data.totalCount;
+				
+				// 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
+				var templateFn = Handlebars.compile($('#board-template').text())
+				var generatedHTML = templateFn(result.data) // 템플릿 함수에 데이터를 넣고 HTML을 생성한다.
+				
+				tbodyy.text('') // tbody의 기존 tr 태그들을 지우고
+				tbodyy.html(generatedHTML) // 새 tr 태그들로 설정한다.
 			
 			
-		}
+			}
 		}
 			
 	})
