@@ -134,7 +134,7 @@ ALTER TABLE `MP_PRO`
 		FOREIGN KEY (
 			`MNO` -- 회원일련번호
 		)
-		REFERENCES `NEW_SCHEMA`.`MEMB` ( -- 회원
+		REFERENCES `MEMB` ( -- 회원
 			`MNO` -- 회원일련번호
 		);
 
@@ -164,6 +164,6 @@ ALTER TABLE `CAST_MEMB`
 		FOREIGN KEY (
 			`MNO` -- 회원일련번호
 		)
-		REFERENCES `NEW_SCHEMA`.`MEMB` ( -- 회원
+		REFERENCES `MEMB` ( -- 회원
 			`MNO` -- 회원일련번호
 		);
