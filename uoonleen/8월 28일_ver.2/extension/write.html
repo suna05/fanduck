@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style media="screen">
+
+    ::-webkit-input-placeholder .ex_title {
+        /*font-weight: 400;*/
+        text-weight: bold;
+        color: lightgray;
+        font-size: 35px;
+    }
+    .form-group {
+      margin-bottom: 5px;
+    }
+    #ex_title {
+      border: transparent;
+      width:300px;
+      height:40px;
+      /*margin-top:6px;*/
+      text-weight: bold;
+      color: gray;
+      font-size:25px;
+      /*margin-bottom: 7px;*/
+    }
+    #reImg-add {
+      font-weight:bold;
+      color:steelblue;
+      display:inline-block;
+      margin-right: 3px;
+    }
+    #ex_content {
+    font-size:20px;
+    height:auto;
+    width: 295px;
+    border:transparent;
+    margin:3px 0px 0px 0px;
+    }
+    </style>
+  </head>
+  <body>
+    <div style="padding:10px 0px 10px 0px; background-color:white; ">
+      <h4 style=" font-size:20px;line-height: 3px; text-align:center;color:steelblue;text-weight: bold;">글쓰기</h4>
+    </div>
+    <form id="myForm" action="http://localhost:8080/board/add.json" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <div class="img-bar" style="text-align:center;">
+       <label for="represent-photo" style="cursor:pointer" id="images-div">
+        <img src="images/placeholder7.jpg" style="opacity: 0.7;width:300px; height:220px">
+       </label>
+       <div>
+       <label for="represent-photo" style="margin-top:2%; cursor:pointer; display:none;">
+        <img src="images/upload.png" height="17px;" style="display: inline-block; margin-top: -4px;">
+        <p id="reImg-add">&nbsp사진올리기</p>
+       </label>
+       </div>
+       </div>
+      <input id="represent-photo" type="file" name="files" onchange="handleFiles(this.files)" style="display:none;">
+      <div>
+        <input type="text" id="ex_title" id="fi-title" name="bdTitle" name="ex_title" placeholder="제목"/>
+      </div>
+      <textarea id="ex_content" name="ex_content" rows="5" cols="30" placeholder="내용을 입력하세요." style="resize:none" ></textarea>
+      <button type="button" id="close-btn" style="margin-left: 180px; margin-top:3px; "class="btn btn-info">취소</button>
+      <button type="submit" id="upload-btn" class="btn btn-info" style="margin-top:3px; ">확인</button>
+  </div>
+  </form>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/write.js"></script>
+  </body>
+</html>
