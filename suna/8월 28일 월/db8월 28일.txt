@@ -15,7 +15,7 @@ CREATE TABLE `BOARD` (
 	`list7` VARCHAR(200) NULL     COMMENT '리스트7', -- 리스트7
 	`list8` VARCHAR(200) NULL     COMMENT '리스트8', -- 리스트8
 	`list9` VARCHAR(200) NULL     COMMENT '새 컬럼' -- 새 컬럼
-)
+) ENGINE = InnoDB
 COMMENT '게시판 상세';
 
 -- 게시판 상세
@@ -23,7 +23,7 @@ ALTER TABLE `BOARD`
 	ADD CONSTRAINT `PK_BOARD` -- 게시판 상세 기본키
 		PRIMARY KEY (
 			`BD_NO` -- 게시물번호
-		)ENGINE = InnoDB;
+		);
 
 ALTER TABLE `BOARD`
 	MODIFY COLUMN `BD_NO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시물번호';
@@ -38,7 +38,7 @@ CREATE TABLE `MP_PRO` (
 	`MP_FILMO` VARCHAR(400) NULL     COMMENT '필모리스트', -- 필모리스트
 	`MP_CODE`  VARCHAR(200) NULL     COMMENT '영화인코드', -- 영화인코드
 	`MP_TYPE`  VARCHAR(10)  NULL     COMMENT '유형' -- 유형
-)
+)ENGINE = InnoDB
 COMMENT '영화인프로필';
 
 -- 영화인프로필
@@ -46,7 +46,7 @@ ALTER TABLE `MP_PRO`
 	ADD CONSTRAINT `PK_MP_PRO` -- 영화인프로필 기본키
 		PRIMARY KEY (
 			`MP_NO` -- 영화인일련번호
-		) ENGINE = InnoDB;
+		);
 
 ALTER TABLE `MP_PRO`
 	MODIFY COLUMN `MP_NO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '영화인일련번호';
@@ -136,7 +136,8 @@ ALTER TABLE `MP_PRO`
 		)
 		REFERENCES `MEMB` ( -- 회원
 			`MNO` -- 회원일련번호
-		);
+		)ON DELETE CASCADE 
+    		  ON UPDATE CASCADE;
 
 -- 출연자
 ALTER TABLE `CAST_MEMB`
