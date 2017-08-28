@@ -2,74 +2,76 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>fanduck</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style media="screen">
-
-    ::-webkit-input-placeholder .ex_title {
-        /*font-weight: 400;*/
-        text-weight: bold;
-        color: lightgray;
-        font-size: 35px;
-    }
     .form-group {
       margin-bottom: 5px;
     }
-    #fi_title {
-      border: transparent;
-      width:300px;
-      height:40px;
-      /*margin-top:6px;*/
-      text-weight: bold;
-      color: gray;
-      font-size:25px;
-      /*margin-bottom: 7px;*/
-    }
-    #reImg-add {
-      font-weight:bold;
-      color:steelblue;
-      display:inline-block;
-      margin-right: 3px;
-    }
-    #ex_content {
-    font-size:20px;
-    height:auto;
-    width: 295px;
-    border:transparent;
-    margin:3px 0px 0px 0px;
+
+    .add-Close-btn {
+      margin-right:5px;
+      float:right;
+      background-color:#fa507b;
+      color:white;
     }
 
+    .person-array {
+      border: 1px solid lightgray;
+      border-radius:5px;
+      padding-left: 10px;
+      cursor:pointer;
+    }
+
+    #person-tags {
+      background-image:url('remove.png');
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+    }
+
+    #remove-btn{
+      border: 1px solid lightgray;
+      border-radius: 5px; padding: 5px;
+      margin-left: 5px;
+      font-size:1em;
+      display:inline-block;
+    }
     </style>
   </head>
   <body>
     <div style="padding:10px 0px 10px 0px; background-color:white; ">
-      <h4 style=" font-size:20px;line-height: 3px; text-align:center;color:steelblue;text-weight: bold;">영화인 등록</h4>
+      <h4 style="line-height: 5px; text-align:center;color:steelblue;">글쓰기</h4>
     </div>
-    <form id="myForm" action="http://localhost:8080/board/add.json" method="post" enctype="multipart/form-data">
+    <form action="http://localhost:8080/movieperson/add.json" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <div class="img-bar" style="text-align:center;">
-       <label for="represent-photo" style="cursor:pointer" id="images-div">
-        <img src="http://localhost:8080/images/placeholder7.jpg" style="opacity: 0.7;width:300px; height:220px">
+       <label for="chrome-upload" style="cursor:pointer" id="images-div">
+        <img src="/images/placeholder11.jpg" style="opacity: 0.7;width:300px; height:220px">
        </label>
        <div>
-       <label for="represent-photo" style="margin-top:6%; cursor:pointer">
-       <img src="images/upload.png" height="17px;" style="display: inline-block; margin-top: -4px;">
-        <p id="reImg-add">&nbsp사진올리기</p>
-	</label>
+       <label for="chrome-upload" style="margin-top:2px; cursor:pointer; display:none;">
+        <p id="img-add" style="font-weight:bold; color:steelblue;">사진 등록</p>
+       </label>
        </div>
+       </div>
+      <input id="chrome-upload" type="file" name="files" onchange="handleFiles(this.files)" style="display:none;">
+      <div class="ui-widget" style="margin-bottom:20px;">
+        <!-- <label for="person-tags" class="col-sm-3">영화인 이름</label> -->
+        <div class="person-list">
+            <input type="text" class="form-control" id="person-tags" placeholder="이름을 검색하세요!"
+                   style="margin-top:3%; margin-left: 6px; width:222px; display:inline-block" name="searchInfo">
+            <input id="chrome-hidden-info" type="hidden" name="hiddenInfo">
+            <input id="chrome-hidden-mno" type="hidden" name="mno">
+            <div id="remove-btn" style="cursor:pointer" name="button">초기화</div>
+        </div>
       </div>
-			<input id="represent-photo" type="file" name="files" onchange="handleFiles(this.files)" style="display:none;">
-			 <input type="text"  id="fi-title" name="bdTitle" placeholder="제목" style="width: 295px;  margin-left: 7px;"/>
-			 <textarea id="fi-content" name="bdContent" rows="10" cols="70" placeholder="내용" style="width: 295px;  margin-left: 7px;"></textarea>
-			 <input type="text"  id="fi-date" name="bdRegister" placeholder="등록일" style="width: 295px;  margin-left: 7px;"/>
-       <input type="hidden" id="person-code" name="mpNo" value="">
-
-      <button type="button" id="close-btn" class="btn btn-default add-Close-btn">취소</button>
-      <button type="submit" id="add-btn" class="btn btn-default add-Close-btn">추가</button>
+      <button type="button" id="close-btn" class="btn btn-info" style="margin-left: 180px; margin-top:23px; ">취소</button>
+      <button type="submit" id="upload-btn" class="btn btn-info" style="margin-top:23px; ">추가</button>
     </div>
   </form>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-  <script src="js/write.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/content0.js"></script>
   </body>
 </html>
