@@ -1,0 +1,169 @@
+-- 게시판 상세
+CREATE TABLE `BOARD` (
+	`BD_NO` INTEGER      NOT NULL COMMENT '게시물번호', -- 게시물번호
+	`MP_NO` INTEGER      NOT NULL COMMENT '영화인일련번호', -- 영화인일련번호
+	`TITL`  VARCHAR(100) NOT NULL COMMENT '제목', -- 제목
+	`TEXT`  VARCHAR(200) NULL     COMMENT '내용', -- 내용
+	`RDT`   DATE         NOT NULL COMMENT '등록일', -- 등록일
+	`photo` VARCHAR(200) NOT NULL COMMENT '대표사진', -- 대표사진
+	`list1` VARCHAR(200) NULL     COMMENT '리스트1', -- 리스트1
+	`list2` VARCHAR(200) NULL     COMMENT '리스트2', -- 리스트2
+	`list3` VARCHAR(200) NULL     COMMENT '리스트3', -- 리스트3
+	`list4` VARCHAR(200) NULL     COMMENT '리스트4', -- 리스트4
+	`list5` VARCHAR(200) NULL     COMMENT '리스트5', -- 리스트5
+	`list6` VARCHAR(200) NULL     COMMENT '리스트6', -- 리스트6
+	`list7` VARCHAR(200) NULL     COMMENT '리스트7', -- 리스트7
+	`list8` VARCHAR(200) NULL     COMMENT '리스트8', -- 리스트8
+	`list9` VARCHAR(200) NULL     COMMENT '새 컬럼' -- 새 컬럼
+)
+COMMENT '게시판 상세';
+
+-- 게시판 상세
+ALTER TABLE `BOARD`
+	ADD CONSTRAINT `PK_BOARD` -- 게시판 상세 기본키
+		PRIMARY KEY (
+			`BD_NO` -- 게시물번호
+		);
+
+ALTER TABLE `BOARD`
+	MODIFY COLUMN `BD_NO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시물번호';
+
+-- 영화인프로필
+CREATE TABLE `MP_PRO` (
+	`MP_NO`    INTEGER      NOT NULL COMMENT '영화인일련번호', -- 영화인일련번호
+	`MNO`      INTEGER      NOT NULL COMMENT '회원일련번호', -- 회원일련번호
+	`MP_PATH`  VARCHAR(250) NOT NULL COMMENT '파일경로', -- 파일경로
+	`MP_NICK`  VARCHAR(100) NOT NULL COMMENT '별명', -- 별명
+	`MP_CONT`  TEXT         NOT NULL COMMENT '내용', -- 내용
+	`MP_FILMO` VARCHAR(400) NULL     COMMENT '필모리스트', -- 필모리스트
+	`MP_CODE`  VARCHAR(200) NULL     COMMENT '영화인코드', -- 영화인코드
+	`MP_TYPE`  VARCHAR(10)  NULL     COMMENT '유형' -- 유형
+)
+COMMENT '영화인프로필';
+
+-- 영화인프로필
+ALTER TABLE `MP_PRO`
+	ADD CONSTRAINT `PK_MP_PRO` -- 영화인프로필 기본키
+		PRIMARY KEY (
+			`MP_NO` -- 영화인일련번호
+		);
+
+ALTER TABLE `MP_PRO`
+	MODIFY COLUMN `MP_NO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '영화인일련번호';
+
+-- 개봉영화
+CREATE TABLE `MOVIE` (
+	`MV_NO`   INTEGER      NOT NULL COMMENT '개봉영화고유번호', -- 개봉영화고유번호
+	`MV_TITL` VARCHAR(100) NOT NULL COMMENT '영화명', -- 영화명
+	`MV_DAY`  VARCHAR(100) NOT NULL COMMENT '개봉일' -- 개봉일
+)
+COMMENT '개봉영화';
+
+-- 개봉영화
+ALTER TABLE `MOVIE`
+	ADD CONSTRAINT `PK_MOVIE` -- 개봉영화 기본키
+		PRIMARY KEY (
+			`MV_NO` -- 개봉영화고유번호
+		);
+
+-- 출연자
+CREATE TABLE `CAST_MEMB` (
+	`MV_NO`   INTEGER      NOT NULL COMMENT '개봉영화고유번호', -- 개봉영화고유번호
+	`FP_CODE` VARCHAR(200) NOT NULL COMMENT '영화인코드', -- 영화인코드
+	`MNO`     INTEGER      NOT NULL COMMENT '회원일련번호', -- 회원일련번호
+	`IFREAD`  BOOLEAN      NULL     COMMENT '읽은여부YN' -- 읽은여부YN
+)
+COMMENT '출연자';
+
+-- 영화인
+CREATE TABLE `FILM_PERSON` (
+	`FP_CODE` VARCHAR(200) NOT NULL COMMENT '영화인코드', -- 영화인코드
+	`FP_NAME` VARCHAR(50)  NOT NULL COMMENT '이름' -- 이름
+)
+COMMENT '영화인';
+
+-- 영화인
+ALTER TABLE `FILM_PERSON`
+	ADD CONSTRAINT `PK_FILM_PERSON` -- 영화인 기본키
+		PRIMARY KEY (
+			`FP_CODE` -- 영화인코드
+		);
+
+-- 회원
+CREATE TABLE `MEMB` (
+	`MNO`   INTEGER      NOT NULL COMMENT '회원일련번호', -- 회원일련번호
+	`ID`    VARCHAR(50)  NOT NULL COMMENT '아이디', -- 아이디
+	`NICK`  VARCHAR(50)  NULL     COMMENT '닉네임', -- 닉네임
+	`PWD`   VARCHAR(50)  NOT NULL COMMENT '암호', -- 암호
+	`PATH`  VARCHAR(250) NULL     COMMENT '파일경로', -- 파일경로
+	`INTRO` VARCHAR(250) NULL     COMMENT '회원소개', -- 회원소개
+	`TYPE`  VARCHAR(250) NULL     COMMENT '가입유형' -- 가입유형
+)
+COMMENT '회원';
+
+-- 회원
+ALTER TABLE `MEMB`
+	ADD CONSTRAINT `PK_MEMB` -- 회원 Primary key
+		PRIMARY KEY (
+			`MNO` -- 회원일련번호
+		);
+
+-- 회원 유니크 인덱스
+CREATE UNIQUE INDEX `UIX_MEMB`
+	ON `MEMB` ( -- 회원
+		`ID` ASC -- 아이디
+	);
+
+ALTER TABLE `MEMB`
+	MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원일련번호';
+
+-- 게시판 상세
+ALTER TABLE `BOARD`
+	ADD CONSTRAINT `FK_MP_PRO_TO_BOARD` -- 영화인프로필 -> 게시판 상세
+		FOREIGN KEY (
+			`MP_NO` -- 영화인일련번호
+		)
+		REFERENCES `MP_PRO` ( -- 영화인프로필
+			`MP_NO` -- 영화인일련번호
+		)  ON DELETE CASCADE 
+    		  ON UPDATE CASCADE;
+
+-- 영화인프로필
+ALTER TABLE `MP_PRO`
+	ADD CONSTRAINT `FK_MEMB_TO_MP_PRO` -- 회원 -> 영화인프로필
+		FOREIGN KEY (
+			`MNO` -- 회원일련번호
+		)
+		REFERENCES `NEW_SCHEMA`.`MEMB` ( -- 회원
+			`MNO` -- 회원일련번호
+		);
+
+-- 출연자
+ALTER TABLE `CAST_MEMB`
+	ADD CONSTRAINT `FK_MOVIE_TO_CAST_MEMB` -- 개봉영화 -> 출연자
+		FOREIGN KEY (
+			`MV_NO` -- 개봉영화고유번호
+		)
+		REFERENCES `MOVIE` ( -- 개봉영화
+			`MV_NO` -- 개봉영화고유번호
+		);
+
+-- 출연자
+ALTER TABLE `CAST_MEMB`
+	ADD CONSTRAINT `FK_FILM_PERSON_TO_CAST_MEMB` -- 영화인 -> 출연자
+		FOREIGN KEY (
+			`FP_CODE` -- 영화인코드
+		)
+		REFERENCES `FILM_PERSON` ( -- 영화인
+			`FP_CODE` -- 영화인코드
+		);
+
+-- 출연자
+ALTER TABLE `CAST_MEMB`
+	ADD CONSTRAINT `FK_MEMB_TO_CAST_MEMB` -- 회원 -> 출연자
+		FOREIGN KEY (
+			`MNO` -- 회원일련번호
+		)
+		REFERENCES `NEW_SCHEMA`.`MEMB` ( -- 회원
+			`MNO` -- 회원일련번호
+		);
