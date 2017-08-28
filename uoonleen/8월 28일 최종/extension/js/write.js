@@ -1,0 +1,78 @@
+var personCode = $('#person-code')
+var files, img, no
+var chromeUpload = document.getElementById("represent-photo")
+$(document).on('ready', function() {
+  chromeUpload.addEventListener("change", handleFiles, false);
+  console.log('aaaa');
+
+  $('#myForm').addEventListener('submit', function (evt) { window.close()});
+})
+
+no = location.href.split('?')[1].split('=')[1]
+personCode.val(no)
+
+var imagesDiv = document.getElementById('images-div')
+
+function handleFiles() {
+  files = this.files;
+  if (files.length) {
+      imagesDiv.innerHTML = "";
+
+      img = document.createElement("img");
+      img.src = window.URL.createObjectURL(files[0]);
+      img.classList.add("obj");
+      img.file = files[0]
+      img.height = 150;
+      img.onload = function() {
+        window.URL.revokeObjectURL(this.src);
+        /*
+           1. createObjectURL()을 통해서 filse[0]의 data url 정보를 생성.
+           2.그 정보를 img 객체의 src에다가 저장.
+           3. revokeObjectURL() 함수를 통해 load 된 url정보를 revoke(취소, 해제) 시킨다.
+        */
+      }
+      $('.img-bar').css('margin-bottom', '65px')
+      imagesDiv.appendChild(img);
+  }
+}
+
+var fiTitle = $('#fi-title'),
+    fiDate = $('#fi-date'),
+    fiContent = $('#fi-content'),
+    fiBdNo = $('#fi-bdNo'),
+    fiMpno = $('#fi-mpNO'),
+    fiPhotoName = $('#represent-photo')
+
+$('#upload-btn').click(function() {
+   $.getJSON('http://localhost:8080/movie/list.json', function(result) {
+     window.close()
+   })
+})
+
+
+
+// $.post('http://localhost:8080/board/add.json', {
+//   files : files,
+//   bdTitle : $('#fi-title').val(),
+//   bdContent : $('#fi-content').val()
+// }, function(result) {
+//   alert('성공!')
+// })
+// // $('#add-btn').click(function(e) {
+// //
+// //       $.post('http://localhost:8080/board/add.json', {
+// //         'bdNo' : bdNo,
+// //         'mpNo' : mpNo,
+// //         'bdTitle': fiTitle.val(),
+// // 				'bdContent': fiContent.val(),
+// // 				'bdRegister': fiDate.val()
+// //
+// //
+// //   }, function(result) {
+// //     alert('add')
+// //     alert(img)
+// //   })
+//   console.log(fiPhotoName)
+//   console.log(fiContent.val())
+//   console.log(fiDate.val())
+// })
