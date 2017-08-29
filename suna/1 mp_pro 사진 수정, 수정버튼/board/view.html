@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FanDuck</title>
+
+
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/mypage_miya_edit.css"
+	type="text/css">
+<link rel="stylesheet" href="../../css/menu_miya_edit.css" />
+<link rel="stylesheet" href="../../css/style_miya_edit.css" />
+<link rel="stylesheet" href="../../css/footer.css" />
+<link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../node_modules/sweetalert/dist/sweetalert.css">
+
+</head>
+
+<style>
+#fi-content {
+	border: 1px; 
+	font-size: large; 
+	font-family: initial; 
+	margin-bottom:5%; 
+	resize:none; 
+	background-color: unset; 
+	margin-left: 5%; 
+	margin-top: 5%;"
+	
+}
+
+
+#represent-images {
+  margin-top: 8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	/*border: 1px solid red;*/
+}
+
+#representPhoto {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	/*border: 1px solid;*/
+
+}
+
+
+
+
+
+.upload {             /*input tag 공통 스타일*/
+  width: 200px;
+  height: 100px;
+  border-radius: 3px;
+  font-weight: 600;
+  border-color: transparent;
+  font-size: 25px;
+  background: hotpink;
+  color: #fff;
+ cursor: pointer;
+}
+input.upload {  
+  opacity: 0;       /*input type="file" tag 투명하게 처리*/
+  position: relative;
+}
+button.replace {    /*button tag 에 원하는 스타일 적용*/
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  border-radius: 3px;
+  font-weight: 600;
+  border-color: transparent;
+  font-size: 25px;
+  background: hotpink;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* #list-del {
+		background-color: rgba(217, 83, 79, 0.86);
+    border-color: rgba(212, 63, 58, 0.08);
+} */
+
+.listDel {
+  margin-left: 1%;
+	float: right;
+	margin-right: 7%;
+	background-color: rgba(217, 83, 79, 0.86);
+  border-color: rgba(212, 63, 58, 0.08);
+}
+
+.img-cropper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+}
+
+.img-cropper .list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width:150px;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+
+.photo-add , .listDel {
+	font-size: 7px;
+	border-radius: 50%;
+}
+
+th, td {
+	width: 330px;
+	padding-left:25px;
+}
+
+.photo-add {
+	margin-bottom:2%; 
+	float: right;
+}
+
+</style>
+
+
+
+
+<body>
+
+	<div class="container">
+		<header class="hheader">
+			<div id="logo" style="display: inline-block">
+				<a class="ha" href="../../main.html"><img class="himg"
+					src="../../images/logo1.png" /></a> <span id="menu">
+					<ul class="hul">
+						<li class="hli"><a href="../movieperson/mypage.html" class="ha" id="1"
+							style="color: black; cursor: pointer">홈</a></li>
+						<li class="hli" style="color: black" data-toggle="modal"
+							data-target="#join"><a class="ha" id="2"
+							style="color: black; cursor: pointer">프로필</a></li>
+						<li class="hli"><button id="logout" class="btn btn-default"
+								style="background-color: #fa507b; color: white; margin-bottom: 5px; right: 0px;"
+								data-toggle="modal" data-target="#login">로그아웃</button></li>
+						<a style="float: right; font-size: 175%; padding-left: 10px; color: black;" data-toggle="modal" data-target="#mypage"> 
+						</a>
+					</ul>
+				</span>
+
+
+			</div>
+
+
+		</header>
+		
+
+
+
+<div class="outer-wrapper">
+	<section class="top">
+		<button class="btn btn-info" id="list-btn">목록</button> 
+	</section>
+
+
+<!-- 게시판 -->
+<form class="form-horizontal" style="background: 	#F3F7F7; margin-top: 3%; border-radius: 40px; padding-left:3%">
+
+	
+	<div class="form-group">
+		<label for="fi-title"></label>
+		<div class="col-sm-7">
+			<h1>
+				<input type="text" id="fi-title" 
+					style="border: 0px; margin-top: 5%; width: 150%; background-color: 	#F3F7F7"
+					placeholder="제목">
+			</h1>
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label for="fi-date"></label>
+		<div class="col-sm-12">
+			<input type="text" id="fi-date" style="border: 0px; background-color: #F3F7F7; float: right;" class="bit-view"
+				placeholder="등록일" readonly="readonly">
+		</div>
+	</div>
+				
+
+
+<div class="form-group">
+
+					
+	<div class="col-sm-12">
+		<!-- 대표사진 등록 -->
+			<label for="represent-photo" class="control-label bit-new"> </label>
+				<div class="fileupload-buttonbar">
+            <div class="col-lg-3">
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>대표사진</span>
+                    <input id="represent-photo" class="form-control" type="file" name="files">
+                 </span>
+                    <input id="represent-filename" name="filename" style="display: none;">
+             </div>
+<!--              <div id='represent-images' style="float: left; margin-top: 8%;">
+            	 <img id="representPhoto" style="float: left; margin: 0 0% 5% -15%;">  -->
+            	 
+            	 
+            	 
+        </div>
+        <div id='represent-images' style="margin-top: 8%;">
+            	 <img id="representPhoto"> 
+       </div>
+
+
+
+	<textarea rows="15" cols="115%" id="fi-content" placeholder="내용을 입력해주세요" ></textarea>
+		
+			
+
+
+	<div class="img-list" id="fileList-upload" style="margin-right: 0%; margin-bottom: 1%; margin-left: 3.5%;">
+		
+		<table>		
+		
+			<tr>
+				<th>
+			      <button type="button" id="list-del" class="btn btn-danger delete listDel" >
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					 <span class="btn btn-success fileinput-button photo-add" >
+			       <i class="glyphicon glyphicon-plus"></i>
+			         <span></span>
+			        <input id="list1-photo" class="form-control" type="file" name="files">
+			     </span>
+				
+				</th>
+				<th>
+				   <button type="button" id="list-del2" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					<span class="btn btn-success fileinput-button photo-add">
+				       <i class="glyphicon glyphicon-plus"></i>
+				         <span></span>
+				        <input id="list2-photo" class="form-control" type="file" name="files">
+				  </span>		
+				</th>
+				<th>
+				   <button type="button" id="list-del3" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					<span class="btn btn-success fileinput-button photo-add">
+				       <i class="glyphicon glyphicon-plus"></i>
+				         <span></span>
+				        <input id="list3-photo" class="form-control" type="file" name="files">
+				  </span>		
+				</th>
+			</tr>
+			
+		
+			<tr>
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list1-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list1" name="file1" style="display: none;">
+	             </div>
+	             <div id='list1-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list1Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	      		</div>
+	      </td>
+		
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list2-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list2" name="files2 " style="display: none;">
+	             </div>
+	              <div id='list2-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list2Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	     			 </div>
+				</td>
+					
+	      
+	      <td style="width:265px; padding-bottom:5%;"">
+					<label for="list3-photo" class="control-label bit-new"> </label>
+							<div class="fileupload-buttonbar">
+			            <div class="col-lg-3">
+			                <!-- The fileinput-button span is used to style the file input field as button -->
+			                
+			                    <input id="list3" name="files3" style="display: none;">
+			             </div>
+			          <div id='list3-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list3Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+			      </div>
+	      </td>
+			</tr>			
+				
+				
+		</table>
+				
+				
+				
+				
+				
+				
+				
+				<!-- 테이블 2번째 -->
+	<table>		
+		
+			<tr>
+				<th>
+			      <button type="button" id="list-del4" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					 <span class="btn btn-success fileinput-button  photo-add">
+			       <i class="glyphicon glyphicon-plus"></i>
+			         <span></span>
+			        <input id="list4-photo" class="form-control" type="file" name="files">
+			     </span>
+				
+				</th>
+				<th>
+				   <button type="button" id="list-del5" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+		       <span class="btn btn-success fileinput-button photo-add">
+			       <i class="glyphicon glyphicon-plus"></i>
+			         <span></span>
+			        <input id="list5-photo" class="form-control" type="file" name="files">
+			     </span>
+				</th>
+				<th>
+				   <button type="button" id="list-del6" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					<span class="btn btn-success fileinput-button photo-add">
+				       <i class="glyphicon glyphicon-plus"></i>
+				         <span></span>
+				        <input id="list6-photo" class="form-control" type="file" name="files">
+				  </span>		
+				</th>
+			</tr>
+			
+		
+			<tr>
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list4-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list4" name="file4" style="display: none;">
+	             </div>
+	             <div id='list4-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list4Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	      		</div>
+	      </td>
+		
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list5-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list5" name="files5 " style="display: none;">
+	             </div>
+	              <div id='list5-images' class="img-cropper " style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list5Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	     			 </div>
+				</td>
+					
+	      
+	      <td style="width:265px; padding-bottom:5%;"">
+					<label for="list6-photo" class="control-label bit-new"> </label>
+							<div class="fileupload-buttonbar">
+			            <div class="col-lg-3">
+			                <!-- The fileinput-button span is used to style the file input field as button -->
+			                
+			                    <input id="list6" name="files6" style="display: none;">
+			             </div>
+			          <div id='list6-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list6Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+			      </div>
+	      </td>
+			</tr>			
+				
+				
+		</table><!-- 테이블 2번째 끝 -->
+		
+		
+		
+					<!-- 테이블 3번째 -->
+	<table>		
+		
+			<tr>
+				<th>
+			      <button type="button" id="list-del7" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					 <span class="btn btn-success fileinput-button photo-add">
+			       <i class="glyphicon glyphicon-plus"></i>
+			         <span></span>
+			        <input id="list7-photo" class="form-control" type="file" name="files">
+			     </span>
+				
+				</th>
+				<th>
+				   <button type="button" id="list-del8" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					<span class="btn btn-success fileinput-button photo-add">
+				       <i class="glyphicon glyphicon-plus"></i>
+				         <span></span>
+				        <input id="list8-photo" class="form-control" type="file" name="files">
+				  </span>		
+				</th>
+				<th>
+				   <button type="button" id="list-del9" class="btn btn-danger delete listDel">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span></span>
+		       </button>
+					<span class="btn btn-success fileinput-button photo-add">
+				       <i class="glyphicon glyphicon-plus"></i>
+				         <span></span>
+				        <input id="list9-photo" class="form-control" type="file" name="files">
+				  </span>		
+				</th>
+			</tr>
+			
+		
+			<tr>
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list7-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list7" name="file7" style="display: none;">
+	             </div>
+	             <div id='list7-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list7Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	      		</div>
+	      </td>
+		
+				<td style="width:265px; padding-bottom:5%;">
+					<label for="list8-photo" class="control-label bit-new"> </label>
+						<div class="fileupload-buttonbar">
+	            <div class="col-lg-3">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	               
+	                    <input id="list8" name="files8 " style="display: none;">
+	             </div>
+	              <div id='list8-images' class="img-cropper " style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list8Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+	     			 </div>
+				</td>
+					
+	      
+	      <td style="width:265px; padding-bottom:5%;"">
+					<label for="list9-photo" class="control-label bit-new"> </label>
+							<div class="fileupload-buttonbar">
+			            <div class="col-lg-3">
+			                <!-- The fileinput-button span is used to style the file input field as button -->
+			                
+			                    <input id="list9" name="files6" style="display: none;">
+			             </div>
+			          <div id='list9-images' class="img-cropper" style="float: left; margin: 0 0% 0% 0%">
+	            	 <img id="list9Photo" class="profile" style="float: left; margin: 0 0% 0% 0%"> 
+	             </div>
+			      </div>
+	      </td>
+			</tr>			
+				
+				
+		</table><!-- 테이블 3번째 끝 -->
+		
+		
+</div><!-- image-list 끝 -->
+				
+</div>  <!-- "col-sm-11" 끝 -->
+</div> <!-- form-group 끝 -->
+</form> <!-- form 끝 -->
+  
+</div> <!-- outer-wrapper 끝 -->
+				
+				
+					
+<!-- 공유하기 버튼 -->
+	<div class="addthis_inline_share_toolbox_u02i"></div>
+
+
+
+			
+			
+			
+
+
+	<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" data-dismiss="modal">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<img src="" class="imagepreview" style="width: 100%;">
+				</div>
+				<div class="modal-footer">
+					<div class="col-xs-12">
+						<p class="text-left"></p>
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	
+<!-- 위로가기 버튼 -->
+<div class="a" style="position: fixed; bottom: 2%; right: 5px; width: 20%;">
+	<a href="#" class="top-button" style="display:none;"><img src="photo/up.png" title="위로가기" style="width: 50px; float: right;"></a>
+</div>
+
+<!-- 글 등록, 추가, 삭제 버튼 -->
+	<div class="bottom" style="text-align:center; font-size: 150%; margin-top:3%;">
+		<!-- Standard button -->
+		<button type="button" class="btn btn-info bit-new" id="add-btn">추가</button>
+		<button type="button" class="btn btn-default bit-view" id="upd-btn" name="footer">저장</button>
+		<button type="button" class="btn btn-danger bit-view" id="del-btn">삭제</button>
+	</div>
+
+
+
+
+</div> <!-- container  끝--> 
+
+	
+		<footer id="footer">
+		<a> © 2017<a class="ha"
+			style="color: #0a93a6; text-decoration: none; width: 100%;" href="#">
+				김미연 신선아 이유운</a>&nbsp; Fanduck
+		</a>
+	</footer>
+	
+
+
+<script>
+$( window ).scroll( function() {
+  if ( $( this ).scrollTop() > 200 ) {
+    $( '.top-button' ).fadeIn();
+  } else {
+    $( '.top-button' ).fadeOut();
+  }
+} );
+
+$( '.top-button' ).click( function() {
+  $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+  return false;
+} );
+</script>
+
+
+
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<script src="../../js/myboard_handlebars.js"></script>
+		
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-599a57f699bed4a9"></script> 
+
+
+<script>
+function popup(){
+			console.log("pop")
+			
+		$('#pop').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+			
+			
+		$('#pop2').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+			
+		
+		$('#pop3').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		$('#pop4').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		$('#pop5').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		$('#pop6').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		
+		$('#pop7').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		
+		
+		$('#pop8').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+		
+		$('#pop9').click(function() {
+			console.log("이미지 로드~~~")
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+		
+} 
+
+</script>
+
+
+
+
+<script>
+$('#represent-photo').fileupload({
+	url: '/board/upload2.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 650,   // 미리보기 이미지 너비
+		previewMaxHeight: 650,  // 미리보기 이미지 높이 
+		previewCrop: false,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('대표사진 등록ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#represent-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('display', 'block').css('margin-left', 'auto').
+						css('margin-right', 'auto').css('top', '0').css('left', '0').css('right', '0').css('margin', 'auto').appendTo(imagesDiv);
+					}
+					
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+	console.log("data", data)
+			var filename = data.result.fileList2;
+			console.log(filename)
+		
+			var val = fiPhotoName.val();
+			console.log('대표사진등록')
+			fiPhotoName.val(filename);
+		 // console.log('filename : ' + filename)
+				
+			
+		}
+});
+
+</script>
+
+
+
+<script>
+$('#list1-photo').fileupload({
+	url: '/board/list1.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진1ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list1-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files1  = data.result.list1;
+			console.log(files1)
+		
+			var val = fiList1.val();
+			console.log('사진1')
+			fiList1.val(files1);
+	
+				
+			
+		}
+});
+
+</script>
+
+
+
+<script>
+$('#list2-photo').fileupload({
+	url: '/board/list2.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진2222ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list2-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files2  = data.result.list2;
+			console.log(files2)
+		
+			var val = fiList2.val();
+			console.log('사진2')
+			fiList2.val(files2);
+	
+				
+			
+		}
+});
+
+</script>
+
+
+
+
+<script>
+$('#list3-photo').fileupload({
+	url: '/board/list3.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진3ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list3-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files3  = data.result.list3;
+			console.log(files3)
+		
+			var val = fiList3.val();
+			console.log('사진3')
+			fiList3.val(files3);
+	
+				
+			
+		}
+});
+
+</script>
+
+
+<script>
+$('#list4-photo').fileupload({
+	url: '/board/list4.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진4ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list4-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files4  = data.result.list4;
+			console.log(files4)
+		
+			var val = fiList4.val();
+			console.log('사진4')
+			fiList4.val(files4);
+			
+		}
+});
+</script>
+
+
+
+<script>
+$('#list5-photo').fileupload({
+	url: '/board/list5.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진5ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list5-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files5  = data.result.list5;
+			console.log(files5)
+		
+			var val = fiList5.val();
+			console.log('사진5')
+			fiList5.val(files5);
+	
+				
+			
+		}
+});
+
+</script>
+
+
+<script>
+$('#list6-photo').fileupload({
+	url: '/board/list6.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진6ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list6-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files6  = data.result.list6;
+			console.log(files6)
+		
+			var val = fiList6.val();
+			console.log('사진6')
+			fiList6.val(files6);
+	
+				
+			
+		}
+});
+
+</script>
+
+
+
+<script>
+$('#list7-photo').fileupload({
+	url: '/board/list7.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진7ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list7-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files7  = data.result.list7;
+			console.log(files7)
+		
+			var val = fiList7.val();
+			console.log('사진7')
+			fiList7.val(files7);
+	
+				
+			
+		}
+});
+
+</script>
+
+<script>
+$('#list8-photo').fileupload({
+	url: '/board/list8.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진8ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list8-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files8  = data.result.list8;
+			console.log(files8)
+		
+			var val = fiList8.val();
+			console.log('사진8')
+			fiList8.val(files8);
+		}
+});
+
+
+</script>
+
+
+<script>
+$('#list9-photo').fileupload({
+	url: '/board/list9.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 280,   // 미리보기 이미지 너비
+		previewMaxHeight: 280,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('사진9ㅇ...');
+			console.log(data.files);
+			var imagesDiv = $('#list9-images');
+			imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '280px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+		/*	$('#upload-btn').unbind("click");
+			$('#upload-btn').click(function() {
+				data.submit();
+			});*/
+		}, 
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var files9  = data.result.list9;
+			console.log(files9)
+		
+			var val = fiList9.val();
+			console.log('사진9')
+			fiList9.val(files9);
+		}
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$('#fi-photoupload').fileupload({
+	url: '/board/upload.json',        // 서버에 요청할 URL
+	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
+	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
+	autoUpload: true,        // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+	disableImageResize: /Android(?!.*Chrome)|Opera/
+		.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+		previewMaxWidth: 100,   // 미리보기 이미지 너비
+		previewMaxHeight: 100,  // 미리보기 이미지 높이 
+		previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+		processalways: function(e, data) {
+			console.log('fileuploadprocessalways()...');
+			
+			var imagesDiv = $('#images-div');
+			//imagesDiv.html("");
+			for (var i = 0; i < data.files.length; i++) {
+				try {
+					if (data.files[i].preview.toDataURL) {
+						$("<img>").attr('src', data.files[i].preview.toDataURL()).css('width', '100px').appendTo(imagesDiv);
+					}
+				} catch (err) {}
+			}
+//			$('#upload-btn').unbind("click");
+//			$('#upload-btn').click(function() {
+//				data.submit();
+//			});
+		}, 
+/* 		submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
+			console.log(data.result);
+		},  */
+
+		
+		done: function (e, data) { 
+			console.log('done()...');
+			console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+
+			var filenames = data.result.fileList;
+			for (var i = 0; i <filenames.length ; i++) {
+				var val = fiFilenames.val();
+				if (val.length > 0) val += ",";
+				console.log('sssss')
+				fiFilenames.val(val + filenames[i]);
+
+
+			};
+		}
+});
+
+</script>
+
+ 
+ 
+ 
+
+<script>
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){
+		js=d.createElement(s);js.id=id;
+		js.src=p+'://platform.twitter.com/widgets.js';
+		fjs.parentNode.insertBefore(js,fjs);
+}
+}(document, 'script', 'twitter-wjs');
+</script>
+
+<!--
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId            : '1932124593828840',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v2.10'
+  });
+  FB.AppEvents.logPageView();
+};
+
+/* (function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk')); */
+
+
+
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){
+		js=d.createElement(s);js.id=id;
+		console.log(p)
+		console.log(d.location)
+		fjs.parentNode.insertBefore(js,fjs);
+		console.log("===>", d.location.href);
+}
+}(document, 'script', 'facebook-jssdk');
+</script>-->
+
+
+</body>
+
+
+
+</html>
