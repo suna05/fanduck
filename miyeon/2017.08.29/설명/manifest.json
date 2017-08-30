@@ -1,0 +1,18 @@
+{
+  "manifest_version" : 2,
+
+  "name" : "fanduck",
+  "description" : "test",
+
+  "version" : "1.1",
+
+  "browser_action" : {
+    "default_icon" : "icon.png",
+    "default_popup" : "popup.html"
+  },
+
+  "permissions" : [
+    "tabs",
+    "notifications"
+  ]
+}
