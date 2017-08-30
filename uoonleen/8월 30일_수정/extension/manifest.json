@@ -1,4 +1,3 @@
-
 {
   "manifest_version": 2,
 
@@ -25,14 +24,12 @@
     "http://*/*",
     "https://*/*",
     "contextMenus",
-    "<all_urls>",
-    "notifications",
-    "http://localhost:8080/*"
+    "<all_urls>"
   ],
 
   "content_scripts" : [
     {
-      "matches": ["http://*/*","https://*/*", "http://localhost/*"],
+      "matches": ["http://*/*","https://*/*"],
       "css":["css/bootstrap.min.css"],
       "js": [
         "js/jquery.js",
@@ -41,5 +38,4 @@
          ]
     }
   ]
-
 }
