@@ -1,0 +1,45 @@
+
+{
+  "manifest_version": 2,
+
+  "name": "fanduck",
+  "description": "movie alarm and ....",
+  "background" : {
+    "scripts": ["js/jquery.js",
+                "js/background.js"]
+
+  },
+  "version" : "1.1",
+  "browser_action": {
+      "default_icon": "images/logo.png",
+       "default_popup": "popup.html"
+  },
+  "icons" : {
+    "64" : "images/logo.png",
+    "32" : "images/logo.png",
+    "16" : "images/logo.png",
+    "128" : "images/logo.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "<all_urls>",
+    "notifications",
+    "http://localhost:8080/*"
+  ],
+
+  "content_scripts" : [
+    {
+      "matches": ["http://*/*","https://*/*", "http://localhost/*"],
+      "css":["css/bootstrap.min.css"],
+      "js": [
+        "js/jquery.js",
+        "js/login.js",
+        "js/logout.js"
+         ]
+    }
+  ]
+
+}
