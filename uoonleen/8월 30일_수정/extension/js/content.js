@@ -25,7 +25,7 @@ $('#person-tags').autocomplete({
   minLength: 1,
   autoFocus:true,
   source: function(request, response) {
-    $.ajax('http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=b0cac97aa508433ca9835e54ab51d7cd&itemPerPage=500', {
+    $.ajax('http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=2f866d0aa55c6fd70be5b68ea8dc1ce5&itemPerPage=500', {
       contentType: "application/json; charset=utf-8",
       data : { input : request.term },
       dataType: 'json',

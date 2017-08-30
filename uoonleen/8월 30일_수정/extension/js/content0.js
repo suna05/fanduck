@@ -55,7 +55,7 @@ $('#upload-btn').click(function(e) {
 
 
         $.ajax('http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleInfo.json?' +
-    				   'key=b0cac97aa508433ca9835e54ab51d7cd&peopleCd=' + peopleCd, {
+    				   'key=2f866d0aa55c6fd70be5b68ea8dc1ce5&peopleCd=' + peopleCd, {
         			  contentType: "application/json; charset=utf-8",
         			  dataType: 'json',
         			  async: false,
@@ -63,7 +63,7 @@ $('#upload-btn').click(function(e) {
         			            var getDetailInfo = getPersonDetail.peopleInfoResult.peopleInfo
         			            var attendMovieCode = getDetailInfo.filmos[0].movieCd
       			              $.ajax('http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?' +
-                				 				 'key=b0cac97aa508433ca9835e54ab51d7cd&movieCd=' + attendMovieCode, {
+                				 				 'key=2f866d0aa55c6fd70be5b68ea8dc1ce5&movieCd=' + attendMovieCode, {
                 			  					contentType: "application/json; charset=utf-8",
                 			 					  dataType: 'json',
                 			 					  async: false,
