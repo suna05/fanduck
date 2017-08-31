@@ -1,0 +1,52 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: fanduckdb
+-- ------------------------------------------------------
+-- Server version	5.7.17-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `movie`
+--
+
+DROP TABLE IF EXISTS `movie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movie` (
+  `MV_NO` int(11) NOT NULL COMMENT '개봉영화고유번호',
+  `MV_TITL` varchar(100) NOT NULL COMMENT '영화명',
+  `MV_DAY` varchar(100) NOT NULL COMMENT '개봉일',
+  PRIMARY KEY (`MV_NO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='개봉영화';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movie`
+--
+
+LOCK TABLES `movie` WRITE;
+/*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES (1111,'어떤영화','1111'),(20156559,'계춘할망','2016년 05월 19일'),(20158421,'어머니가방에들어가신다','년 월 일'),(20162869,'택시운전사','2017년 08월 02일'),(20167901,'어느날','2017년 04월 05일'),(20169270,'안녕 히어로','2017년 09월 07일'),(20170033,'캠프 살인사건의 비밀','2017년 07월 26일'),(20170841,'리틀 포레스트','년 월 일'),(20172064,'마더!','년 월 일'),(20172203,'블랙 워터 뱀파이어','2017년 08월 30일'),(20178647,'땐뽀걸즈','2017년 09월 27일'),(20178982,'박열','2017년 06월 28일');
+/*!40000 ALTER TABLE `movie` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-08-31 21:03:12
