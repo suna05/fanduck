@@ -13,7 +13,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.15.4",
     "handlebars": "^4.0.6",
-    "jquery": "^1.12.4",
+    "jquery": "^3.0.0",
     "mixitup": "^3.2.1",
     "shufflejs": "^5.0.1",
     "tinysort": "^2.3.6"
